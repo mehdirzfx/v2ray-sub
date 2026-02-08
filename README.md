@@ -1,4 +1,4 @@
-# Combined subscription links 
+# Collections subscription links 
 > Last update on: 2026/2/4
 
 # Bulk V2ray Subscriptions
@@ -296,6 +296,12 @@ https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub11.
 https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub12.txt
 https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub13.txt
 https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub14.txt
+https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/all.txt
+https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/light.txt
+https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/vless.txt
+https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/vmess.txt
+https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/shadowsocks.txt
+https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/trojan.txt
 ```
 
 
