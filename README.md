@@ -314,6 +314,31 @@ https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/vl
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/vmess.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/shadowsocks.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/trojan.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/1.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/2.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/3.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/4.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/5.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/6.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/7.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/8.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/9.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/10.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/11.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/12.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/13.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/14.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/15.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/16.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/17.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/18.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/19.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/20.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/21.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/22.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/23.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/24.txt
+https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/25.txt
 ```
 
 
