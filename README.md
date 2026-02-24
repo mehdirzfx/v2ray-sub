@@ -7,26 +7,7 @@
 > Note: This list is a compilation of other repositories. While emphasizing that all developers' rights will be preserved, the release links will be fully specified with the username within the link.
 
 ### Supported Protocols:
-- Vmess
-- Vless
-- Trojan
-- Tuic
-- Shadowsocks
-- ShadowsocksR
-
-### You can use a v2ray client to use these subscription links:
-
-#### Android:
-  v2rayng
-
-#### IOS:
-1. fair
-2. streisand
-
-#### Windows and Linux:
-1. hiddify-next
-2. nekoray
-3. v2rayn
+> Vmess • Vless • Trojan • Tuic • Shadowsocks • ShadowsocksR • Clash
 
 ## Subscriptions Links
 
@@ -368,6 +349,23 @@ https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/24.txt
 https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/25.txt
 ```
 
+### You can use a v2ray client to use these subscription links:
+
+#### Android:
+- v2rayng
+- Husi
+- Hiddify
+- Exclave
+- NPV Thunnel
+  
+#### IOS:
+1. fair
+2. streisand
+
+#### Windows and Linux:
+1. hiddify-next
+2. nekoray
+3. v2rayn
 
 ### Usage:
 
