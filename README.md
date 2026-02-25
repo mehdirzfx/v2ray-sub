@@ -207,10 +207,8 @@ https://raw.githubusercontent.com/wangyingbo/v2rayse_sub/refs/heads/main/wzdnzd_
 https://raw.githubusercontent.com/xyfqzy/free-nodes/main/nodes/v2ray.txt
 https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt
 https://shadowmere.xyz/api/b64sub/
-https://tinyurl.com/2acy7v9p
 https://v2rayshare.githubrowcontent.com/2025/08/20250804.txt
 https://vpn.fail/free-proxy/v2ray
-https://vpny.online/VPNy.json
 https://weoknow.com/data/dayupdate/1/z.txt
 https://www.xrayvip.com/free.txt
 https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/githubmirror/1.txt
