@@ -1,5 +1,5 @@
 # Collections subscription links 
-<b>Last update on: 2026/02/24</b>
+<b>Last update on: 2026/07/21</b>
 
 # Bulk V2ray Subscriptions
 💻 This repository contains a collection of free V2ray configuration subscription links that you can use with your V2ray client for secure and anonymous internet access.
