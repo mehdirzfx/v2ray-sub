@@ -3,7 +3,6 @@
 ---
 [![GitHub stars](https://img.shields.io/github/stars/mehdirzfx/v2ray-sub?style=for-the-badge&logo=github&color=yellow)](https://github.com/mehdirzfx/v2ray-sub/stargazers)
 <img src="https://img.shields.io/github/forks/mehdirzfx/v2ray-sub?style=for-the-badge">
-<img src="https://img.shields.io/github/downloads/mehdirzfx/v2ray-sub/total?style=for-the-badge">
 ---
 # Bulk V2ray Subscriptions
 💻 This repository contains a collection of free V2ray configuration subscription links that you can use with your V2ray client for secure and anonymous internet access.
