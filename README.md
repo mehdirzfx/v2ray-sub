@@ -68,6 +68,7 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **823 links.**
 
 ```
+https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
 https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt
 https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt
 https://raw.githubusercontent.com/kort0881/vpn-checker-backend/main/checked/RU_Best/ru_white_part3.txt
