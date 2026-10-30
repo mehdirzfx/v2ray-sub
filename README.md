@@ -15,23 +15,32 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Table of Contents
 
-- [How to Use These Subscription Links](#how-to-use-these-subscription-links)
-- [Supported Protocols](#supported-protocols)
-- [Compatible Clients](#compatible-clients)
-- [Mixed Subscription Links](#mixed-subscription-links) (823)
-- [VLESS Subscription Links](#vless-subscription-links) (68)
-- [VMess Subscription Links](#vmess-subscription-links) (31)
-- [Trojan Subscription Links](#trojan-subscription-links) (31)
-- [Shadowsocks Subscription Links](#shadowsocks-subscription-links) (37)
-- [Hysteria2 and TUIC Subscription Links](#hysteria2-and-tuic-subscription-links) (12)
-- [Clash and Mihomo YAML Links](#clash-and-mihomo-yaml-links) (103)
-- [Sing-box and JSON Links](#sing-box-and-json-links) (48)
-- [Sources and Credits](#sources-and-credits)
-- [Tips for Better Speed and Stability](#tips-for-better-speed-and-stability)
-- [FAQ](#faq)
-- [Contributing](#contributing)
-- [Disclaimer](#disclaimer)
-- [راهنمای فارسی](#راهنمای-فارسی)
+- [Free V2Ray Subscription Links: VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and Clash](#free-v2ray-subscription-links-vless-vmess-trojan-shadowsocks-hysteria2-and-clash)
+  - [Table of Contents](#table-of-contents)
+  - [How to Use These Subscription Links](#how-to-use-these-subscription-links)
+  - [Supported Protocols](#supported-protocols)
+  - [Compatible Clients](#compatible-clients)
+  - [Mixed Subscription Links](#mixed-subscription-links)
+  - [VLESS Subscription Links](#vless-subscription-links)
+  - [VMess Subscription Links](#vmess-subscription-links)
+  - [Trojan Subscription Links](#trojan-subscription-links)
+  - [Shadowsocks Subscription Links](#shadowsocks-subscription-links)
+  - [Hysteria2 and TUIC Subscription Links](#hysteria2-and-tuic-subscription-links)
+  - [Clash and Mihomo YAML Links](#clash-and-mihomo-yaml-links)
+  - [Sing-box and JSON Links](#sing-box-and-json-links)
+  - [Sources and Credits](#sources-and-credits)
+  - [Tips for Better Speed and Stability](#tips-for-better-speed-and-stability)
+  - [FAQ](#faq)
+    - [What is a V2Ray subscription link?](#what-is-a-v2ray-subscription-link)
+    - [Which protocol should I choose?](#which-protocol-should-i-choose)
+    - [Why does a link or config not work?](#why-does-a-link-or-config-not-work)
+    - [Can I use these links on iPhone, Android, Windows, macOS and Linux?](#can-i-use-these-links-on-iphone-android-windows-macos-and-linux)
+    - [Are free V2Ray configs safe?](#are-free-v2ray-configs-safe)
+  - [Contributing](#contributing)
+  - [Disclaimer](#disclaimer)
+  - [راهنمای فارسی](#راهنمای-فارسی)
+    - [طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)](#طرز-استفاده-از-لینک-ساب-کانفیگ-رایگان-v2ray)
+    - [نکات](#نکات)
 
 ## How to Use These Subscription Links
 
@@ -95,42 +104,42 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batch
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_009.txt
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_010.txt
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_011.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-1.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-2.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-3.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-4.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-5.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-6.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-7.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-8.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-9.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-10.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-11.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-12.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-13.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-14.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-15.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-16.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-17.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-18.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-19.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-20.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-21.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-22.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-23.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-24.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-25.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-26.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-27.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-28.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-29.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-30.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-31.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-32.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-33.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-34.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-35.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/mini/m1n1-5ub-36.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-1.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-2.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-3.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-4.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-5.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-6.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-7.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-8.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-9.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-10.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-11.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-12.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-13.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-14.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-15.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-16.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-17.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-18.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-19.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-20.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-21.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-22.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-23.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-24.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-25.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-26.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-27.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-28.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-29.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-30.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-31.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-32.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-33.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-34.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-35.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-36.txt
 http://66.42.50.118:12580/clash/proxies
 https://cdn.jsdelivr.net/gh/firefoxmmx2/v2rayshare_subcription/subscription/vray_sub.txt
 https://cdn.jsdelivr.net/gh/peasoft/NoMoreWalls@master/list.txt
@@ -901,7 +910,7 @@ VLESS configs, including VLESS + Reality and VLESS + XHTTP/WS/gRPC where availab
 ```
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/vl.txt
 https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless.txt
@@ -975,7 +984,7 @@ VMess configs (WebSocket, TCP, gRPC and other transports). **31 links.**
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vm.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/vm.txt
 https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt
 https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
@@ -1013,7 +1022,7 @@ Trojan configs over TLS. **31 links.**
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/tr.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/tr.txt
 https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt
 https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/trojan.txt
 https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/trojan
@@ -1051,7 +1060,7 @@ Shadowsocks and ShadowsocksR configs. **37 links.**
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss.txt
-https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/ss.txt
+https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/ss.txt
 https://raw.githubusercontent.com/Argh94/V2RayAutoConfig/refs/heads/main/configs/ShadowSocks.txt
 https://raw.githubusercontent.com/Kolandone/v2raycollector/refs/heads/main/ss.txt
 https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/ss.txt
