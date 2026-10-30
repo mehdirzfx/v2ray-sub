@@ -9,7 +9,7 @@ A curated collection of **1153 free public V2Ray / Xray / sing-box subscription 
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/10/23**
+**Last update on: 2026/10/30**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
