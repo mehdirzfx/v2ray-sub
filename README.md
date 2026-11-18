@@ -5,7 +5,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **1153 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **994 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
