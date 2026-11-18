@@ -173,8 +173,6 @@ https://raw.githubusercontent.com/rasool083/v2ray-sub/refs/heads/main/sub.txt
 https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
 https://raw.githubusercontent.com/teknovpnhub/v2ray-subscription/refs/heads/main/servers.txt
 https://shadowmere.xyz/api/b64sub/
-https://weoknow.com/data/dayupdate/1/z.txt
-https://www.xrayvip.com/free.txt
 https://raw.githubusercontent.com/Danialsamadi/v2go/refs/heads/main/AllConfigsSub.txt
 https://raw.githubusercontent.com/Farid-Karimi/Config-Collector/refs/heads/main/mixed_iran.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/refs/heads/main/subscriptions/v2ray/super-sub.txt

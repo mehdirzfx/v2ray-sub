@@ -59,7 +59,8 @@ h1{margin:0;font-size:1.3rem;font-weight:800}
 
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem;margin-bottom:.8rem}
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:.9rem;padding:.55rem .9rem;box-shadow:var(--shadow)}
-.stat b{display:flex;align-items:baseline;gap:.5rem;font-size:1.4rem;font-weight:800;line-height:1.35;font-variant-numeric:tabular-nums}
+.stat{min-width:0;overflow:hidden}
+.stat b{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .5rem;font-size:clamp(1.15rem,3.4vw,1.4rem);font-weight:800;line-height:1.4;font-variant-numeric:tabular-nums}
 .stat b i{display:inline-flex;align-items:center;gap:.2rem;font-style:normal;font-weight:400;font-size:.8rem;color:var(--muted)}
 .stat span{color:var(--muted);font-size:.78rem}
 .stat.ok b{color:var(--ok)}.stat.bad b{color:var(--bad)}.stat.mute b{color:var(--mute)}
@@ -87,11 +88,12 @@ input[type=search],select,textarea{font:inherit;font-size:.85rem;color:var(--ink
 .st{display:inline-flex;align-items:center;gap:.35rem;height:1.55rem;padding:0 .6rem;border-radius:99px;font-size:.76rem;font-weight:500;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent)}
 .row .st{min-width:5.8rem;justify-content:flex-start}
 .alive{--c:var(--ok)}.dead,.invalid{--c:var(--bad)}.empty,.weak,.opaque{--c:var(--warn)}.pending,.skip,.checking{--c:var(--mute)}
-.u{flex:1 1 0;min-width:0;direction:ltr;text-align:left;line-height:1.35}
+.u{flex:1 1 0;min-width:0;direction:ltr;text-align:right;line-height:1.35}
 .u b{display:block;font-weight:500;font-size:.86rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .u:hover b{color:var(--accent)}
 .u small{display:block;color:var(--muted);font-size:.72rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.m{display:flex;align-items:center;gap:.55rem;font-size:.8rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.m{display:flex;align-items:center;gap:.55rem;width:9.5rem;font-size:.8rem;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.m .nt{color:var(--muted);font-size:.74rem;direction:ltr}
 .m span{display:inline-flex;align-items:center;gap:.2rem}
 .m .v{color:var(--ok)}.m .t{color:var(--muted)}.m .ms{color:var(--muted);font-size:.72rem}
 .pr{display:inline-flex;align-items:center;height:1.3rem;padding:0 .45rem;border:1px solid var(--line);border-radius:.4rem;font-size:.7rem;direction:ltr;color:var(--muted);background:var(--panel2);white-space:nowrap}
@@ -104,7 +106,7 @@ input[type=search],select,textarea{font:inherit;font-size:.85rem;color:var(--ink
 .dt small{display:block;color:var(--muted);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .c{display:flex;align-items:center;gap:.5rem;height:46px;margin-bottom:6px;padding:0 .6rem;background:var(--panel);border:1px solid var(--line);border-radius:.75rem;overflow:hidden}
 .c.bad{border-color:color-mix(in srgb,var(--bad) 45%,var(--line))}
-.cn{flex:1 1 0;min-width:0;direction:ltr;text-align:left;line-height:1.35}
+.cn{flex:1 1 0;min-width:0;direction:ltr;text-align:right;line-height:1.35}
 .cn b{display:block;font-weight:500;font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cn small{display:block;color:var(--muted);font-size:.72rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tag{display:inline-flex;align-items:center;gap:.25rem;height:1.35rem;font-size:.72rem;padding:0 .5rem;border-radius:99px;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);white-space:nowrap}
@@ -138,7 +140,7 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
 @keyframes rise{from{opacity:0;transform:translateY(1rem)}}
 .toast{position:fixed;inset-inline:0;bottom:1.2rem;margin:auto;width:max-content;max-width:90vw;background:var(--ink);color:var(--bg);padding:.45rem 1.1rem;border-radius:99px;font-size:.85rem;opacity:0;transform:translateY(1rem);pointer-events:none;transition:.25s;z-index:70}
 .toast.on{opacity:1;transform:none}
-@media(max-width:700px){.row .st .lb,.lb{display:none}.row .st{min-width:0;width:1.7rem;padding:0;justify-content:center}.prs{display:none}.m .ms{display:none}.c .pr.x{display:none}}
+@media(max-width:700px){.row .st .lb,.lb{display:none}.row .st{min-width:0;width:1.7rem;padding:0;justify-content:center}.prs{display:none}.m .ms,.m .nt{display:none}.m{width:auto}.c .pr.x{display:none}}
 </style>
 </head>
 <body>
@@ -204,8 +206,16 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
 </dialog>
 <dialog id="dRem">
   <h2>حذف‌شده‌ها</h2>
+  <div class="note" id="remInfo" style="color:var(--muted);font-size:.82rem;padding-bottom:.5rem"></div>
   <div class="rl" id="remList"></div>
-  <div class="df"><button class="btn" id="remCopy"></button><button class="btn" id="remAll"></button><button class="btn" data-close>بستن</button></div>
+  <div class="df">
+    <button class="btn pri" id="rdCopy"></button>
+    <button class="btn" id="rdDl"></button>
+    <a class="btn" id="rdEdit" href="https://github.com/mehdirzfx/v2ray-sub/edit/main/README.md" target="_blank" rel="noopener"></a>
+  </div>
+  <div class="df" style="margin-top:.4rem">
+    <button class="btn sm" id="remCopy"></button><button class="btn sm" id="remAll"></button><button class="btn sm danger" id="remClear"></button><button class="btn sm" data-close>بستن</button>
+  </div>
 </dialog>
 <div class="nudge" id="nudge" hidden>
   <span class="ns" id="nsico"></span>
@@ -432,6 +442,7 @@ const README='https://raw.githubusercontent.com/mehdirzfx/v2ray-sub/main/README.
 const CONC=8,RH=54,DRH=52;
 const LBL={alive:'سالم',weak:'ضعیف',empty:'خالی',invalid:'نامعتبر',opaque:'غیرقابل خواندن',dead:'خراب',skip:'ردشده',pending:'در انتظار',checking:'در حال بررسی'};
 const PROBLEM=new Set(['dead','empty','invalid']),GOOD=new Set(['alive','weak','opaque']);
+const isSoft=i=>i.status==='dead'&&(i.note==='network'||i.note==='timeout'||/^HTTP (5|429)/.test(i.note));
 const ORD={dead:0,invalid:1,empty:2,weak:3,opaque:4,skip:5,pending:6,checking:7,alive:8};
 const $=id=>document.getElementById(id);
 const fa=n=>Number(n).toLocaleString('fa-IR');
@@ -485,7 +496,8 @@ $('nclose').onclick=hideNudge;$('nstar').onclick=hideNudge;
     if(typeof j.stargazers_count==='number'){ls.set('sc_stars',{n:j.stargazers_count,t:Date.now()});setStars(j.stargazers_count)}}catch(e){}
 })();$('home').innerHTML=IC.home;$('sico').innerHTML=IC.search;$('dsico').innerHTML=IC.search;
 $('back').innerHTML=IC.back;$('dopen').innerHTML=IC.open;$('dre').innerHTML=IC.refresh;$('ddns').innerHTML=IC.globe;$('dcopy').innerHTML=IC.copy;
-$('remCopy').innerHTML=IC.copy+'کپی همه';$('remAll').innerHTML=IC.undo+'بازگردانی همه';
+$('remCopy').innerHTML=IC.copy+'کپی لینک‌ها';$('remAll').innerHTML=IC.undo+'بازگردانی همه';$('remClear').innerHTML=IC.trash+'پاک‌کردن لیست';
+$('rdCopy').innerHTML=IC.copy+'کپی README جدید';$('rdDl').innerHTML=IC.dl+'دانلود README';$('rdEdit').innerHTML=IC.open+'ویرایش در GitHub';
 
 /* theme */
 const eff=()=>document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
@@ -601,9 +613,10 @@ function rowHtml(i){
   const pr=Object.entries(i.protos||{}).slice(0,3).map(([k,x])=>`<span class="pr">${esc(k)} ${fa(x)}</span>`).join('');
   const m=i.total?`<span class="v" title="معتبر">${IC.tick}${fa(i.valid)}</span><span class="t" title="کل کانفیگ‌ها">${IC.list}${fa(i.total)}</span>`:'';
   const ms=i.ms!=null?`<span class="ms">${fa(i.ms)}ms</span>`:'';
+  const nt=!i.total&&i.note?`<span class="nt">${esc(i.note)}</span>`:'';
   return`<article class="row" data-u="${esc(i.url)}">${stPill(i.status)}
     <a class="u" href="${esc(i.url)}" target="_blank" rel="noopener" title="${esc(i.url)}${i.note?'\n'+esc(i.note):''}"><b>${esc(host)}</b><small>${esc(path)}</small></a>
-    <div class="m">${m}${ms}</div><div class="prs">${pr}</div>
+    <div class="m">${m}${nt}${ms}</div><div class="prs">${pr}</div>
     <div class="act">
       <a class="btn sm ic" data-view href="#v=${encodeURIComponent(i.url)}" title="کانفیگ‌ها">${IC.list}</a>
       <button class="btn sm ic" data-a="check" title="بررسی دوباره">${IC.refresh}</button>
@@ -630,7 +643,8 @@ function render(){
     .map(([k,v,x,l])=>`<div class="stat ${k}"><b>${v}${x}</b><span>${l}</span></div>`).join('');
   $('prog').style.width=(n?done/n*100:0)+'%';
   $('run').innerHTML=running?IC.stop+'<span class="lb">توقف</span>':IC.play+`<span>${done===n&&n&&done>0?'بررسی دوباره':'شروع بررسی'}</span>`;
-  $('purge').innerHTML=IC.trash+'<span class="lb">حذف مشکل‌دارها</span>'+(prob?`<span>${fa(prob)}</span>`:'');$('purge').disabled=!prob;
+  const hard=items.reduce((a,i)=>a+(PROBLEM.has(i.status)&&!isSoft(i)?1:0),0);
+  $('purge').innerHTML=IC.trash+'<span class="lb">حذف مشکل‌دارها</span>'+(hard?`<span>${fa(hard)}</span>`:'');$('purge').disabled=!hard;
   $('copy').innerHTML=IC.copy+'<span class="lb">کپی لیست</span>';$('copy').dataset.menu=1;
   $('add').innerHTML=IC.plus+'<span class="lb">افزودن</span>';
   $('rem').innerHTML=IC.undo+'<span class="lb">حذف‌شده‌ها</span>'+(removed.size?`<span>${fa(removed.size)}</span>`:'');
@@ -669,9 +683,10 @@ $('copy').onclick=e=>{
   ]);
 };
 $('purge').onclick=()=>{
-  const p=items.filter(i=>PROBLEM.has(i.status));if(!p.length)return;
-  if(!confirm(`${fa(p.length)} لینک مشکل‌دار از لیست حذف شود؟`))return;
-  removeItems(p);render();toast(`${fa(p.length)} لینک حذف شد`);
+  const p=items.filter(i=>PROBLEM.has(i.status)&&!isSoft(i));if(!p.length)return;
+  const soft=items.filter(i=>PROBLEM.has(i.status)&&isSoft(i)).length;
+  if(!confirm(`${fa(p.length)} لینک خراب از لیست حذف شود؟`+(soft?`\n${fa(soft)} لینک به‌خاطر خطای شبکه یا timeout نگه داشته می‌شود (ممکن است روی اینترنت شما فیلتر باشد).`:'')))return;
+  removeItems(p);render();remRender();$('dRem').showModal();
 };
 $('add').onclick=()=>$('dAdd').showModal();
 $('addOk').onclick=()=>{
@@ -681,7 +696,19 @@ $('addOk').onclick=()=>{
   extras=[...new Set([...extras,...items.slice(before).map(i=>i.url)])];ls.set('sc_extra',extras);
   $('extra').value='';$('dAdd').close();render();
 };
+let readmeText='';
+function cleanReadme(){
+  let inCode=false,dropped=0;
+  const text=readmeText.split('\n').filter(line=>{
+    if(/^\s*```/.test(line)){inCode=!inCode;return true}
+    if(!inCode)return true;
+    if(removed.has(line.trim().split('#')[0])){dropped++;return false}
+    return true;
+  }).join('\n');
+  return{text,dropped};
+}
 function remRender(){
+  $('remInfo').textContent=!removed.size?'':readmeText?`${fa(cleanReadme().dropped)} لینک از این لیست در README پیدا شد و در نسخه‌ی جدید حذف می‌شود`:'README هنوز خوانده نشده';
   $('remList').innerHTML=[...removed].map(u=>`<div><span>${esc(u)}</span><button class="btn sm ic" data-r="${esc(u)}" title="بازگردانی">${IC.undo}</button></div>`).join('')||'<div class="msg">لیست خالی است</div>';
 }
 $('rem').onclick=()=>{remRender();$('dRem').showModal()};
@@ -691,6 +718,9 @@ $('remList').onclick=e=>{
 };
 $('remAll').onclick=()=>{const l=[...removed];removed.clear();ls.set('sc_removed',[]);addLinks(l);remRender();render()};
 $('remCopy').onclick=()=>copyText([...removed].join('\n'));
+$('rdCopy').onclick=()=>{if(!readmeText)return toast('README هنوز خوانده نشده');const r=cleanReadme();copyText(r.text,`README جدید کپی شد، ${fa(r.dropped)} لینک حذف شد`)};
+$('rdDl').onclick=()=>{if(!readmeText)return toast('README هنوز خوانده نشده');download(cleanReadme().text,'README.md')};
+$('remClear').onclick=()=>{if(!removed.size||!confirm('لیست حذف‌شده‌ها پاک شود؟ این کار را بعد از آپدیت README انجام دهید، وگرنه لینک‌های README دوباره در لیست ظاهر می‌شوند.'))return;removed.clear();ls.set('sc_removed',[]);remRender();render()};
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
 document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
 
@@ -801,7 +831,7 @@ $('dwin').onclick=async e=>{
 
 /* init */
 addLinks(extras);render();route();
-fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{addLinks(parseReadme(md));render();route()})
+fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{readmeText=md;addLinks(parseReadme(md));render();route()})
   .catch(()=>{$('msg').hidden=false;$('msg').textContent='خواندن README ناموفق بود؛ لینک‌ها را دستی اضافه کنید'});
 </script>
 </body>
