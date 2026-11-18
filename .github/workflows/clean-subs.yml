@@ -1,6 +1,9 @@
 name: Clean subscription list
 
 on:
+  push:
+    branches: [main]
+    paths: ["README.md"]   # you edited the README by hand -> only the numbers get fixed (no network checks)
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -31,6 +34,7 @@ jobs:
       - name: Check links and clean README
         env:
           DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          COUNTS_ONLY: ${{ github.event_name == 'push' && '1' || '0' }}
           STRIKES: "1"
         run: python scripts/clean_readme.py
 
@@ -40,6 +44,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore: remove dead subscription links"
+            git commit -m "chore: clean dead subscription links / refresh counts"
+            git pull --rebase
             git push
           fi

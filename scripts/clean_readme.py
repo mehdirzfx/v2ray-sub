@@ -19,6 +19,11 @@ Environment variables (all optional)
   MAX_REMOVE_RATIO=0.3           refuse to remove more than this share in one run
   UPDATE_DATE=changed|always|never   (changed = refresh date only when links were removed)
   DRY_RUN=1                      report only, change nothing
+  COUNTS_ONLY=1                  no network checks: only fix the numbers in the README (used on every push)
+
+The numbers in the README are ALWAYS recomputed from the real content, whether links were
+removed automatically or added by hand: per-section "**N links.**", the total
+"**N free public ...**" and the repository count ("**N open-source GitHub repositories**").
 """
 import base64
 import datetime as dt
@@ -223,6 +228,31 @@ def update_counts(lines):
     return out, changed
 
 
+REPO_BUL = re.compile(r"^- \[[^\]]+\]\(https://github\.com/[^)\s]+\)\s*$")
+REPO_A = re.compile(r"(\*\*)\d[\d,]*( open-source GitHub repositories)")
+REPO_B = re.compile(r"(Show all )\d[\d,]*( source repositories)")
+
+
+def update_repo_count(lines):
+    """Count the bullets in 'Sources and Credits' and refresh the repository numbers."""
+    start = next((i for i, l in enumerate(lines) if l.startswith("## Sources and Credits")), None)
+    if start is None:
+        return lines, 0
+    end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
+    n = sum(1 for l in lines[start:end] if REPO_BUL.match(l.strip()))
+    out, changed, inc = list(lines), 0, False
+    for k, l in enumerate(out):
+        if l.strip().startswith(("```", "~~~")):
+            inc = not inc
+            continue
+        if inc:
+            continue
+        new = REPO_B.sub(lambda m: f"{m.group(1)}{n}{m.group(2)}", REPO_A.sub(lambda m: f"{m.group(1)}{n}{m.group(2)}", l))
+        if new != l:
+            out[k], changed = new, changed + 1
+    return out, changed
+
+
 # ------------------------------------------------------------------------ dates
 DIG = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
 FA = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
@@ -314,6 +344,14 @@ def main():
     with open(README, encoding="utf-8", newline="") as f:
         raw = f.read()
     lines = raw.splitlines(keepends=True)
+    if os.environ.get("COUNTS_ONLY") == "1":
+        new_lines, a = update_counts(lines)
+        new_lines, b = update_repo_count(new_lines)
+        print(f"COUNTS_ONLY: {a + b} number(s) refreshed")
+        if not DRY and "".join(new_lines) != raw:
+            with open(README, "w", encoding="utf-8", newline="") as f:
+                f.write("".join(new_lines))
+        return
     urls = sorted({u for _, u in link_lines(lines)})
     keep, state = load_keep(), load_json(STATE)
     print(f"{len(urls)} links found")
@@ -360,11 +398,13 @@ def main():
         new_lines, empty = drop_empty_blocks(new_lines)
         if empty:
             notes.append(f"{empty} code block(s) became empty and were removed from the README.")
-        new_lines, counted = update_counts(new_lines)
-        if counted:
-            notes.append("Link counts in the README were refreshed.")
         for u in removed:
             new_state.pop(u, None)
+
+    new_lines, counted = update_counts(new_lines)
+    new_lines, counted_r = update_repo_count(new_lines)
+    if counted or counted_r:
+        notes.append("Numbers in the README were refreshed (links per section, total, repositories).")
 
     dates = 0
     if (removed and UPDATE_DATE != "never") or UPDATE_DATE == "always":
