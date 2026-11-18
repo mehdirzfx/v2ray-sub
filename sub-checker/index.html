@@ -3,220 +3,582 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>بررسی ساب‌ها | v2ray-sub</title>
+<title>بررسی ساب‌ها</title>
+<meta name="color-scheme" content="light dark">
+<script>(function(){try{var t=localStorage.getItem('sc_theme');if(t)document.documentElement.dataset.theme=t}catch(e){}})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f2f5f7;--panel:#fff;--ink:#14202b;--muted:#5b6b79;--line:#d5dde3;--accent:#1f5fbf;--ok:#17803d;--bad:#c0392b;--warn:#b26a00;--mute:#6b7a88;color-scheme:light}
-@media(prefers-color-scheme:dark){:root{--bg:#10181f;--panel:#16212a;--ink:#e6edf2;--muted:#93a3b1;--line:#263540;--accent:#6ea4f0;--ok:#4cc27a;--bad:#ef7b6e;--warn:#e0a13a;--mute:#8d9cab;color-scheme:dark}}
+:root{
+  --bg:#f3f5fb;--panel:#fff;--panel2:#f7f8fc;--ink:#0f172a;--muted:#64748b;--line:#e3e8f2;
+  --accent:#4f46e5;--accent2:#0ea5e9;--ok:#15803d;--bad:#dc2626;--warn:#b45309;--mute:#64748b;
+  --shadow:0 1px 2px rgba(15,23,42,.05),0 8px 24px -12px rgba(15,23,42,.12);
+  --glow:radial-gradient(60rem 28rem at 85% -10%,rgba(79,70,229,.13),transparent 60%),radial-gradient(48rem 24rem at 0% 0%,rgba(14,165,233,.10),transparent 60%);
+  color-scheme:light}
+:root[data-theme=dark]{
+  --bg:#0a0f1e;--panel:#121a2f;--panel2:#0e1527;--ink:#e8edf8;--muted:#8d9ab6;--line:#1f2a45;
+  --accent:#818cf8;--accent2:#38bdf8;--ok:#34d399;--bad:#f87171;--warn:#fbbf24;--mute:#8d9ab6;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -14px rgba(0,0,0,.6);
+  --glow:radial-gradient(60rem 28rem at 85% -10%,rgba(129,140,248,.16),transparent 60%),radial-gradient(48rem 24rem at 0% 0%,rgba(56,189,248,.10),transparent 60%);
+  color-scheme:dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0a0f1e;--panel:#121a2f;--panel2:#0e1527;--ink:#e8edf8;--muted:#8d9ab6;--line:#1f2a45;
+  --accent:#818cf8;--accent2:#38bdf8;--ok:#34d399;--bad:#f87171;--warn:#fbbf24;--mute:#8d9ab6;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -14px rgba(0,0,0,.6);
+  --glow:radial-gradient(60rem 28rem at 85% -10%,rgba(129,140,248,.16),transparent 60%),radial-gradient(48rem 24rem at 0% 0%,rgba(56,189,248,.10),transparent 60%);
+  color-scheme:dark}}
 *{box-sizing:border-box}
-body{margin:0;padding:2rem 1rem 3rem;background:var(--bg);color:var(--ink);font:400 1rem/1.7 "Vazirmatn",Tahoma,sans-serif}
-main{max-width:68rem;margin:0 auto}
-header{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:baseline;justify-content:space-between;margin-bottom:1.25rem}
-h1{margin:0;font-size:1.75rem;font-weight:800}
-header p{margin:0;color:var(--muted);font-size:.95rem}
-a{color:var(--accent);text-underline-offset:.2em}
-.stats{display:flex;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:.6rem;margin-bottom:1rem}
-.stat{flex:1 1 8rem;padding:.7rem 1rem;border-inline-start:1px solid var(--line)}
-.stat:first-child{border-inline-start:0}
-.stat b{display:block;font-size:1.5rem;font-weight:800;line-height:1.4}
-.stat span{color:var(--muted);font-size:.85rem}
-.bar{height:4px;background:var(--line);border-radius:2px;margin-bottom:1rem;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
-.tools{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
-.tools input,.tools select,textarea{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.4rem;padding:.4rem .7rem}
-.tools input[type=search]{flex:1 1 12rem}
-button{font:inherit;cursor:pointer;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.4rem;padding:.4rem .9rem}
-button.pri{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:500}
-button:hover{filter:brightness(1.08)}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:var(--bg) var(--glow) no-repeat;color:var(--ink);font:400 .95rem/1.7 "Vazirmatn",Tahoma,sans-serif;transition:background-color .25s,color .25s}
+main{max-width:72rem;margin:0 auto;padding:1.25rem 1rem 4rem}
+a{color:inherit;text-decoration:none}
+svg{width:1.1em;height:1.1em;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-details{margin-bottom:.75rem}
-summary{cursor:pointer;color:var(--accent)}
-textarea{width:100%;min-height:5rem;margin:.5rem 0;direction:ltr;font-family:ui-monospace,Consolas,monospace;font-size:.85rem}
-.wrap{background:var(--panel);border:1px solid var(--line);border-radius:.6rem;overflow-x:auto}
-table{width:100%;border-collapse:collapse;min-width:44rem}
-th,td{padding:.55rem .8rem;text-align:start;border-bottom:1px solid var(--line);vertical-align:middle}
-th{font-weight:500;color:var(--muted);font-size:.85rem;white-space:nowrap;position:sticky;top:0;background:var(--panel)}
-th.s{cursor:pointer}
-tr:last-child td{border-bottom:0}
-td.u{direction:ltr;text-align:left;font-size:.85rem;word-break:break-all;max-width:26rem}
-td.u small{display:block;color:var(--muted)}
-.st{display:inline-block;padding:0 .6rem;border-radius:99px;font-size:.8rem;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
-.alive{--c:var(--ok)}.dead{--c:var(--bad)}.opaque,.empty{--c:var(--warn)}.pending,.skip,.checking{--c:var(--mute)}
-.pr{display:inline-block;margin:0 0 .15rem .3rem;padding:0 .45rem;border:1px solid var(--line);border-radius:.3rem;font-size:.75rem;direction:ltr}
-.num{white-space:nowrap}
-.msg{padding:1.5rem;text-align:center;color:var(--muted)}
-footer{margin-top:1rem;color:var(--muted);font-size:.85rem}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.logo{width:2.5rem;height:2.5rem;border-radius:.8rem;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 6px 18px -6px var(--accent)}
+.logo svg{width:1.3rem;height:1.3rem}
+h1{margin:0;font-size:1.4rem;font-weight:800;letter-spacing:-.01em}
+.hd{display:flex;gap:.4rem}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font:inherit;font-size:.88rem;font-weight:500;cursor:pointer;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.65rem;padding:.42rem .85rem;transition:transform .12s,border-color .15s,background .15s,box-shadow .15s;white-space:nowrap}
+.btn:hover{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.ic{padding:.45rem;width:2.2rem;height:2.2rem}
+.btn.pri{color:#fff;border:0;background:linear-gradient(135deg,#4f46e5,#6d5ef0 55%,#0ea5e9);box-shadow:0 8px 20px -8px #4f46e5}
+.btn.pri:hover{box-shadow:0 10px 24px -8px #4f46e5}
+.btn.danger{color:var(--bad)}
+.btn.danger:hover{border-color:var(--bad);box-shadow:0 0 0 3px color-mix(in srgb,var(--bad) 14%,transparent)}
+.btn.sm{padding:.2rem .55rem;font-size:.8rem;border-radius:.5rem}
+.btn.sm.ic{width:1.9rem;height:1.9rem;padding:.3rem}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.75rem;margin-bottom:1rem}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:1rem;padding:.75rem 1rem;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:1.6rem;font-weight:800;line-height:1.3;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:.82rem}
+.stat.ok b{color:var(--ok)}.stat.bad b{color:var(--bad)}.stat.mute b{color:var(--mute)}
+.bar{height:4px;background:var(--line);border-radius:4px;margin-bottom:1rem;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .25s}
+
+.tools{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;padding:.6rem;margin:0 -.25rem 1rem;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:1rem}
+.search{position:relative;flex:1 1 13rem}
+.search svg{position:absolute;inset-inline-start:.7rem;top:50%;transform:translateY(-50%);color:var(--muted)}
+input[type=search],select,textarea{font:inherit;font-size:.9rem;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.65rem;padding:.42rem .8rem}
+.search input{width:100%;padding-inline-start:2.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;flex:1 1 100%}
+.chip{font:inherit;font-size:.82rem;cursor:pointer;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:99px;padding:.15rem .75rem;transition:.15s}
+.chip:hover{color:var(--ink);border-color:var(--accent)}
+.chip.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+.chip em{font-style:normal;opacity:.75;margin-inline-start:.3rem;font-size:.78rem}
+.sp{flex:1}
+
+.list{display:flex;flex-direction:column;gap:.6rem}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:1rem;box-shadow:var(--shadow);transition:border-color .2s}
+.row.open{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.main{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;flex-wrap:wrap}
+.st{display:inline-flex;align-items:center;gap:.4rem;min-width:6.4rem;justify-content:center;padding:.1rem .7rem;border-radius:99px;font-size:.8rem;font-weight:500;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent)}
+.st::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--c)}
+.st.checking::before{background:none;width:.7rem;height:.7rem;border:2px solid var(--c);border-top-color:transparent;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.st.checking::before{animation:none}*{transition:none!important}}
+.alive{--c:var(--ok)}.dead,.invalid{--c:var(--bad)}.empty,.weak,.opaque{--c:var(--warn)}.pending,.skip,.checking{--c:var(--mute)}
+.u{flex:1 1 15rem;min-width:0;direction:ltr;text-align:left}
+.u b{display:block;font-weight:500;font-size:.92rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.u b:hover{color:var(--accent)}
+.u small{display:block;color:var(--muted);font-size:.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.m{display:flex;flex-direction:column;align-items:flex-end;min-width:5.2rem;font-size:.8rem;color:var(--muted);line-height:1.5}
+.m b{color:var(--ink);font-size:.95rem;font-variant-numeric:tabular-nums}
+.pr{display:inline-block;padding:0 .45rem;border:1px solid var(--line);border-radius:.4rem;font-size:.72rem;direction:ltr;color:var(--muted);background:var(--panel2)}
+.prs{display:flex;flex-wrap:wrap;gap:.25rem;flex:0 1 11rem;justify-content:flex-end}
+.act{display:flex;gap:.3rem}
+.chev svg{transition:transform .2s}
+.row.open .chev svg{transform:rotate(180deg)}
+
+.panel{border-top:1px dashed var(--line);padding:.8rem .9rem 1rem;background:var(--panel2);border-radius:0 0 1rem 1rem}
+.pt{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:.7rem}
+.note{padding:.8rem;color:var(--muted);text-align:center}
+.cl{display:flex;flex-direction:column;gap:.35rem}
+.c{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.4rem .6rem;background:var(--panel);border:1px solid var(--line);border-radius:.7rem}
+.c.bad{border-color:color-mix(in srgb,var(--bad) 45%,var(--line))}
+.cn{flex:1 1 12rem;min-width:0;direction:ltr;text-align:left}
+.cn b{display:block;font-weight:500;font-size:.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cn small{color:var(--muted);font-size:.76rem}
+.tag{font-size:.74rem;padding:0 .5rem;border-radius:99px;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);white-space:nowrap}
+.tag.ok{--c:var(--ok)}.tag.bad{--c:var(--bad)}.tag.wn{--c:var(--warn)}.tag.mu{--c:var(--mute)}
+.more{margin:.6rem auto 0;display:flex}
+
+.msg{padding:2.5rem 1rem;text-align:center;color:var(--muted)}
+dialog{width:min(34rem,92vw);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:1.1rem;padding:1.1rem;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+dialog::backdrop{background:rgba(5,8,20,.55);backdrop-filter:blur(3px)}
+dialog h2{margin:0 0 .7rem;font-size:1.05rem}
+textarea{width:100%;min-height:9rem;direction:ltr;font-family:ui-monospace,Consolas,monospace;font-size:.82rem}
+.df{display:flex;gap:.5rem;justify-content:flex-start;margin-top:.8rem;flex-wrap:wrap}
+.rl{max-height:50vh;overflow:auto;display:flex;flex-direction:column;gap:.3rem}
+.rl div{display:flex;align-items:center;gap:.5rem;padding:.3rem .5rem;border:1px solid var(--line);border-radius:.6rem}
+.rl span{flex:1;min-width:0;direction:ltr;text-align:left;font-size:.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toast{position:fixed;inset-inline:0;bottom:1.2rem;margin:auto;width:max-content;max-width:90vw;background:var(--ink);color:var(--bg);padding:.5rem 1.1rem;border-radius:99px;font-size:.88rem;opacity:0;transform:translateY(1rem);pointer-events:none;transition:.25s;z-index:50}
+.toast.on{opacity:1;transform:none}
+.sw{display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;font-size:.85rem;color:var(--muted);user-select:none}
+.sw input{accent-color:var(--accent);width:1rem;height:1rem}
+@media(max-width:640px){.prs{display:none}.m{align-items:flex-start}.act{margin-inline-start:auto}}
 </style>
 </head>
 <body>
 <main>
 <header>
-  <h1>بررسی ساب‌ها</h1>
-  <p>لینک‌ها از <a href="https://github.com/mehdirzfx/v2ray-sub" target="_blank" rel="noopener">mehdirzfx/v2ray-sub</a> خوانده می‌شوند · <a href="/">صفحه اصلی</a></p>
+  <div class="brand"><div class="logo" id="logo"></div><h1>بررسی ساب‌ها</h1></div>
+  <div class="hd">
+    <a class="btn ic" id="gh" href="https://github.com/mehdirzfx/v2ray-sub" target="_blank" rel="noopener" title="GitHub"></a>
+    <a class="btn ic" id="home" href="/" title="صفحه اصلی"></a>
+    <button class="btn ic" id="theme" title="تم"></button>
+  </div>
 </header>
 
 <section class="stats" id="stats"></section>
 <div class="bar"><i id="prog"></i></div>
 
 <div class="tools">
-  <button class="pri" id="run">شروع بررسی</button>
-  <input type="search" id="q" placeholder="جستجو در لینک‌ها" aria-label="جستجو">
-  <select id="f" aria-label="فیلتر وضعیت">
-    <option value="">همه وضعیت‌ها</option><option value="alive">سالم</option><option value="empty">بدون کانفیگ</option>
-    <option value="opaque">غیرقابل خواندن</option><option value="dead">خراب</option><option value="skip">ردشده</option>
+  <button class="btn pri" id="run"></button>
+  <div class="search"><span id="sico"></span><input type="search" id="q" placeholder="جستجو" aria-label="جستجو"></div>
+  <select id="sort" aria-label="مرتب‌سازی">
+    <option value="">پیش‌فرض</option><option value="cfg">بیشترین کانفیگ</option><option value="ms">سریع‌ترین</option><option value="st">مشکل‌دار اول</option>
   </select>
-  <button id="copy">کپی لینک‌های سالم</button>
-  <button id="dl">دانلود لیست سالم‌ها</button>
+  <label class="sw" title="بررسی دامنه‌ی کانفیگ‌ها با DNS"><input type="checkbox" id="dnsOn">DNS</label>
+  <span class="sp"></span>
+  <button class="btn danger" id="purge"></button>
+  <button class="btn" id="copy"></button>
+  <button class="btn" id="dl"></button>
+  <button class="btn" id="add"></button>
+  <button class="btn" id="rem"></button>
+  <div class="chips" id="chips"></div>
 </div>
 
-<details>
-  <summary>افزودن لینک دلخواه</summary>
-  <textarea id="extra" placeholder="هر خط یک لینک"></textarea>
-  <button id="add">افزودن به لیست</button>
-</details>
-
-<div class="wrap"><table>
-  <thead><tr><th>وضعیت</th><th>لینک</th><th class="s" data-k="total">کانفیگ ⇅</th><th>پروتکل‌ها</th><th class="s" data-k="ms">زمان ⇅</th><th></th></tr></thead>
-  <tbody id="rows"></tbody>
-</table><div class="msg" id="msg">در حال خواندن لیست…</div></div>
-
-<footer>
-  «سالم» یعنی لینک باز شد و حداقل یک کانفیگ داخلش پیدا شد؛ اتصال تک‌تک کانفیگ‌ها تست نمی‌شود.
-  سایت‌هایی که اجازه خواندن از مرورگر نمی‌دهند (CORS) فقط «در دسترس» حساب می‌شوند و لینک‌های <span dir="ltr">http://</span> در صفحه https بررسی نمی‌شوند.
-</footer>
+<div class="list" id="rows"></div>
+<div class="msg" id="msg">در حال خواندن…</div>
 </main>
+
+<dialog id="dAdd">
+  <h2>افزودن لینک</h2>
+  <textarea id="extra" placeholder="هر خط یک لینک"></textarea>
+  <div class="df"><button class="btn pri" id="addOk">افزودن</button><button class="btn" data-close>بستن</button></div>
+</dialog>
+<dialog id="dRem">
+  <h2>حذف‌شده‌ها</h2>
+  <div class="rl" id="remList"></div>
+  <div class="df"><button class="btn" id="remCopy">کپی همه</button><button class="btn" id="remAll">بازگردانی همه</button><button class="btn" data-close>بستن</button></div>
+</dialog>
+<div class="toast" id="toast"></div>
 
 <script>
 const README='https://raw.githubusercontent.com/mehdirzfx/v2ray-sub/main/README.md';
-const CONC=8, TIMEOUT=15000;
-const LBL={alive:'سالم',empty:'بدون کانفیگ',opaque:'غیرقابل خواندن',dead:'خراب',skip:'ردشده',pending:'در انتظار',checking:'در حال بررسی'};
+const CONC=8,TIMEOUT=15000,SHOW=60;
+const LBL={alive:'سالم',weak:'ضعیف',empty:'خالی',invalid:'نامعتبر',opaque:'غیرقابل خواندن',dead:'خراب',skip:'ردشده',pending:'در انتظار',checking:'در حال بررسی'};
+const PROBLEM=new Set(['dead','empty','invalid']);
+const GOOD=new Set(['alive','weak','opaque']);
+const ORD={dead:0,invalid:1,empty:2,weak:3,opaque:4,skip:5,pending:6,checking:7,alive:8};
+const KNOWN=new Set(['vmess','vless','trojan','ss','ssr','hysteria','hysteria2','tuic','wireguard']);
 const $=id=>document.getElementById(id);
 const fa=n=>Number(n).toLocaleString('fa-IR');
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let items=[], running=false, stopReq=false, sortK=null, sortDir=-1, raf=0;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
+const P=d=>`<svg viewBox="0 0 24 24">${d}</svg>`;
+const IC={
+  logo:P('<path d="M12 3l8 4v5c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V7l8-4z"/><path d="M8.5 12l2.5 2.5L16 9.5"/>'),
+  gh:P('<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>'),
+  home:P('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>'),
+  sun:P('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+  moon:P('<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>'),
+  search:P('<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>'),
+  play:P('<path d="M6 4l14 8-14 8z"/>'),
+  stop:P('<rect x="6" y="6" width="12" height="12" rx="2"/>'),
+  open:P('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/>'),
+  check:P('<path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/>'),
+  copy:P('<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/>'),
+  trash:P('<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 10v7M14 10v7"/>'),
+  chev:P('<path d="M6 9l6 6 6-6"/>'),
+  plus:P('<path d="M12 5v14M5 12h14"/>'),
+  dl:P('<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>'),
+  undo:P('<path d="M3 7v6h6"/><path d="M3 13a9 9 0 103-7"/>')
+};
+$('logo').innerHTML=IC.logo;$('gh').innerHTML=IC.gh;$('home').innerHTML=IC.home;$('sico').innerHTML=IC.search;
+
+/* theme */
+const eff=()=>document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+const themeIcon=()=>{$('theme').innerHTML=eff()==='dark'?IC.sun:IC.moon};
+$('theme').onclick=()=>{const t=eff()==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('sc_theme',t)}catch(e){}themeIcon()};
+matchMedia('(prefers-color-scheme:dark)').addEventListener?.('change',themeIcon);
+themeIcon();
+
+/* state */
+let items=[],byUrl=new Map(),removed=new Set(ls.get('sc_removed',[])),extras=ls.get('sc_extra',[]);
+let running=false,stopReq=false,raf=0,filter='all',dnsOn=ls.get('sc_dns',false);
+$('dnsOn').checked=dnsOn;
+const dns=new Map();
+
+/* ---------- parsing ---------- */
+const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const DOMAIN=/^(?=.{1,253}$)([a-z0-9_]([a-z0-9_-]{0,61}[a-z0-9_])?\.)+[a-z0-9-]{2,}$/i;
+function isIP4(h){const m=h.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);return !!m&&m.slice(1).every(x=>+x<=255)}
+function isIP6(h){return h.includes(':')&&/^[0-9a-f:.]+$/i.test(h)}
+const isIP=h=>isIP4(h)||isIP6(h);
+function safeDec(s){try{return decodeURIComponent(s)}catch(e){return s}}
+function b64dec(s){s=s.replace(/\s+/g,'').replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';const bin=atob(s);try{return new TextDecoder('utf-8',{fatal:true}).decode(Uint8Array.from(bin,c=>c.charCodeAt(0)))}catch(e){return bin}}
+function mk(proto,raw,name,host,port,id){
+  const c={proto,raw,name:name||'',host:String(host||'').replace(/^\[|\]$/g,''),port:parseInt(port,10)||0,issues:[]};
+  const h=c.host;
+  if(!h)c.issues.push('آدرس خالی');
+  else if(/^(localhost|0\.0\.0\.0|127\.|::1$)/i.test(h))c.issues.push('آدرس محلی');
+  else if(!isIP(h)&&!DOMAIN.test(h))c.issues.push('آدرس نامعتبر');
+  if(!(c.port>=1&&c.port<=65535))c.issues.push('پورت نامعتبر');
+  if(proto==='vless'||proto==='vmess'){if(!id||!UUID.test(id))c.issues.push('UUID نامعتبر')}
+  else if(['trojan','ss','hysteria2','hysteria','tuic'].includes(proto)&&!id)c.issues.push('رمز خالی');
+  return c;
+}
+function parseLink(raw){
+  const m=raw.match(/^([a-z0-9]+):\/\/(.*)$/is);if(!m)return null;
+  let proto=m[1].toLowerCase(),body=m[2],name='';
+  if(proto==='hy2')proto='hysteria2';
+  const hi=body.indexOf('#');if(hi>=0){name=safeDec(body.slice(hi+1));body=body.slice(0,hi)}
+  try{
+    if(proto==='vmess'){
+      const j=JSON.parse(b64dec(body));
+      return mk(proto,raw,j.ps||name,j.add,j.port,j.id);
+    }
+    if(proto==='ssr'){
+      const d=b64dec(body.split('?')[0]).split(':');
+      const c=mk(proto,raw,name,d[0],d[1],d[5]||'x');
+      if(d.length<6)c.issues.push('ساختار ناقص');return c;
+    }
+    if(proto==='ss'){
+      let b=body.split('?')[0].split('/')[0],auth,hp;
+      if(!b.includes('@')){const d=b64dec(b);const i=d.lastIndexOf('@');auth=d.slice(0,i);hp=d.slice(i+1)}
+      else{const i=b.lastIndexOf('@');auth=b.slice(0,i);hp=b.slice(i+1);if(!auth.includes(':'))try{auth=b64dec(safeDec(auth))}catch(e){}}
+      const hm=hp.match(/^(\[[^\]]+\]|[^:]+):(\d+)$/);
+      const pass=auth.includes(':')?auth.slice(auth.indexOf(':')+1):'';
+      const c=mk(proto,raw,name,hm?hm[1]:'',hm?hm[2]:0,pass);
+      if(!auth.includes(':'))c.issues.push('روش رمزنگاری نامعتبر');return c;
+    }
+    const g=body.match(/^(?:([^@]*)@)?(\[[^\]]+\]|[^:\/?#]+)(?::(\d+)[^\/?#]*)?/);
+    if(!g)return mk(proto,raw,name,'',0,'');
+    const q=new URLSearchParams(body.split('?')[1]||'');
+    const c=mk(proto,raw,name,g[2],g[3],safeDec(g[1]||''));
+    c.net=q.get('type')||'';c.sec=q.get('security')||'';
+    return c;
+  }catch(e){const c=mk(proto,raw,name,'',0,'');c.issues=['ساختار نامعتبر'];return c}
+}
+function scanLinks(t){
+  const out=[];
+  for(const m of t.matchAll(/(?<![A-Za-z0-9])(?:vmess|vless|trojan|ssr|ss|hysteria2|hysteria|hy2|tuic):\/\/[^\s"'<>]+/gi)){
+    const raw=m[0].replace(/[,;)\]}]+$/,'');const c=parseLink(raw);if(c)out.push(c);
+  }
+  return out;
+}
+function splitTop(s){const out=[];let d=0,q='',cur='';for(const ch of s){if(q){cur+=ch;if(ch===q)q='';continue}if(ch==='"'||ch==="'"){q=ch;cur+=ch;continue}if('{['.includes(ch))d++;if('}]'.includes(ch))d--;if(ch===','&&!d){out.push(cur);cur=''}else cur+=ch}if(cur.trim())out.push(cur);return out}
+const unq=s=>String(s).trim().replace(/^["']|["']$/g,'');
+function parseClash(t){
+  const objs=[];let cur=null,ind=-1,inP=false;
+  for(const line of t.split('\n')){
+    if(/^proxies\s*:/.test(line)){inP=true;continue}
+    if(!inP)continue;
+    if(/^\S/.test(line)&&!/^[-#]/.test(line))break;
+    let m;
+    if((m=line.match(/^\s*-\s*\{(.*)\}\s*$/))){cur=null;const o={};splitTop(m[1]).forEach(p=>{const i=p.indexOf(':');if(i>0)o[unq(p.slice(0,i))]=unq(p.slice(i+1))});objs.push(o)}
+    else if((m=line.match(/^(\s*)-\s+([\w-]+)\s*:\s*(.*)$/))){cur={};ind=m[1].length+2;cur[m[2]]=unq(m[3]);objs.push(cur)}
+    else if(cur&&(m=line.match(/^(\s+)([\w-]+)\s*:\s*(.*)$/))&&m[1].length===ind)cur[m[2]]=unq(m[3]);
+  }
+  return objs.map(o=>objCfg(o,'',false)).filter(Boolean);
+}
+function objCfg(o,pp,strict){
+  let proto=String(o.type||o.protocol||pp||'').toLowerCase();
+  if(proto==='shadowsocks')proto='ss';if(proto==='hy2')proto='hysteria2';
+  if(strict&&!KNOWN.has(proto))return null;
+  const host=o.server||o.address,port=o.port||o.server_port;
+  const u=o.users&&o.users[0];
+  const id=o.uuid||o.id||o.password||(u&&(u.id||u.password))||'';
+  const c=mk(proto||'?',JSON.stringify(o),o.name||o.tag||'',host,port,id);
+  if(!proto)c.issues.push('پروتکل نامشخص');return c;
+}
+function walk(o,pp,out){
+  if(Array.isArray(o)){o.forEach(x=>walk(x,pp,out));return}
+  if(o&&typeof o==='object'){
+    if((o.server||o.address)&&(o.port||o.server_port)){const c=objCfg(o,pp,true);if(c)out.push(c)}
+    const p=o.protocol||o.type||pp;for(const k in o)walk(o[k],p,out);
+  }
+}
+function extract(text,depth=0){
+  const t=text.replace(/^\uFEFF/,'').trim();
+  if(!t)return{kind:'empty',configs:[]};
+  if(/^<(!doctype|html|\?xml)/i.test(t)||/<html[\s>]/i.test(t.slice(0,600)))return{kind:'html',configs:[]};
+  let c=scanLinks(t);if(c.length)return{kind:'plain',configs:c};
+  if(/^[\[{]/.test(t)){try{const out=[];walk(JSON.parse(t),'',out);return{kind:'json',configs:out}}catch(e){}}
+  if(/^proxies\s*:/m.test(t)){c=parseClash(t);return{kind:'clash',configs:c}}
+  if(depth<2){
+    const z=t.replace(/\s+/g,'');
+    if(z.length>=16&&/^[A-Za-z0-9+/=_-]+$/.test(z)){
+      try{const r=extract(b64dec(z),depth+1);if(r.configs.length||r.kind==='html')return{...r,kind:'base64'}}catch(e){}
+    }
+  }
+  return{kind:'unknown',configs:[]};
+}
+
+/* ---------- items ---------- */
 function toFetchUrl(u){
   u=u.split('#')[0];
   const m=u.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/(?:raw|blob)\/(?:refs\/heads\/)?(.+)$/);
   return m?`https://raw.githubusercontent.com/${m[1]}/${m[2]}/${m[3]}`:u;
 }
 function addLinks(list){
-  const seen=new Set(items.map(i=>i.url));
   for(const raw of list){
-    const url=raw.trim();
-    if(!/^https?:\/\/\S+$/.test(url)||seen.has(url)) continue;
-    seen.add(url);
-    items.push({url,fetchUrl:toFetchUrl(url),status:'pending',total:0,protos:{},ms:null,note:''});
+    const url=raw.trim().split('#')[0];
+    if(!/^https?:\/\/\S+$/.test(url)||byUrl.has(url)||removed.has(url))continue;
+    const it={url,fetchUrl:toFetchUrl(url),status:'pending',note:'',ms:null,configs:[],kind:'',open:false,cf:'all',limit:SHOW};
+    items.push(it);byUrl.set(url,it);
   }
 }
 function parseReadme(md){
   const out=[];
-  for(const m of md.matchAll(/```[^\n]*\n([\s\S]*?)```/g)) out.push(...m[1].split('\n'));
+  for(const m of md.matchAll(/```[^\n]*\n([\s\S]*?)```/g))out.push(...m[1].split('\n'));
   return out;
 }
-function count(text){
-  const p={};
-  const re=/(?:^|[\s"'>,])(vmess|vless|trojan|ssr|ss|hysteria2|hysteria|hy2|tuic):\/\//gim;
-  for(const m of text.matchAll(re)){const k=m[1].toLowerCase().replace('hy2','hysteria2');p[k]=(p[k]||0)+1}
-  if(!Object.keys(p).length){
-    const re2=/["']?(?:type|protocol)["']?\s*:\s*["']?(vmess|vless|trojan|ssr|ss|hysteria2|hysteria|hy2|tuic)\b/gi;
-    for(const m of text.matchAll(re2)){const k=m[1].toLowerCase().replace('hy2','hysteria2');p[k]=(p[k]||0)+1}
-  }
-  return p;
+const isValid=c=>!c.issues.length&&dns.get(c.host)!=='bad';
+const validN=it=>it.configs.filter(isValid).length;
+function grade(it){
+  const t=it.configs.length,v=validN(it);
+  if(!t){it.status=it.kind==='empty'?'empty':'invalid';it.note=it.kind==='html'?'HTML':it.kind==='unknown'?'فرمت ناشناخته':'';if(it.kind==='empty'||(!it.kind))it.status='empty';return}
+  if(!v){it.status='invalid';it.note='همه کانفیگ‌ها نامعتبر';return}
+  if(v/t<.5){it.status='weak';it.note=fa(t-v)+' نامعتبر';return}
+  it.status='alive';it.note=t-v?fa(t-v)+' نامعتبر':'';
 }
-function analyze(text){
-  let p=count(text);
-  if(!Object.keys(p).length){
-    const t=text.trim().replace(/\s+/g,'');
-    if(t.length>16&&/^[A-Za-z0-9+/=_-]+$/.test(t)){
-      try{p=count(atob(t.replace(/-/g,'+').replace(/_/g,'/')))}catch(e){}
+function applyContent(it,text){
+  const r=extract(text);
+  const seen=new Set();
+  it.kind=r.kind;
+  it.configs=r.configs.filter(c=>!seen.has(c.raw)&&seen.add(c.raw));
+  grade(it);
+  if(r.kind==='html')it.status='invalid';
+}
+async function checkItem(it){
+  it.status='checking';it.note='';it.configs=[];it.kind='';sched();
+  if(it.url.startsWith('http://')&&location.protocol==='https:'){it.status='skip';it.note='HTTP';it.ms=null;return}
+  const t0=performance.now();let last='';
+  for(let a=0;a<2;a++){
+    try{
+      const r=await fetch(it.fetchUrl,{cache:'no-store',signal:AbortSignal.timeout(TIMEOUT)});
+      it.ms=Math.round(performance.now()-t0);
+      if(r.status>=500||r.status===429){last='HTTP '+r.status;await sleep(700);continue}
+      if(!r.ok){it.status='dead';it.note='HTTP '+r.status;return}
+      applyContent(it,await r.text());return;
+    }catch(e){
+      last=e.name==='TimeoutError'?'timeout':'network';
+      if(last==='network'){
+        try{await fetch(it.fetchUrl,{mode:'no-cors',cache:'no-store',signal:AbortSignal.timeout(TIMEOUT)});
+          it.status='opaque';it.note='CORS';it.ms=Math.round(performance.now()-t0);return}catch(e2){}
+      }
     }
   }
-  return {protos:p,total:Object.values(p).reduce((a,b)=>a+b,0)};
+  it.status='dead';it.note=last;it.ms=null;
 }
-async function check(it){
-  if(it.url.startsWith('http://')) return {status:'skip',note:'HTTP'};
-  const t0=performance.now();
+
+/* ---------- DNS ---------- */
+async function resolveHost(h){
+  if(isIP(h)){dns.set(h,'ip');return'ip'}
+  const c=dns.get(h);if(c&&c!=='pending')return c;
+  dns.set(h,'pending');
   try{
-    const r=await fetch(it.fetchUrl,{cache:'no-store',signal:AbortSignal.timeout(TIMEOUT)});
-    const ms=Math.round(performance.now()-t0);
-    if(!r.ok) return {status:'dead',note:'HTTP '+r.status,ms,total:0,protos:{}};
-    const a=analyze(await r.text());
-    return {status:a.total?'alive':'empty',note:'',ms,...a};
-  }catch(e){
-    if(e.name==='TimeoutError') return {status:'dead',note:'timeout',ms:null,total:0,protos:{}};
-    try{
-      await fetch(it.fetchUrl,{mode:'no-cors',cache:'no-store',signal:AbortSignal.timeout(TIMEOUT)});
-      return {status:'opaque',note:'CORS',ms:Math.round(performance.now()-t0),total:0,protos:{}};
-    }catch(e2){return {status:'dead',note:'network',ms:null,total:0,protos:{}}}
-  }
+    for(const t of['A','AAAA']){
+      const r=await fetch(`https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(h)}&type=${t}`,{headers:{accept:'application/dns-json'},signal:AbortSignal.timeout(8000)});
+      const j=await r.json();
+      if(j.Status===3){dns.set(h,'bad');return'bad'}
+      if(j.Status!==0)throw 0;
+      if((j.Answer||[]).some(a=>a.type===1||a.type===28)){dns.set(h,'ok');return'ok'}
+    }
+    dns.set(h,'bad');return'bad';
+  }catch(e){dns.set(h,'err');return'err'}
 }
+async function pool(list,n,fn,stop=()=>false){
+  const q=[...list];
+  await Promise.all(Array.from({length:Math.min(n,q.length)},async()=>{while(q.length&&!stop())await fn(q.shift())}));
+}
+async function checkDns(it,idxs){
+  const cs=(idxs||it.configs.map((_,i)=>i)).map(i=>it.configs[i]).filter(Boolean);
+  const hosts=[...new Set(cs.map(c=>c.host).filter(Boolean))];
+  hosts.forEach(h=>{if(!isIP(h))dns.set(h,'pending')});sched();
+  await pool(hosts,6,async h=>{dns.delete(h);await resolveHost(h);sched()});
+  if(GOOD.has(it.status)&&it.status!=='opaque'||it.status==='invalid'&&it.configs.length)grade(it);
+  sched();
+}
+
+/* ---------- run ---------- */
 async function runAll(){
   if(running){stopReq=true;return}
-  running=true;stopReq=false;$('run').textContent='توقف';
-  items.forEach(i=>{i.status='pending'});
-  const q=[...items];
-  const worker=async()=>{
-    while(q.length&&!stopReq){
-      const it=q.shift();it.status='checking';sched();
-      Object.assign(it,await check(it));sched();
-    }
-  };
-  await Promise.all(Array.from({length:CONC},worker));
-  running=false;$('run').textContent='بررسی دوباره';render();
+  running=true;stopReq=false;sched();
+  items.forEach(i=>{i.status='pending';i.note='';i.configs=[];i.ms=null});sched();
+  await pool(items,CONC,async it=>{await checkItem(it);if(dnsOn&&it.configs.length)await checkDns(it);sched()},()=>stopReq);
+  running=false;stopReq=false;render();
+  const p=items.filter(i=>PROBLEM.has(i.status)).length;
+  toast(p?`${fa(p)} لینک مشکل‌دار پیدا شد`:'همه چیز سالم است');
 }
-function sched(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render)}
+const sched=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(render)};
+
+/* ---------- render ---------- */
+function protos(it){const p={};it.configs.forEach(c=>p[c.proto]=(p[c.proto]||0)+1);return p}
+function dnsTag(c){
+  const d=dns.get(c.host);
+  if(d==='pending')return'<span class="tag mu">…</span>';
+  if(d==='bad')return'<span class="tag bad">دامنه ناموجود</span>';
+  if(d==='ok'||d==='ip')return'<span class="tag ok">DNS ✓</span>';
+  if(d==='err')return'<span class="tag wn">DNS ناموفق</span>';
+  return'';
+}
+function cfgRow(c,i){
+  const bad=c.issues.length||dns.get(c.host)==='bad';
+  const iss=c.issues.map(s=>`<span class="tag bad">${esc(s)}</span>`).join('');
+  return `<div class="c ${bad?'bad':''}"><span class="pr">${esc(c.proto)}</span>
+    <div class="cn"><b title="${esc(c.name)}">${esc(c.name||c.host||'—')}</b><small>${esc(c.host)}${c.port?':'+c.port:''}${c.net?' · '+esc(c.net):''}${c.sec?' · '+esc(c.sec):''}</small></div>
+    ${iss}${dnsTag(c)}${!bad&&!dns.get(c.host)?'<span class="tag ok">معتبر</span>':''}
+    <button class="btn sm ic" data-a="ccheck" data-i="${i}" title="بررسی دامنه">${IC.check}</button>
+    <button class="btn sm ic" data-a="ccopy" data-i="${i}" title="کپی کانفیگ">${IC.copy}</button></div>`;
+}
+function panel(it){
+  if(it.status==='checking'||it.status==='pending')return`<div class="panel"><div class="note">…</div></div>`;
+  if(!it.configs.length){
+    const m=it.status==='opaque'?'محتوای این لینک از مرورگر قابل خواندن نیست؛ با دکمه‌ی باز کردن بررسی کنید.':(it.note||LBL[it.status]);
+    return`<div class="panel"><div class="note">${esc(m)}</div></div>`;
+  }
+  const f=it.cf;
+  const all=it.configs.map((c,i)=>[c,i]);
+  const list=all.filter(([c])=>f==='all'||(f==='ok'?isValid(c):!isValid(c)));
+  const nb=all.filter(([c])=>!isValid(c)).length;
+  const sh=list.slice(0,it.limit);
+  return`<div class="panel"><div class="pt">
+    <button class="chip ${f==='all'?'on':''}" data-a="cf" data-v="all">همه<em>${fa(all.length)}</em></button>
+    <button class="chip ${f==='ok'?'on':''}" data-a="cf" data-v="ok">معتبر<em>${fa(all.length-nb)}</em></button>
+    <button class="chip ${f==='bad'?'on':''}" data-a="cf" data-v="bad">نامعتبر<em>${fa(nb)}</em></button>
+    <span class="sp"></span>
+    <button class="btn sm" data-a="dns">${IC.check}بررسی دامنه‌ها</button>
+    <button class="btn sm" data-a="cvalid">${IC.copy}کپی معتبرها</button></div>
+    <div class="cl">${sh.map(([c,i])=>cfgRow(c,i)).join('')||'<div class="note">—</div>'}</div>
+    ${list.length>sh.length?`<button class="btn sm more" data-a="more">نمایش بیشتر (${fa(list.length-sh.length)})</button>`:''}</div>`;
+}
 function view(){
-  const q=$('q').value.trim().toLowerCase(), f=$('f').value;
-  let v=items.filter(i=>(!f||i.status===f)&&(!q||i.url.toLowerCase().includes(q)));
-  if(sortK) v=[...v].sort((a,b)=>((a[sortK]??-1)-(b[sortK]??-1))*sortDir);
+  const q=$('q').value.trim().toLowerCase(),s=$('sort').value;
+  let v=items.filter(i=>{
+    if(filter==='problem'&&!PROBLEM.has(i.status))return false;
+    if(filter!=='all'&&filter!=='problem'&&i.status!==filter)return false;
+    return !q||i.url.toLowerCase().includes(q);
+  });
+  if(s==='cfg')v=[...v].sort((a,b)=>validN(b)-validN(a));
+  else if(s==='ms')v=[...v].sort((a,b)=>(a.ms??1e9)-(b.ms??1e9));
+  else if(s==='st')v=[...v].sort((a,b)=>ORD[a.status]-ORD[b.status]);
   return v;
 }
 function render(){
-  const n=items.length, c=s=>items.filter(i=>i.status===s).length;
+  const n=items.length,c=s=>items.filter(i=>i.status===s).length;
   const done=items.filter(i=>i.status!=='pending'&&i.status!=='checking').length;
-  const cfg=items.reduce((a,i)=>a+(i.total||0),0);
-  const bad=c('dead')+c('empty');
-  $('stats').innerHTML=[['کل لینک‌ها',n],['سالم',c('alive')],['خراب یا خالی',bad],['غیرقابل خواندن',c('opaque')],['مجموع کانفیگ',cfg]]
-    .map(([l,v])=>`<div class="stat"><b>${fa(v)}</b><span>${l}</span></div>`).join('');
+  const prob=items.filter(i=>PROBLEM.has(i.status)).length;
+  const tc=items.reduce((a,i)=>a+i.configs.length,0),vc=items.reduce((a,i)=>a+validN(i),0);
+  $('stats').innerHTML=[['',['کل لینک‌ها',n]],['ok',['سالم',c('alive')]],['bad',['مشکل‌دار',prob]],['mute',['غیرقابل خواندن',c('opaque')]],['',['کانفیگ معتبر',vc,tc]]]
+    .map(([k,[l,v,t]])=>`<div class="stat ${k}"><b>${fa(v)}${t!=null?`<small style="font-size:.9rem;color:var(--muted)"> / ${fa(t)}</small>`:''}</b><span>${l}</span></div>`).join('');
   $('prog').style.width=(n?done/n*100:0)+'%';
+  $('run').innerHTML=running?IC.stop+'توقف':IC.play+(done===n&&n&&done>0?'بررسی دوباره':'شروع بررسی');
+  $('purge').innerHTML=IC.trash+'حذف مشکل‌دارها'+(prob?` (${fa(prob)})`:'');$('purge').disabled=!prob;
+  $('copy').innerHTML=IC.copy+'کپی سالم‌ها';$('dl').innerHTML=IC.dl;$('dl').title='دانلود سالم‌ها';
+  $('add').innerHTML=IC.plus+'افزودن';
+  $('rem').innerHTML=IC.undo+(removed.size?`حذف‌شده‌ها (${fa(removed.size)})`:'حذف‌شده‌ها');
+  const chips=[['all','همه',n],['alive','سالم',c('alive')],['problem','مشکل‌دار',prob],['weak','ضعیف',c('weak')],['opaque','غیرقابل خواندن',c('opaque')]];
+  $('chips').innerHTML=chips.map(([k,l,x])=>`<button class="chip ${filter===k?'on':''}" data-f="${k}">${l}<em>${fa(x)}</em></button>`).join('');
   const v=view();
   $('rows').innerHTML=v.map(i=>{
-    let host='';try{host=new URL(i.fetchUrl).host}catch(e){}
-    const pr=Object.entries(i.protos||{}).map(([k,x])=>`<span class="pr">${k} ${fa(x)}</span>`).join('');
-    const note=i.note&&i.status!=='alive'?` <small>${esc(i.note)}</small>`:'';
-    return `<tr><td><span class="st ${i.status}">${LBL[i.status]}</span></td>
-      <td class="u"><a href="${esc(i.url.split('#')[0])}" target="_blank" rel="noopener">${esc(i.url.split('#')[0].replace(/^https?:\/\//,''))}</a></td>
-      <td class="num">${i.total?fa(i.total):'–'}</td><td>${pr||'–'}</td>
-      <td class="num">${i.ms!=null?fa(i.ms)+' ms':'–'}${note}</td>
-      <td><button data-copy="${esc(i.url.split('#')[0])}" aria-label="کپی لینک">کپی</button></td></tr>`;
+    let host='',path='';try{const u=new URL(i.fetchUrl);host=u.host;path=u.pathname+u.search}catch(e){host=i.url}
+    const pr=Object.entries(protos(i)).map(([k,x])=>`<span class="pr">${esc(k)} ${fa(x)}</span>`).join('');
+    const t=i.configs.length;
+    return`<article class="row ${i.open?'open':''}" data-u="${esc(i.url)}"><div class="main">
+      <span class="st ${i.status}" title="${esc(i.note)}">${LBL[i.status]}</span>
+      <a class="u" href="${esc(i.url)}" target="_blank" rel="noopener" title="${esc(i.url)}"><b>${esc(host)}</b><small>${esc(path)}</small></a>
+      <div class="m">${t?`<b>${fa(validN(i))}<small style="font-weight:400;color:var(--muted)"> / ${fa(t)}</small></b>`:'<b>–</b>'}<span>${i.ms!=null?fa(i.ms)+' ms':(i.note&&!t?esc(i.note):'')}</span></div>
+      <div class="prs">${pr}</div>
+      <div class="act">
+        <button class="btn sm ic chev" data-a="toggle" title="کانفیگ‌ها">${IC.chev}</button>
+        <button class="btn sm ic" data-a="check" title="بررسی دوباره">${IC.check}</button>
+        <a class="btn sm ic" href="${esc(i.url)}" target="_blank" rel="noopener" title="باز کردن">${IC.open}</a>
+        <button class="btn sm ic" data-a="copy" title="کپی لینک">${IC.copy}</button>
+        <button class="btn sm ic danger" data-a="del" title="حذف از لیست">${IC.trash}</button>
+      </div></div>${i.open?panel(i):''}</article>`;
   }).join('');
   $('msg').style.display=v.length?'none':'block';
-  if(!v.length) $('msg').textContent=n?'موردی پیدا نشد':'لینکی بارگذاری نشد؛ از «افزودن لینک دلخواه» استفاده کنید.';
+  if(!v.length)$('msg').textContent=n?'موردی پیدا نشد':'لینکی بارگذاری نشد';
 }
-const good=()=>items.filter(i=>i.status==='alive'||i.status==='opaque').map(i=>i.url.split('#')[0]);
-async function copy(t,btn){
-  try{await navigator.clipboard.writeText(t);const o=btn.textContent;btn.textContent='کپی شد';setTimeout(()=>btn.textContent=o,1200)}catch(e){prompt('کپی کنید:',t)}
+
+/* ---------- actions ---------- */
+let tt=0;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2200)}
+async function copyText(t,msg='کپی شد'){
+  try{await navigator.clipboard.writeText(t);toast(msg)}catch(e){prompt('کپی کنید:',t)}
 }
+const good=()=>items.filter(i=>GOOD.has(i.status)).map(i=>i.url);
+function removeItems(list){
+  list.forEach(i=>{removed.add(i.url);byUrl.delete(i.url);extras=extras.filter(u=>u!==i.url)});
+  items=items.filter(i=>!removed.has(i.url));
+  ls.set('sc_removed',[...removed]);ls.set('sc_extra',extras);
+}
+$('rows').onclick=async e=>{
+  const b=e.target.closest('[data-a]');if(!b)return;
+  const row=b.closest('.row');const it=byUrl.get(row.dataset.u);if(!it)return;
+  const a=b.dataset.a,i=+b.dataset.i;
+  if(a==='toggle'){it.open=!it.open;it.limit=SHOW;render()}
+  else if(a==='check'){await checkItem(it);if(dnsOn&&it.configs.length)await checkDns(it);sched()}
+  else if(a==='copy')copyText(it.url);
+  else if(a==='del'){removeItems([it]);render();toast('حذف شد')}
+  else if(a==='cf'){it.cf=b.dataset.v;it.limit=SHOW;render()}
+  else if(a==='more'){it.limit+=SHOW*2;render()}
+  else if(a==='dns')await checkDns(it);
+  else if(a==='ccheck')await checkDns(it,[i]);
+  else if(a==='ccopy')copyText(it.configs[i].raw);
+  else if(a==='cvalid')copyText(it.configs.filter(isValid).map(c=>c.raw).join('\n'),'کانفیگ‌های معتبر کپی شد');
+};
+$('chips').onclick=e=>{const b=e.target.closest('[data-f]');if(b){filter=b.dataset.f;render()}};
 $('run').onclick=runAll;
-$('q').oninput=render;$('f').onchange=render;
-$('add').onclick=()=>{addLinks($('extra').value.split('\n'));$('extra').value='';render()};
-$('copy').onclick=e=>copy(good().join('\n'),e.target);
+$('q').oninput=render;$('sort').onchange=render;
+$('dnsOn').onchange=e=>{dnsOn=e.target.checked;ls.set('sc_dns',dnsOn)};
+$('copy').onclick=()=>copyText(good().join('\n'),'لینک‌های سالم کپی شد');
 $('dl').onclick=()=>{
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([good().join('\n')],{type:'text/plain'}));
-  a.download='alive-subs.txt';a.click();URL.revokeObjectURL(a.href);
+  a.download='alive-subs.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
-$('rows').onclick=e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy,b)};
-document.querySelectorAll('th.s').forEach(th=>th.onclick=()=>{
-  sortDir=sortK===th.dataset.k?-sortDir:-1;sortK=th.dataset.k;render();
-});
-fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{
-  addLinks(parseReadme(md));render();
-}).catch(()=>{$('msg').textContent='خواندن README ناموفق بود؛ لینک‌ها را دستی اضافه کنید.'});
-render();
+$('purge').onclick=()=>{
+  const p=items.filter(i=>PROBLEM.has(i.status));if(!p.length)return;
+  if(!confirm(`${fa(p.length)} لینک مشکل‌دار از لیست حذف شود؟`))return;
+  removeItems(p);render();toast(`${fa(p.length)} لینک حذف شد`);
+};
+$('add').onclick=()=>$('dAdd').showModal();
+$('addOk').onclick=()=>{
+  const l=$('extra').value.split('\n').map(s=>s.trim().split('#')[0]).filter(Boolean);
+  l.forEach(u=>removed.delete(u));ls.set('sc_removed',[...removed]);
+  const before=items.length;addLinks(l);
+  extras=[...new Set([...extras,...items.slice(before).map(i=>i.url)])];ls.set('sc_extra',extras);
+  $('extra').value='';$('dAdd').close();render();
+};
+function remRender(){
+  $('remList').innerHTML=[...removed].map(u=>`<div><span>${esc(u)}</span><button class="btn sm" data-r="${esc(u)}">بازگردانی</button></div>`).join('')||'<div class="note" style="display:block">—</div>';
+}
+$('rem').onclick=()=>{remRender();$('dRem').showModal()};
+$('remList').onclick=e=>{
+  const b=e.target.closest('[data-r]');if(!b)return;
+  removed.delete(b.dataset.r);ls.set('sc_removed',[...removed]);addLinks([b.dataset.r]);remRender();render();
+};
+$('remAll').onclick=()=>{const l=[...removed];removed.clear();ls.set('sc_removed',[]);addLinks(l);remRender();render()};
+$('remCopy').onclick=()=>copyText([...removed].join('\n'),'کپی شد');
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+
+addLinks(extras);render();
+fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{addLinks(parseReadme(md));render()})
+  .catch(()=>{$('msg').textContent='خواندن README ناموفق بود؛ لینک‌ها را دستی اضافه کنید'});
 </script>
 </body>
 </html>
