@@ -1,0 +1,23 @@
+{
+ "https://raw.githubusercontent.com/Amirrezaheydari81/free-v2ray-for-iran/main/index.html": {
+  "count": 1,
+  "first": "2026-11-18",
+  "kind": "hard",
+  "last": "2026-11-18",
+  "reason": "noconfigs"
+ },
+ "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/new.txt": {
+  "count": 1,
+  "first": "2026-11-18",
+  "kind": "hard",
+  "last": "2026-11-18",
+  "reason": "empty"
+ },
+ "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt": {
+  "count": 1,
+  "first": "2026-11-18",
+  "kind": "hard",
+  "last": "2026-11-18",
+  "reason": "noconfigs"
+ }
+}
