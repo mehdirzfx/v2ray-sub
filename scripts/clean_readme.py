@@ -55,7 +55,7 @@ LINK = re.compile(
     r"|https?://t\.me/proxy\?[^\s\"'<>]+|tg://proxy\?[^\s\"'<>]+",
     re.I,
 )
-STRUCT = re.compile(r"[\"']?\b(?:server|address)[\"']?\s*:\s*[\"']?[\w.\-:\[\]]{3,}")
+STRUCT = re.compile(r"[\"']?\b(?:server|address)[\"']?\s*:\s*[\"']?[\w.\-:\[\]\\]{3,}")  # \\ allows "\x32\x2e..." escaped hosts
 
 
 def has_configs(text, depth=0):
