@@ -185,6 +185,44 @@ def drop_empty_blocks(lines):
     return out, len(pos)
 
 
+# ------------------------------------------------------------ link counters
+COUNT_SEC = re.compile(r"(\*\*)\d[\d,]*( links\.\*\*)")
+COUNT_TOT = re.compile(r"(\*\*)\d[\d,]*( free public)")
+
+
+def update_counts(lines):
+    """Refresh '**N links.**' above each code block and the total in the intro."""
+    out, total, changed = list(lines), 0, 0
+    i = 0
+    while i < len(out):
+        if out[i].strip().startswith(("```", "~~~")):
+            fence = out[i].strip()[:3]
+            j = i + 1
+            n = 0
+            while j < len(out) and not out[j].strip().startswith(fence):
+                if URL_RE.match(out[j].strip()):
+                    n += 1
+                j += 1
+            total += n
+            for k in range(i - 1, max(i - 6, -1), -1):
+                new = COUNT_SEC.sub(lambda m: f"{m.group(1)}{n}{m.group(2)}", out[k])
+                if new != out[k]:
+                    out[k], changed = new, changed + 1
+                    break
+            i = j + 1
+        else:
+            i += 1
+    inc = False
+    for k, l in enumerate(out):
+        if l.strip().startswith(("```", "~~~")):
+            inc = not inc
+        elif not inc:
+            new = COUNT_TOT.sub(lambda m: f"{m.group(1)}{total}{m.group(2)}", l)
+            if new != l:
+                out[k], changed = new, changed + 1
+    return out, changed
+
+
 # ------------------------------------------------------------------------ dates
 DIG = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
 FA = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
@@ -322,6 +360,9 @@ def main():
         new_lines, empty = drop_empty_blocks(new_lines)
         if empty:
             notes.append(f"{empty} code block(s) became empty and were removed from the README.")
+        new_lines, counted = update_counts(new_lines)
+        if counted:
+            notes.append("Link counts in the README were refreshed.")
         for u in removed:
             new_state.pop(u, None)
 
