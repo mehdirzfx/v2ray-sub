@@ -8,7 +8,7 @@ on:
       dry_run:
         description: "Report only, do not change anything"
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: write
@@ -31,6 +31,7 @@ jobs:
       - name: Check links and clean README
         env:
           DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          STRIKES: "1"
         run: python scripts/clean_readme.py
 
       - name: Commit changes
