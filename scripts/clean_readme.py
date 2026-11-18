@@ -15,7 +15,7 @@ Verdicts per link
 
 Environment variables (all optional)
   README, STATE, KEEP            file paths
-  STRIKES=1  STRIKES_UNREACH=7   days of consecutive failure before removal
+  STRIKES=1  STRIKES_UNREACH=7  STRIKES_EMPTY=3   days of consecutive failure before removal
   MAX_REMOVE_RATIO=0.3           refuse to remove more than this share in one run
   UPDATE_DATE=changed|always|never   (changed = refresh date only when links were removed)
   DRY_RUN=1                      report only, change nothing
@@ -38,6 +38,7 @@ STATE = os.environ.get("STATE", ".github/sub-health.json")
 KEEP = os.environ.get("KEEP", ".github/sub-keep.txt")
 STRIKES = int(os.environ.get("STRIKES", "1"))
 STRIKES_UNREACH = int(os.environ.get("STRIKES_UNREACH", "7"))
+STRIKES_EMPTY = int(os.environ.get("STRIKES_EMPTY", "3"))  # page opens but has no configs (may be a temporary empty list)
 MAX_RATIO = float(os.environ.get("MAX_REMOVE_RATIO", "0.3"))
 UPDATE_DATE = os.environ.get("UPDATE_DATE", "changed")
 WORKERS = int(os.environ.get("WORKERS", "16"))
@@ -303,7 +304,7 @@ def main():
                     s["count"] += 1
                 s["last"], s["reason"] = TODAY, why
                 new_state[u] = s
-                need = STRIKES if v == "hard" else STRIKES_UNREACH
+                need = STRIKES_UNREACH if v == "unreach" else (STRIKES_EMPTY if why in ("empty", "noconfigs") else STRIKES)
                 if s["count"] >= need and not any(k in u for k in keep):
                     cands.append(u)
             elif v == "soft" and u in state:
