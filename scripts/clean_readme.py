@@ -9,15 +9,15 @@ are removed and, optionally, the "last updated" date is refreshed).
 
 Verdicts per link
   ok       opens and contains configs (or a list of links)       -> strikes reset
-  hard     404/410, domain does not exist, empty / no configs    -> strike (STRIKES days)
+  hard     404/410, domain does not exist, empty / no configs    -> removed after STRIKES day(s)
   unreach  timeout, refused, TLS error, 5xx                      -> strike (STRIKES_UNREACH days)
   soft     401/403/429, temporary DNS error                      -> ignored, nothing changes
 
 Environment variables (all optional)
   README, STATE, KEEP            file paths
-  STRIKES=3  STRIKES_UNREACH=7   days of consecutive failure before removal
+  STRIKES=1  STRIKES_UNREACH=7   days of consecutive failure before removal
   MAX_REMOVE_RATIO=0.3           refuse to remove more than this share in one run
-  UPDATE_DATE=changed|always|never
+  UPDATE_DATE=changed|always|never   (changed = refresh date only when links were removed)
   DRY_RUN=1                      report only, change nothing
 """
 import base64
@@ -36,7 +36,7 @@ from concurrent.futures import ThreadPoolExecutor
 README = os.environ.get("README", "README.md")
 STATE = os.environ.get("STATE", ".github/sub-health.json")
 KEEP = os.environ.get("KEEP", ".github/sub-keep.txt")
-STRIKES = int(os.environ.get("STRIKES", "3"))
+STRIKES = int(os.environ.get("STRIKES", "1"))
 STRIKES_UNREACH = int(os.environ.get("STRIKES_UNREACH", "7"))
 MAX_RATIO = float(os.environ.get("MAX_REMOVE_RATIO", "0.3"))
 UPDATE_DATE = os.environ.get("UPDATE_DATE", "changed")
@@ -62,7 +62,8 @@ def has_configs(text, depth=0):
     if LINK.search(text):
         return True
     s = text.strip()
-    if re.search(r"^proxies\s*:", s, re.M) or s[:1] in "[{" or "outbounds" in s:
+    if (re.search(r"^proxies\s*:", s, re.M) or s[:1] in "[{" or "outbounds" in s
+            or re.search(r"^\s*-\s*\{?\s*(?:name|type|server)\s*:", s, re.M)):
         if STRUCT.search(s):
             return True
     if depth < 2:
@@ -145,6 +146,42 @@ def link_lines(lines):
             if m:
                 out.append((i, m.group(1).split("#")[0]))
     return out
+
+
+# ------------------------------------------------- empty code blocks / headings
+HEAD = re.compile(r"^(#{1,6})\s")
+
+
+def drop_empty_blocks(lines):
+    """Remove fenced blocks left empty after link removal, plus the heading above
+    them if its whole section is now empty. Untouched parts stay as they were."""
+    out, pos, i = [], [], 0
+    while i < len(lines):
+        s = lines[i].strip()
+        if s.startswith(("```", "~~~")):
+            j = i + 1
+            while j < len(lines) and not lines[j].strip().startswith(s[:3]):
+                j += 1
+            if j < len(lines) and all(not x.strip() for x in lines[i + 1:j]):
+                pos.append(len(out))
+                i = j + 1
+                continue
+        out.append(lines[i])
+        i += 1
+    for p in sorted(set(pos), reverse=True):
+        h = p - 1
+        while h >= 0 and not out[h].strip():
+            h -= 1
+        n = p
+        while n < len(out) and not out[n].strip():
+            n += 1
+        m = HEAD.match(out[h]) if h >= 0 else None
+        nxt = HEAD.match(out[n]) if n < len(out) else None
+        if m and (n >= len(out) or (nxt and len(nxt.group(1)) <= len(m.group(1)))):
+            del out[h:n]
+        elif 0 < p < len(out) and not out[p - 1].strip() and not out[p].strip():
+            del out[p]
+    return out, len(pos)
 
 
 # ------------------------------------------------------------------------ dates
@@ -281,6 +318,9 @@ def main():
     if removed:
         drop = {i for i, u in link_lines(lines) if u in removed}
         new_lines = [l for i, l in enumerate(lines) if i not in drop]
+        new_lines, empty = drop_empty_blocks(new_lines)
+        if empty:
+            notes.append(f"{empty} code block(s) became empty and were removed from the README.")
         for u in removed:
             new_state.pop(u, None)
 
