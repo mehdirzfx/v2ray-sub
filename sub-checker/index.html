@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بررسی ساب‌ها | v2ray-sub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f7;--panel:#fff;--ink:#14202b;--muted:#5b6b79;--line:#d5dde3;--accent:#1f5fbf;--ok:#17803d;--bad:#c0392b;--warn:#b26a00;--mute:#6b7a88;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#10181f;--panel:#16212a;--ink:#e6edf2;--muted:#93a3b1;--line:#263540;--accent:#6ea4f0;--ok:#4cc27a;--bad:#ef7b6e;--warn:#e0a13a;--mute:#8d9cab;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;padding:2rem 1rem 3rem;background:var(--bg);color:var(--ink);font:400 1rem/1.7 "Vazirmatn",Tahoma,sans-serif}
+main{max-width:68rem;margin:0 auto}
+header{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:baseline;justify-content:space-between;margin-bottom:1.25rem}
+h1{margin:0;font-size:1.75rem;font-weight:800}
+header p{margin:0;color:var(--muted);font-size:.95rem}
+a{color:var(--accent);text-underline-offset:.2em}
+.stats{display:flex;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:.6rem;margin-bottom:1rem}
+.stat{flex:1 1 8rem;padding:.7rem 1rem;border-inline-start:1px solid var(--line)}
+.stat:first-child{border-inline-start:0}
+.stat b{display:block;font-size:1.5rem;font-weight:800;line-height:1.4}
+.stat span{color:var(--muted);font-size:.85rem}
+.bar{height:4px;background:var(--line);border-radius:2px;margin-bottom:1rem;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+.tools{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
+.tools input,.tools select,textarea{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.4rem;padding:.4rem .7rem}
+.tools input[type=search]{flex:1 1 12rem}
+button{font:inherit;cursor:pointer;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.4rem;padding:.4rem .9rem}
+button.pri{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:500}
+button:hover{filter:brightness(1.08)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{margin-bottom:.75rem}
+summary{cursor:pointer;color:var(--accent)}
+textarea{width:100%;min-height:5rem;margin:.5rem 0;direction:ltr;font-family:ui-monospace,Consolas,monospace;font-size:.85rem}
+.wrap{background:var(--panel);border:1px solid var(--line);border-radius:.6rem;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:44rem}
+th,td{padding:.55rem .8rem;text-align:start;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-weight:500;color:var(--muted);font-size:.85rem;white-space:nowrap;position:sticky;top:0;background:var(--panel)}
+th.s{cursor:pointer}
+tr:last-child td{border-bottom:0}
+td.u{direction:ltr;text-align:left;font-size:.85rem;word-break:break-all;max-width:26rem}
+td.u small{display:block;color:var(--muted)}
+.st{display:inline-block;padding:0 .6rem;border-radius:99px;font-size:.8rem;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.alive{--c:var(--ok)}.dead{--c:var(--bad)}.opaque,.empty{--c:var(--warn)}.pending,.skip,.checking{--c:var(--mute)}
+.pr{display:inline-block;margin:0 0 .15rem .3rem;padding:0 .45rem;border:1px solid var(--line);border-radius:.3rem;font-size:.75rem;direction:ltr}
+.num{white-space:nowrap}
+.msg{padding:1.5rem;text-align:center;color:var(--muted)}
+footer{margin-top:1rem;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>بررسی ساب‌ها</h1>
+  <p>لینک‌ها از <a href="https://github.com/mehdirzfx/v2ray-sub" target="_blank" rel="noopener">mehdirzfx/v2ray-sub</a> خوانده می‌شوند · <a href="/">صفحه اصلی</a></p>
+</header>
+
+<section class="stats" id="stats"></section>
+<div class="bar"><i id="prog"></i></div>
+
+<div class="tools">
+  <button class="pri" id="run">شروع بررسی</button>
+  <input type="search" id="q" placeholder="جستجو در لینک‌ها" aria-label="جستجو">
+  <select id="f" aria-label="فیلتر وضعیت">
+    <option value="">همه وضعیت‌ها</option><option value="alive">سالم</option><option value="empty">بدون کانفیگ</option>
+    <option value="opaque">غیرقابل خواندن</option><option value="dead">خراب</option><option value="skip">ردشده</option>
+  </select>
+  <button id="copy">کپی لینک‌های سالم</button>
+  <button id="dl">دانلود لیست سالم‌ها</button>
+</div>
+
+<details>
+  <summary>افزودن لینک دلخواه</summary>
+  <textarea id="extra" placeholder="هر خط یک لینک"></textarea>
+  <button id="add">افزودن به لیست</button>
+</details>
+
+<div class="wrap"><table>
+  <thead><tr><th>وضعیت</th><th>لینک</th><th class="s" data-k="total">کانفیگ ⇅</th><th>پروتکل‌ها</th><th class="s" data-k="ms">زمان ⇅</th><th></th></tr></thead>
+  <tbody id="rows"></tbody>
+</table><div class="msg" id="msg">در حال خواندن لیست…</div></div>
+
+<footer>
+  «سالم» یعنی لینک باز شد و حداقل یک کانفیگ داخلش پیدا شد؛ اتصال تک‌تک کانفیگ‌ها تست نمی‌شود.
+  سایت‌هایی که اجازه خواندن از مرورگر نمی‌دهند (CORS) فقط «در دسترس» حساب می‌شوند و لینک‌های <span dir="ltr">http://</span> در صفحه https بررسی نمی‌شوند.
+</footer>
+</main>
+
+<script>
+const README='https://raw.githubusercontent.com/mehdirzfx/v2ray-sub/main/README.md';
+const CONC=8, TIMEOUT=15000;
+const LBL={alive:'سالم',empty:'بدون کانفیگ',opaque:'غیرقابل خواندن',dead:'خراب',skip:'ردشده',pending:'در انتظار',checking:'در حال بررسی'};
+const $=id=>document.getElementById(id);
+const fa=n=>Number(n).toLocaleString('fa-IR');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let items=[], running=false, stopReq=false, sortK=null, sortDir=-1, raf=0;
+
+function toFetchUrl(u){
+  u=u.split('#')[0];
+  const m=u.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/(?:raw|blob)\/(?:refs\/heads\/)?(.+)$/);
+  return m?`https://raw.githubusercontent.com/${m[1]}/${m[2]}/${m[3]}`:u;
+}
+function addLinks(list){
+  const seen=new Set(items.map(i=>i.url));
+  for(const raw of list){
+    const url=raw.trim();
+    if(!/^https?:\/\/\S+$/.test(url)||seen.has(url)) continue;
+    seen.add(url);
+    items.push({url,fetchUrl:toFetchUrl(url),status:'pending',total:0,protos:{},ms:null,note:''});
+  }
+}
+function parseReadme(md){
+  const out=[];
+  for(const m of md.matchAll(/```[^\n]*\n([\s\S]*?)```/g)) out.push(...m[1].split('\n'));
+  return out;
+}
+function count(text){
+  const p={};
+  const re=/(?:^|[\s"'>,])(vmess|vless|trojan|ssr|ss|hysteria2|hysteria|hy2|tuic):\/\//gim;
+  for(const m of text.matchAll(re)){const k=m[1].toLowerCase().replace('hy2','hysteria2');p[k]=(p[k]||0)+1}
+  if(!Object.keys(p).length){
+    const re2=/["']?(?:type|protocol)["']?\s*:\s*["']?(vmess|vless|trojan|ssr|ss|hysteria2|hysteria|hy2|tuic)\b/gi;
+    for(const m of text.matchAll(re2)){const k=m[1].toLowerCase().replace('hy2','hysteria2');p[k]=(p[k]||0)+1}
+  }
+  return p;
+}
+function analyze(text){
+  let p=count(text);
+  if(!Object.keys(p).length){
+    const t=text.trim().replace(/\s+/g,'');
+    if(t.length>16&&/^[A-Za-z0-9+/=_-]+$/.test(t)){
+      try{p=count(atob(t.replace(/-/g,'+').replace(/_/g,'/')))}catch(e){}
+    }
+  }
+  return {protos:p,total:Object.values(p).reduce((a,b)=>a+b,0)};
+}
+async function check(it){
+  if(it.url.startsWith('http://')) return {status:'skip',note:'HTTP'};
+  const t0=performance.now();
+  try{
+    const r=await fetch(it.fetchUrl,{cache:'no-store',signal:AbortSignal.timeout(TIMEOUT)});
+    const ms=Math.round(performance.now()-t0);
+    if(!r.ok) return {status:'dead',note:'HTTP '+r.status,ms,total:0,protos:{}};
+    const a=analyze(await r.text());
+    return {status:a.total?'alive':'empty',note:'',ms,...a};
+  }catch(e){
+    if(e.name==='TimeoutError') return {status:'dead',note:'timeout',ms:null,total:0,protos:{}};
+    try{
+      await fetch(it.fetchUrl,{mode:'no-cors',cache:'no-store',signal:AbortSignal.timeout(TIMEOUT)});
+      return {status:'opaque',note:'CORS',ms:Math.round(performance.now()-t0),total:0,protos:{}};
+    }catch(e2){return {status:'dead',note:'network',ms:null,total:0,protos:{}}}
+  }
+}
+async function runAll(){
+  if(running){stopReq=true;return}
+  running=true;stopReq=false;$('run').textContent='توقف';
+  items.forEach(i=>{i.status='pending'});
+  const q=[...items];
+  const worker=async()=>{
+    while(q.length&&!stopReq){
+      const it=q.shift();it.status='checking';sched();
+      Object.assign(it,await check(it));sched();
+    }
+  };
+  await Promise.all(Array.from({length:CONC},worker));
+  running=false;$('run').textContent='بررسی دوباره';render();
+}
+function sched(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render)}
+function view(){
+  const q=$('q').value.trim().toLowerCase(), f=$('f').value;
+  let v=items.filter(i=>(!f||i.status===f)&&(!q||i.url.toLowerCase().includes(q)));
+  if(sortK) v=[...v].sort((a,b)=>((a[sortK]??-1)-(b[sortK]??-1))*sortDir);
+  return v;
+}
+function render(){
+  const n=items.length, c=s=>items.filter(i=>i.status===s).length;
+  const done=items.filter(i=>i.status!=='pending'&&i.status!=='checking').length;
+  const cfg=items.reduce((a,i)=>a+(i.total||0),0);
+  const bad=c('dead')+c('empty');
+  $('stats').innerHTML=[['کل لینک‌ها',n],['سالم',c('alive')],['خراب یا خالی',bad],['غیرقابل خواندن',c('opaque')],['مجموع کانفیگ',cfg]]
+    .map(([l,v])=>`<div class="stat"><b>${fa(v)}</b><span>${l}</span></div>`).join('');
+  $('prog').style.width=(n?done/n*100:0)+'%';
+  const v=view();
+  $('rows').innerHTML=v.map(i=>{
+    let host='';try{host=new URL(i.fetchUrl).host}catch(e){}
+    const pr=Object.entries(i.protos||{}).map(([k,x])=>`<span class="pr">${k} ${fa(x)}</span>`).join('');
+    const note=i.note&&i.status!=='alive'?` <small>${esc(i.note)}</small>`:'';
+    return `<tr><td><span class="st ${i.status}">${LBL[i.status]}</span></td>
+      <td class="u"><a href="${esc(i.url.split('#')[0])}" target="_blank" rel="noopener">${esc(i.url.split('#')[0].replace(/^https?:\/\//,''))}</a></td>
+      <td class="num">${i.total?fa(i.total):'–'}</td><td>${pr||'–'}</td>
+      <td class="num">${i.ms!=null?fa(i.ms)+' ms':'–'}${note}</td>
+      <td><button data-copy="${esc(i.url.split('#')[0])}" aria-label="کپی لینک">کپی</button></td></tr>`;
+  }).join('');
+  $('msg').style.display=v.length?'none':'block';
+  if(!v.length) $('msg').textContent=n?'موردی پیدا نشد':'لینکی بارگذاری نشد؛ از «افزودن لینک دلخواه» استفاده کنید.';
+}
+const good=()=>items.filter(i=>i.status==='alive'||i.status==='opaque').map(i=>i.url.split('#')[0]);
+async function copy(t,btn){
+  try{await navigator.clipboard.writeText(t);const o=btn.textContent;btn.textContent='کپی شد';setTimeout(()=>btn.textContent=o,1200)}catch(e){prompt('کپی کنید:',t)}
+}
+$('run').onclick=runAll;
+$('q').oninput=render;$('f').onchange=render;
+$('add').onclick=()=>{addLinks($('extra').value.split('\n'));$('extra').value='';render()};
+$('copy').onclick=e=>copy(good().join('\n'),e.target);
+$('dl').onclick=()=>{
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([good().join('\n')],{type:'text/plain'}));
+  a.download='alive-subs.txt';a.click();URL.revokeObjectURL(a.href);
+};
+$('rows').onclick=e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy,b)};
+document.querySelectorAll('th.s').forEach(th=>th.onclick=()=>{
+  sortDir=sortK===th.dataset.k?-sortDir:-1;sortK=th.dataset.k;render();
+});
+fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{
+  addLinks(parseReadme(md));render();
+}).catch(()=>{$('msg').textContent='خواندن README ناموفق بود؛ لینک‌ها را دستی اضافه کنید.'});
+render();
+</script>
+</body>
+</html>
