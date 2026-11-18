@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>بررسی ساب‌ها</title>
+<title>Sub Checker</title>
 <meta name="color-scheme" content="light dark">
-<script>(function(){try{var t=localStorage.getItem('sc_theme');if(t)document.documentElement.dataset.theme=t}catch(e){}})()</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('sc_theme');if(t)d.dataset.theme=t}catch(e){}
+window.__font=function(){if(document.getElementById('vzf'))return;var l=document.createElement('link');l.id='vzf';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap';document.head.appendChild(l)};
+try{if(localStorage.getItem('sc_lang')==='fa'){d.lang='fa';d.dir='rtl';window.__font()}}catch(e){}})()</script>
 <style>
 :root{
   --bg:#f3f5fb;--panel:#fff;--panel2:#f7f8fc;--ink:#0f172a;--muted:#64748b;--line:#e3e8f2;
@@ -29,8 +28,10 @@
   --glow:radial-gradient(60rem 28rem at 85% -10%,rgba(129,140,248,.16),transparent 60%),radial-gradient(48rem 24rem at 0% 0%,rgba(56,189,248,.10),transparent 60%);
   color-scheme:dark}}
 *{box-sizing:border-box}
+:root{--font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+html[lang=fa]{--font:"Vazirmatn",Tahoma,sans-serif}
 [hidden]{display:none!important}
-body{margin:0;min-height:100vh;background:var(--bg) var(--glow) no-repeat;color:var(--ink);font:400 .92rem/1.6 "Vazirmatn",Tahoma,sans-serif;transition:background-color .25s,color .25s}
+body{margin:0;min-height:100vh;background:var(--bg) var(--glow) no-repeat;color:var(--ink);font:400 .92rem/1.6 var(--font);transition:background-color .25s,color .25s}
 main{max-width:70rem;margin:0 auto;padding:1.1rem .9rem 4rem}
 a{color:inherit;text-decoration:none}
 svg{width:1.1em;height:1.1em;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -44,7 +45,10 @@ header{display:flex;align-items:center;justify-content:space-between;gap:1rem;ma
 .logo{width:2.3rem;height:2.3rem;border-radius:.75rem;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 6px 18px -6px var(--accent)}
 .logo svg{width:1.25rem;height:1.25rem}
 h1{margin:0;font-size:1.3rem;font-weight:800}
-.hd{display:flex;gap:.4rem}
+.hd{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
+.btn.lg{font-weight:700;letter-spacing:.02em}
+html[dir=ltr] .u,html[dir=ltr] .cn{text-align:left}
+html[dir=ltr] #back svg{transform:scaleX(-1)}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font:inherit;font-size:.85rem;font-weight:500;cursor:pointer;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.65rem;padding:.38rem .8rem;transition:transform .12s,border-color .15s,box-shadow .15s;white-space:nowrap}
 .btn:hover{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}
@@ -146,11 +150,13 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
 <body>
 <main>
 <header>
-  <div class="brand"><div class="logo" id="logo"></div><h1>بررسی ساب‌ها</h1></div>
+  <div class="brand"><div class="logo" id="logo"></div><h1 data-i18n="title">Sub Checker</h1></div>
   <div class="hd">
-    <a class="btn star" id="gh" href="https://github.com/mehdirzfx/v2ray-sub" target="_blank" rel="noopener" title="ستاره در GitHub"></a>
-    <a class="btn ic" id="home" href="/" title="صفحه اصلی"></a>
-    <button class="btn ic" id="theme" title="تم"></button>
+    <a class="btn star" id="gh" href="https://github.com/mehdirzfx/v2ray-sub" target="_blank" rel="noopener" data-i18n-title="star_title" title="Star on GitHub"></a>
+    <button class="btn" id="contrib" data-menu="1" data-i18n-title="contribute" title="Contribute"></button>
+    <button class="btn lg" id="lang" title="فارسی"></button>
+    <a class="btn ic" id="home" href="/" data-i18n-title="home" title="Home"></a>
+    <button class="btn ic" id="theme" data-i18n-title="theme" title="Theme"></button>
   </div>
 </header>
 
@@ -159,11 +165,11 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
   <div class="bar"><i id="prog"></i></div>
   <div class="tools">
     <button class="btn pri" id="run"></button>
-    <div class="search"><span id="sico"></span><input type="search" id="q" placeholder="جستجو" aria-label="جستجو"></div>
-    <select id="sort" aria-label="مرتب‌سازی">
-      <option value="">پیش‌فرض</option><option value="cfg">بیشترین کانفیگ</option><option value="ms">سریع‌ترین</option><option value="st">مشکل‌دار اول</option>
+    <div class="search"><span id="sico"></span><input type="search" id="q" placeholder="Search" aria-label="Search" data-i18n-ph="search" data-i18n-aria="search"></div>
+    <select id="sort" aria-label="Sort" data-i18n-aria="sort">
+      <option value="" data-i18n="sort_default">Default</option><option value="cfg" data-i18n="sort_cfg">Most configs</option><option value="ms" data-i18n="sort_ms">Fastest</option><option value="st" data-i18n="sort_st">Problems first</option>
     </select>
-    <label class="sw" title="بررسی دامنه‌ی کانفیگ‌ها با DNS"><input type="checkbox" id="dnsOn">DNS</label>
+    <label class="sw" title="Check config domains via DNS" data-i18n-title="dns_title"><input type="checkbox" id="dnsOn">DNS</label>
     <span class="sp"></span>
     <button class="btn danger" id="purge"></button>
     <button class="btn" id="copy"></button>
@@ -172,26 +178,26 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
     <div class="chips" id="chips"></div>
   </div>
   <div class="vl" id="vl"><div class="win" id="win"></div></div>
-  <div class="msg" id="msg">در حال خواندن</div>
+  <div class="msg" id="msg">Loading…</div>
 </section>
 
 <section id="detail" hidden>
   <div class="dh">
-    <a class="btn ic" id="back" href="#" title="بازگشت"></a>
+    <a class="btn ic" id="back" href="#" title="Back" data-i18n-title="back"></a>
     <div class="dt"><b id="dhost"></b><small id="dpath"></small></div>
     <span class="st" id="dst"></span>
     <div class="act">
-      <a class="btn ic" id="dopen" target="_blank" rel="noopener" title="باز کردن لینک"></a>
-      <button class="btn ic" id="dre" title="بررسی دوباره"></button>
-      <button class="btn ic" id="ddns" title="بررسی دامنه‌ها"></button>
-      <button class="btn ic" id="dcopy" title="کپی"></button>
+      <a class="btn ic" id="dopen" target="_blank" rel="noopener" title="Open link" data-i18n-title="open_link"></a>
+      <button class="btn ic" id="dre" title="Check again" data-i18n-title="recheck"></button>
+      <button class="btn ic" id="ddns" title="Check domains" data-i18n-title="check_domains"></button>
+      <button class="btn ic" id="dcopy" title="Copy" data-i18n-title="copy"></button>
     </div>
   </div>
   <section class="stats" id="dstats"></section>
   <div class="tools">
     <div class="chips" id="dchips" style="flex:0 1 auto"></div>
-    <div class="search"><span id="dsico"></span><input type="search" id="dq" placeholder="جستجو" aria-label="جستجو"></div>
-    <select id="dp" aria-label="پروتکل"></select>
+    <div class="search"><span id="dsico"></span><input type="search" id="dq" placeholder="Search" aria-label="Search" data-i18n-ph="search" data-i18n-aria="search"></div>
+    <select id="dp" aria-label="Protocol" data-i18n-aria="protocol"></select>
   </div>
   <div class="vl" id="dvl"><div class="win" id="dwin"></div></div>
   <div class="msg" id="dmsg" hidden></div>
@@ -200,12 +206,12 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
 
 <div class="menu" id="menu" hidden></div>
 <dialog id="dAdd">
-  <h2>افزودن لینک</h2>
-  <textarea id="extra" placeholder="هر خط یک لینک"></textarea>
-  <div class="df"><button class="btn pri" id="addOk">افزودن</button><button class="btn" data-close>بستن</button></div>
+  <h2 data-i18n="add_title">Add links</h2>
+  <textarea id="extra" placeholder="One link per line" data-i18n-ph="extra_ph"></textarea>
+  <div class="df"><button class="btn pri" id="addOk" data-i18n="add_ok">Add</button><button class="btn" data-close data-i18n="close">Close</button></div>
 </dialog>
 <dialog id="dRem">
-  <h2>حذف‌شده‌ها</h2>
+  <h2 data-i18n="rem_title">Removed links</h2>
   <div class="note" id="remInfo" style="color:var(--muted);font-size:.82rem;padding-bottom:.5rem"></div>
   <div class="rl" id="remList"></div>
   <div class="df">
@@ -214,14 +220,14 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
     <a class="btn" id="rdEdit" href="https://github.com/mehdirzfx/v2ray-sub/edit/main/README.md" target="_blank" rel="noopener"></a>
   </div>
   <div class="df" style="margin-top:.4rem">
-    <button class="btn sm" id="remCopy"></button><button class="btn sm" id="remAll"></button><button class="btn sm danger" id="remClear"></button><button class="btn sm" data-close>بستن</button>
+    <button class="btn sm" id="remCopy"></button><button class="btn sm" id="remAll"></button><button class="btn sm danger" id="remClear"></button><button class="btn sm" data-close data-i18n="close">Close</button>
   </div>
 </dialog>
 <div class="nudge" id="nudge" hidden>
   <span class="ns" id="nsico"></span>
-  <span>اگه به دردت خورد، یه ستاره بزن</span>
+  <span data-i18n="nudge">If this helped you, give it a star</span>
   <a class="btn sm pri" id="nstar" href="https://github.com/mehdirzfx/v2ray-sub" target="_blank" rel="noopener"></a>
-  <button class="btn sm ic" id="nclose" title="بستن"></button>
+  <button class="btn sm ic" id="nclose" title="Close" data-i18n-title="close"></button>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -230,7 +236,6 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
 function workerMain(){
   const TIMEOUT=15000;
   const store=new Map(),dns=new Map();let cache=new Map();
-  const fa=n=>Number(n).toLocaleString('fa-IR');
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   const DOMAIN=/^(?=.{1,253}$)([a-z0-9_]([a-z0-9_-]{0,61}[a-z0-9_])?\.)+[a-z0-9-]{2,}$/i;
@@ -243,12 +248,12 @@ function workerMain(){
   function mk(proto,raw,name,host,port,id){
     const c={proto,raw,name:name||'',host:String(host||'').replace(/^\[|\]$/g,''),port:parseInt(port,10)||0,issues:[],net:'',sec:''};
     const h=c.host;
-    if(!h)c.issues.push('آدرس خالی');
-    else if(/^(localhost|0\.0\.0\.0|127\.|::1$)/i.test(h))c.issues.push('آدرس محلی');
-    else if(!isIP(h)&&!DOMAIN.test(h))c.issues.push('آدرس نامعتبر');
-    if(!(c.port>=1&&c.port<=65535))c.issues.push('پورت نامعتبر');
-    if(proto==='vless'||proto==='vmess'){if(!id||!UUID.test(id))c.issues.push('UUID نامعتبر')}
-    else if(['trojan','ss','hysteria2','hysteria','tuic'].includes(proto)&&!id)c.issues.push('رمز خالی');
+    if(!h)c.issues.push('addr_empty');
+    else if(/^(localhost|0\.0\.0\.0|127\.|::1$)/i.test(h))c.issues.push('addr_local');
+    else if(!isIP(h)&&!DOMAIN.test(h))c.issues.push('addr_bad');
+    if(!(c.port>=1&&c.port<=65535))c.issues.push('port_bad');
+    if(proto==='vless'||proto==='vmess'){if(!id||!UUID.test(id))c.issues.push('uuid_bad')}
+    else if(['trojan','ss','hysteria2','hysteria','tuic'].includes(proto)&&!id)c.issues.push('pass_empty');
     return c;
   }
   function parseLink(raw){
@@ -258,7 +263,7 @@ function workerMain(){
     const hi=body.indexOf('#');if(hi>=0){name=safeDec(body.slice(hi+1));body=body.slice(0,hi)}
     try{
       if(proto==='vmess'){const j=JSON.parse(b64dec(body));const c=mk(proto,raw,j.ps||name,j.add,j.port,j.id);c.net=j.net||'';c.sec=j.tls||'';return c}
-      if(proto==='ssr'){const d=b64dec(body.split('?')[0]).split(':');const c=mk(proto,raw,name,d[0],d[1],d[5]||'x');if(d.length<6)c.issues.push('ساختار ناقص');return c}
+      if(proto==='ssr'){const d=b64dec(body.split('?')[0]).split(':');const c=mk(proto,raw,name,d[0],d[1],d[5]||'x');if(d.length<6)c.issues.push('struct_partial');return c}
       if(proto==='ss'){
         let b=body.split('?')[0].split('/')[0],auth,hp;
         if(!b.includes('@')){const d=b64dec(b);const i=d.lastIndexOf('@');auth=d.slice(0,i);hp=d.slice(i+1)}
@@ -266,14 +271,14 @@ function workerMain(){
         const hm=hp.match(/^(\[[^\]]+\]|[^:]+):(\d+)$/);
         const pass=auth.includes(':')?auth.slice(auth.indexOf(':')+1):'';
         const c=mk(proto,raw,name,hm?hm[1]:'',hm?hm[2]:0,pass);
-        if(!auth.includes(':'))c.issues.push('روش رمزنگاری نامعتبر');return c;
+        if(!auth.includes(':'))c.issues.push('ss_method');return c;
       }
       const g=body.match(/^(?:([^@]*)@)?(\[[^\]]+\]|[^:\/?#]+)(?::(\d+)[^\/?#]*)?/);
       if(!g)return mk(proto,raw,name,'',0,'');
       const q=new URLSearchParams(body.split('?')[1]||'');
       const c=mk(proto,raw,name,g[2],g[3],safeDec(g[1]||''));
       c.net=q.get('type')||'';c.sec=q.get('security')||'';return c;
-    }catch(e){const c=mk(proto,raw,name,'',0,'');c.issues=['ساختار نامعتبر'];return c}
+    }catch(e){const c=mk(proto,raw,name,'',0,'');c.issues=['struct_bad'];return c}
   }
   function scanLinks(t){
     const out=[];
@@ -291,7 +296,7 @@ function workerMain(){
     const u=o.users&&o.users[0];
     const id=o.uuid||o.id||o.password||(u&&(u.id||u.password))||'';
     const c=mk(proto||'?',JSON.stringify(o),o.name||o.tag||'',o.server||o.address,o.port||o.server_port,id);
-    c.net=o.network||'';if(!proto)c.issues.push('پروتکل نامشخص');return c;
+    c.net=o.network||'';if(!proto)c.issues.push('proto_unknown');return c;
   }
   function parseClash(t){
     const objs=[];let cur=null,ind=-1,inP=false;
@@ -333,14 +338,14 @@ function workerMain(){
     const t=it.configs.length;
     if(!t){
       if(it.kind==='html'){it.status='invalid';it.note='HTML'}
-      else if(it.kind==='unknown'){it.status='invalid';it.note='فرمت ناشناخته'}
+      else if(it.kind==='unknown'){it.status='invalid';it.note='unknown'}
       else{it.status='empty';it.note=''}
       return;
     }
     const v=it.configs.filter(isValid).length;
-    if(!v){it.status='invalid';it.note='همه کانفیگ‌ها نامعتبر'}
-    else if(v/t<.5){it.status='weak';it.note=fa(t-v)+' نامعتبر'}
-    else{it.status='alive';it.note=t-v?fa(t-v)+' نامعتبر':''}
+    if(!v){it.status='invalid';it.note='allbad'}
+    else if(v/t<.5){it.status='weak';it.note='bad:'+(t-v)}
+    else{it.status='alive';it.note=t-v?'bad:'+(t-v):''}
   }
   function summary(it){
     const protos={};let v=0;
@@ -440,12 +445,71 @@ function workerMain(){
 /* ================= Main thread ================= */
 const README='https://raw.githubusercontent.com/mehdirzfx/v2ray-sub/main/README.md';
 const CONC=8,RH=54,DRH=52;
-const LBL={alive:'سالم',weak:'ضعیف',empty:'خالی',invalid:'نامعتبر',opaque:'غیرقابل خواندن',dead:'خراب',skip:'ردشده',pending:'در انتظار',checking:'در حال بررسی'};
+const LBL=s=>tr('st_'+s);
 const PROBLEM=new Set(['dead','empty','invalid']),GOOD=new Set(['alive','weak','opaque']);
 const isSoft=i=>i.status==='dead'&&(i.note==='network'||i.note==='timeout'||/^HTTP (5|429)/.test(i.note));
 const ORD={dead:0,invalid:1,empty:2,weak:3,opaque:4,skip:5,pending:6,checking:7,alive:8};
 const $=id=>document.getElementById(id);
-const fa=n=>Number(n).toLocaleString('fa-IR');
+const REPO='https://github.com/mehdirzfx/v2ray-sub';
+let lang=(()=>{try{return localStorage.getItem('sc_lang')==='fa'?'fa':'en'}catch(e){return'en'}})();
+const I18N={
+en:{title:'Sub Checker',star:'Star',star_title:'Star on GitHub',home:'Home',theme:'Theme',lang_to:'فارسی',contribute:'Contribute',
+ search:'Search',sort:'Sort',sort_default:'Default',sort_cfg:'Most configs',sort_ms:'Fastest',sort_st:'Problems first',
+ dns_title:'Check config domains via DNS',loading:'Loading…',back:'Back',open_link:'Open link',recheck:'Check again',check_domains:'Check domains',
+ copy:'Copy',protocol:'Protocol',add_title:'Add links',extra_ph:'One link per line',add_ok:'Add',close:'Close',rem_title:'Removed links',
+ nudge:'If this helped you, give it a star',download:'Download',copied:'Copied',copy_prompt:'Copy:',worker_err:'Worker error',
+ st_alive:'Alive',st_weak:'Weak',st_empty:'Empty',st_invalid:'Invalid',st_opaque:'Unreadable',st_dead:'Dead',st_skip:'Skipped',st_pending:'Pending',st_checking:'Checking',
+ s_total:'Total links',s_alive:'Alive',s_problem:'Problems',s_opaque:'Unreadable',s_valid:'Valid configs',
+ b_stop:'Stop',b_start:'Start check',b_again:'Check again',b_purge:'Remove broken',b_copy:'Copy list',b_add:'Add',b_removed:'Removed',
+ f_all:'All',f_alive:'Alive',f_problem:'Problems',f_weak:'Weak',f_opaque:'Unreadable',
+ none_found:'Nothing found',no_links:'No links loaded',readme_fail:'Could not read the README. Add links manually.',
+ valid:'Valid',total_cfg:'Total configs',configs:'Configs',open:'Open',more:'More',
+ copy_link:'Copy link',remove_item:'Remove from list',removed_t:'Removed',
+ m_alive:'Healthy ones',m_bad:'Problematic ones',m_all:'All',m_view:'Current view',
+ found_problems:'{n} problem links found',all_fine:'Everything looks fine',
+ purge_confirm:'Remove {n} broken links from the list?',purge_soft:'{n} links are kept because of network errors or timeouts (they may just be blocked on your connection).',
+ rem_info:'{n} of these links were found in the README and will be removed in the new version',rem_noreadme:'README has not been read yet',
+ restore:'Restore',list_empty:'The list is empty',
+ rem_copy:'Copy links',rem_all:'Restore all',rem_clear:'Clear list',rd_copy:'Copy new README',rd_dl:'Download README',rd_edit:'Edit on GitHub',
+ readme_copied:'New README copied, {n} links removed',clear_confirm:'Clear the removed list? Do this after updating the README, otherwise README links will show up again.',
+ d_missing:'Domain not found',d_failed:'DNS failed',d_total:'Total configs',d_valid:'Valid',d_invalid:'Invalid',d_resp:'Response',
+ all_protos:'All protocols',d_opaque:'The content of this link cannot be read by the browser; use the open button to check it.',d_checking:'Checking…',
+ n_unknown:'Unknown format',n_allbad:'All configs are invalid',n_invalid:'{n} invalid',
+ i_addr_empty:'Empty address',i_addr_local:'Local address',i_addr_bad:'Invalid address',i_port_bad:'Invalid port',i_uuid_bad:'Invalid UUID',i_pass_empty:'Empty password',
+ i_struct_partial:'Incomplete structure',i_ss_method:'Invalid cipher method',i_struct_bad:'Invalid structure',i_proto_unknown:'Unknown protocol',
+ copy_cfg:'Copy config',check_domain:'Check domain',
+ c_add:'Suggest a subscription link',c_report:'Report a dead link',c_pr:'Edit README (pull request)',c_issues:'Open issues',c_repo:'Source repository'},
+fa:{title:'بررسی ساب‌ها',star:'ستاره',star_title:'ستاره در GitHub',home:'صفحه اصلی',theme:'تم',lang_to:'English',contribute:'مشارکت',
+ search:'جستجو',sort:'مرتب‌سازی',sort_default:'پیش‌فرض',sort_cfg:'بیشترین کانفیگ',sort_ms:'سریع‌ترین',sort_st:'مشکل‌دار اول',
+ dns_title:'بررسی دامنه‌ی کانفیگ‌ها با DNS',loading:'در حال خواندن',back:'بازگشت',open_link:'باز کردن لینک',recheck:'بررسی دوباره',check_domains:'بررسی دامنه‌ها',
+ copy:'کپی',protocol:'پروتکل',add_title:'افزودن لینک',extra_ph:'هر خط یک لینک',add_ok:'افزودن',close:'بستن',rem_title:'حذف‌شده‌ها',
+ nudge:'اگه به دردت خورد، یه ستاره بزن',download:'دانلود',copied:'کپی شد',copy_prompt:'کپی کنید:',worker_err:'خطا در پردازشگر',
+ st_alive:'سالم',st_weak:'ضعیف',st_empty:'خالی',st_invalid:'نامعتبر',st_opaque:'غیرقابل خواندن',st_dead:'خراب',st_skip:'ردشده',st_pending:'در انتظار',st_checking:'در حال بررسی',
+ s_total:'کل لینک‌ها',s_alive:'سالم',s_problem:'مشکل‌دار',s_opaque:'غیرقابل خواندن',s_valid:'کانفیگ معتبر',
+ b_stop:'توقف',b_start:'شروع بررسی',b_again:'بررسی دوباره',b_purge:'حذف مشکل‌دارها',b_copy:'کپی لیست',b_add:'افزودن',b_removed:'حذف‌شده‌ها',
+ f_all:'همه',f_alive:'سالم',f_problem:'مشکل‌دار',f_weak:'ضعیف',f_opaque:'غیرقابل خواندن',
+ none_found:'موردی پیدا نشد',no_links:'لینکی بارگذاری نشد',readme_fail:'خواندن README ناموفق بود؛ لینک‌ها را دستی اضافه کنید',
+ valid:'معتبر',total_cfg:'کل کانفیگ‌ها',configs:'کانفیگ‌ها',open:'باز کردن',more:'بیشتر',
+ copy_link:'کپی لینک',remove_item:'حذف از لیست',removed_t:'حذف شد',
+ m_alive:'سالم‌ها',m_bad:'مشکل‌دارها',m_all:'همه',m_view:'نمایش فعلی',
+ found_problems:'{n} لینک مشکل‌دار پیدا شد',all_fine:'همه چیز سالم است',
+ purge_confirm:'{n} لینک خراب از لیست حذف شود؟',purge_soft:'{n} لینک به‌خاطر خطای شبکه یا timeout نگه داشته می‌شود (ممکن است روی اینترنت شما فیلتر باشد).',
+ rem_info:'{n} لینک از این لیست در README پیدا شد و در نسخه‌ی جدید حذف می‌شود',rem_noreadme:'README هنوز خوانده نشده',
+ restore:'بازگردانی',list_empty:'لیست خالی است',
+ rem_copy:'کپی لینک‌ها',rem_all:'بازگردانی همه',rem_clear:'پاک‌کردن لیست',rd_copy:'کپی README جدید',rd_dl:'دانلود README',rd_edit:'ویرایش در GitHub',
+ readme_copied:'README جدید کپی شد، {n} لینک حذف شد',clear_confirm:'لیست حذف‌شده‌ها پاک شود؟ این کار را بعد از آپدیت README انجام دهید، وگرنه لینک‌های README دوباره در لیست ظاهر می‌شوند.',
+ d_missing:'دامنه ناموجود',d_failed:'DNS ناموفق',d_total:'کل کانفیگ‌ها',d_valid:'معتبر',d_invalid:'نامعتبر',d_resp:'پاسخ',
+ all_protos:'همه پروتکل‌ها',d_opaque:'محتوای این لینک از مرورگر قابل خواندن نیست؛ با دکمه‌ی باز کردن بررسی کنید.',d_checking:'در حال بررسی',
+ n_unknown:'فرمت ناشناخته',n_allbad:'همه کانفیگ‌ها نامعتبر',n_invalid:'{n} نامعتبر',
+ i_addr_empty:'آدرس خالی',i_addr_local:'آدرس محلی',i_addr_bad:'آدرس نامعتبر',i_port_bad:'پورت نامعتبر',i_uuid_bad:'UUID نامعتبر',i_pass_empty:'رمز خالی',
+ i_struct_partial:'ساختار ناقص',i_ss_method:'روش رمزنگاری نامعتبر',i_struct_bad:'ساختار نامعتبر',i_proto_unknown:'پروتکل نامشخص',
+ copy_cfg:'کپی کانفیگ',check_domain:'بررسی دامنه',
+ c_add:'پیشنهاد لینک ساب',c_report:'گزارش لینک خراب',c_pr:'ویرایش README (پول‌ریکوئست)',c_issues:'مشاهده Issues',c_repo:'مخزن اصلی'}
+};
+const tr=(k,p)=>{let v=I18N[lang][k]??I18N.en[k]??k;if(p)for(const x in p)v=v.replace('{'+x+'}',p[x]);return v};
+const nf=n=>Number(n).toLocaleString(lang==='fa'?'fa-IR':'en-US');
+const noteText=n=>{if(!n)return'';if(n==='unknown')return tr('n_unknown');if(n==='allbad')return tr('n_allbad');const m=n.match(/^bad:(\d+)$/);return m?tr('n_invalid',{n:nf(m[1])}):n};
+const issueText=c=>tr('i_'+c);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
@@ -466,7 +530,10 @@ const IC={
   trash:P('<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 10v7M14 10v7"/>'),
   plus:P('<path d="M12 5v14M5 12h14"/>'),
   dl:P('<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>'),
-  undo:P('<path d="M3 7v6h6"/><path d="M3 13a9 9 0 103-7"/>'),
+  undo:P('<path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 010 11H11"/>'),
+  archive:P('<rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 002 2h12a2 2 0 002-2V8"/><path d="M10 12h4"/>'),
+  pr:P('<circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7"/><path d="M6 9v12"/>'),
+  pencil:P('<path d="M17 3a2.85 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5z"/>'),
   list:P('<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'),
   more:P('<circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>'),
   tick:P('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
@@ -483,10 +550,10 @@ const IC={
   spin:'<svg class="spin" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9"/></svg>'
 };
 const STI={alive:'okc',weak:'alert',empty:'inbox',invalid:'alert',opaque:'eyeoff',dead:'xc',skip:'skip',pending:'clock',checking:'spin'};
-const stPill=s=>`<span class="st ${s}" title="${LBL[s]}">${IC[STI[s]]}<span class="lb">${LBL[s]}</span></span>`;
+const stPill=s=>`<span class="st ${s}" title="${LBL(s)}">${IC[STI[s]]}<span class="lb">${LBL(s)}</span></span>`;
 const tag=(c,h,t='')=>`<span class="tag ${c}" title="${esc(t)}">${h}</span>`;
-$('logo').innerHTML=IC.logo;const setStars=n=>{$('gh').innerHTML=IC.star+'<span class="lb">ستاره</span>'+(n?`<em>${fa(n)}</em>`:'')};setStars(0);
-$('nsico').innerHTML=IC.star;$('nstar').innerHTML=IC.star+'ستاره';$('nclose').innerHTML=IC.x;
+$('logo').innerHTML=IC.logo;let starN=0;const setStars=n=>{starN=n;$('gh').innerHTML=IC.star+'<span class="lb">'+tr('star')+'</span>'+(n?`<em>${nf(n)}</em>`:'')};setStars(0);
+$('nsico').innerHTML=IC.star;$('nclose').innerHTML=IC.x;
 const hideNudge=()=>{$('nudge').hidden=true;ls.set('sc_nudge',true)};
 $('nclose').onclick=hideNudge;$('nstar').onclick=hideNudge;
 (async()=>{
@@ -496,8 +563,6 @@ $('nclose').onclick=hideNudge;$('nstar').onclick=hideNudge;
     if(typeof j.stargazers_count==='number'){ls.set('sc_stars',{n:j.stargazers_count,t:Date.now()});setStars(j.stargazers_count)}}catch(e){}
 })();$('home').innerHTML=IC.home;$('sico').innerHTML=IC.search;$('dsico').innerHTML=IC.search;
 $('back').innerHTML=IC.back;$('dopen').innerHTML=IC.open;$('dre').innerHTML=IC.refresh;$('ddns').innerHTML=IC.globe;$('dcopy').innerHTML=IC.copy;
-$('remCopy').innerHTML=IC.copy+'کپی لینک‌ها';$('remAll').innerHTML=IC.undo+'بازگردانی همه';$('remClear').innerHTML=IC.trash+'پاک‌کردن لیست';
-$('rdCopy').innerHTML=IC.copy+'کپی README جدید';$('rdDl').innerHTML=IC.dl+'دانلود README';$('rdEdit').innerHTML=IC.open+'ویرایش در GitHub';
 
 /* theme */
 const eff=()=>document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
@@ -510,18 +575,18 @@ themeIcon();
 const wk=new Worker(URL.createObjectURL(new Blob(['('+workerMain.toString()+')()'],{type:'text/javascript'})));
 let mid=0;const pend=new Map();
 wk.onmessage=e=>{const p=pend.get(e.data.id);if(p){pend.delete(e.data.id);p(e.data.r)}};
-wk.onerror=()=>toast('خطا در پردازشگر');
+wk.onerror=()=>toast(tr('worker_err'));
 const call=m=>new Promise(res=>{m.id=++mid;pend.set(m.id,res);wk.postMessage(m)});
 
 /* state */
 let items=[],byUrl=new Map(),vis=[],removed=new Set(ls.get('sc_removed',[])),extras=ls.get('sc_extra',[]);
-let running=false,stopReq=false,filter='all',dnsOn=ls.get('sc_dns',false),listY=0,D=null;
+let loadState='loading',running=false,stopReq=false,filter='all',dnsOn=ls.get('sc_dns',false),listY=0,D=null;
 $('dnsOn').checked=dnsOn;
 
 /* helpers */
 let tt=0;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2200)}
-async function copyText(t,msg='کپی شد'){
-  try{await navigator.clipboard.writeText(t);toast(msg)}catch(e){prompt('کپی کنید:',t)}
+async function copyText(t,msg=tr('copied')){
+  try{await navigator.clipboard.writeText(t);toast(msg)}catch(e){prompt(tr('copy_prompt'),t)}
 }
 function download(text,name){
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));
@@ -536,8 +601,10 @@ async function pool(list,n,fn,stop=()=>false){
 let menuItems=[];
 function openMenu(btn,its){
   menuItems=its;const m=$('menu');
-  m.innerHTML=its.map((x,i)=>x.get
-    ?`<div class="mi" data-mi="${i}" style="cursor:pointer"><span class="ml">${x.icon||''}${x.label}</span><em>${x.count!=null?fa(x.count):''}</em><button class="btn sm ic" data-dl="${i}" title="دانلود">${IC.dl}</button></div>`
+  m.innerHTML=its.map((x,i)=>x.href
+    ?`<a class="mi" data-mi="${i}" href="${esc(x.href)}" target="_blank" rel="noopener"><span class="ml">${x.icon||''}${x.label}</span></a>`
+    :x.get
+    ?`<div class="mi" data-mi="${i}" style="cursor:pointer"><span class="ml">${x.icon||''}${x.label}</span><em>${x.count!=null?nf(x.count):''}</em><button class="btn sm ic" data-dl="${i}" title="${tr('download')}">${IC.dl}</button></div>`
     :`<button class="mi ${x.danger?'dg':''}" data-mi="${i}"><span class="ml">${x.icon||''}${x.label}</span></button>`).join('');
   m.hidden=false;
   const r=btn.getBoundingClientRect(),w=m.offsetWidth;
@@ -548,7 +615,7 @@ const closeMenu=()=>{$('menu').hidden=true};
 $('menu').onclick=async e=>{
   const dl=e.target.closest('[data-dl]'),row=e.target.closest('[data-mi]');
   if(dl){const x=menuItems[+dl.dataset.dl];closeMenu();download(await x.get(),x.file||'list.txt');return}
-  if(row){const x=menuItems[+row.dataset.mi];closeMenu();if(x.get)copyText(await x.get());else x.fn()}
+  if(row){const x=menuItems[+row.dataset.mi];closeMenu();if(x.href)return;if(x.get)copyText(await x.get());else x.fn()}
 };
 document.addEventListener('click',e=>{if(!$('menu').hidden&&!e.target.closest('#menu')&&!e.target.closest('[data-menu]'))closeMenu()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
@@ -583,7 +650,7 @@ async function runAll(){
   await pool(items,CONC,checkItem,()=>stopReq);
   running=false;stopReq=false;sched();
   const p=items.filter(i=>PROBLEM.has(i.status)).length;
-  toast(p?`${fa(p)} لینک مشکل‌دار پیدا شد`:'همه چیز سالم است');
+  toast(p?tr('found_problems',{n:nf(p)}):tr('all_fine'));
   if(!ls.get('sc_nudge',false)&&items.length)setTimeout(()=>{$('nudge').hidden=false},1800);
 }
 function removeItems(list){
@@ -610,18 +677,18 @@ function computeVis(){
 }
 function rowHtml(i){
   let host=i.url,path='';try{const u=new URL(i.fetchUrl);host=u.host;path=u.pathname+u.search}catch(e){}
-  const pr=Object.entries(i.protos||{}).slice(0,3).map(([k,x])=>`<span class="pr">${esc(k)} ${fa(x)}</span>`).join('');
-  const m=i.total?`<span class="v" title="معتبر">${IC.tick}${fa(i.valid)}</span><span class="t" title="کل کانفیگ‌ها">${IC.list}${fa(i.total)}</span>`:'';
-  const ms=i.ms!=null?`<span class="ms">${fa(i.ms)}ms</span>`:'';
-  const nt=!i.total&&i.note?`<span class="nt">${esc(i.note)}</span>`:'';
+  const pr=Object.entries(i.protos||{}).slice(0,3).map(([k,x])=>`<span class="pr">${esc(k)} ${nf(x)}</span>`).join('');
+  const m=i.total?`<span class="v" title="${tr('valid')}">${IC.tick}${nf(i.valid)}</span><span class="t" title="${tr('total_cfg')}">${IC.list}${nf(i.total)}</span>`:'';
+  const ms=i.ms!=null?`<span class="ms">${nf(i.ms)}ms</span>`:'';
+  const nt=!i.total&&i.note?`<span class="nt">${esc(noteText(i.note))}</span>`:'';
   return`<article class="row" data-u="${esc(i.url)}">${stPill(i.status)}
-    <a class="u" href="${esc(i.url)}" target="_blank" rel="noopener" title="${esc(i.url)}${i.note?'\n'+esc(i.note):''}"><b>${esc(host)}</b><small>${esc(path)}</small></a>
+    <a class="u" href="${esc(i.url)}" target="_blank" rel="noopener" title="${esc(i.url)}${i.note?'\n'+esc(noteText(i.note)):''}"><b>${esc(host)}</b><small>${esc(path)}</small></a>
     <div class="m">${m}${nt}${ms}</div><div class="prs">${pr}</div>
     <div class="act">
-      <a class="btn sm ic" data-view href="#v=${encodeURIComponent(i.url)}" title="کانفیگ‌ها">${IC.list}</a>
-      <button class="btn sm ic" data-a="check" title="بررسی دوباره">${IC.refresh}</button>
-      <a class="btn sm ic" href="${esc(i.url)}" target="_blank" rel="noopener" title="باز کردن">${IC.open}</a>
-      <button class="btn sm ic" data-a="more" data-menu title="بیشتر">${IC.more}</button>
+      <a class="btn sm ic" data-view href="#v=${encodeURIComponent(i.url)}" title="${tr('configs')}">${IC.list}</a>
+      <button class="btn sm ic" data-a="check" title="${tr('recheck')}">${IC.refresh}</button>
+      <a class="btn sm ic" href="${esc(i.url)}" target="_blank" rel="noopener" title="${tr('open')}">${IC.open}</a>
+      <button class="btn sm ic" data-a="more" data-menu title="${tr('more')}">${IC.more}</button>
     </div></article>`;
 }
 function paint(){
@@ -639,21 +706,21 @@ function render(){
   const c=s=>S[s]||0;
   const done=n-c('pending')-c('checking');
   const prob=c('dead')+c('empty')+c('invalid');
-  $('stats').innerHTML=[['',fa(n),'','کل لینک‌ها'],['ok',fa(c('alive')),'','سالم'],['bad',fa(prob),'','مشکل‌دار'],['mute',fa(c('opaque')),'','غیرقابل خواندن'],['',fa(vc),`<i>${IC.list}${fa(tc)}</i>`,'کانفیگ معتبر']]
+  $('stats').innerHTML=[['',nf(n),'',tr('s_total')],['ok',nf(c('alive')),'',tr('s_alive')],['bad',nf(prob),'',tr('s_problem')],['mute',nf(c('opaque')),'',tr('s_opaque')],['',nf(vc),`<i>${IC.list}${nf(tc)}</i>`,tr('s_valid')]]
     .map(([k,v,x,l])=>`<div class="stat ${k}"><b>${v}${x}</b><span>${l}</span></div>`).join('');
   $('prog').style.width=(n?done/n*100:0)+'%';
-  $('run').innerHTML=running?IC.stop+'<span class="lb">توقف</span>':IC.play+`<span>${done===n&&n&&done>0?'بررسی دوباره':'شروع بررسی'}</span>`;
+  $('run').innerHTML=running?IC.stop+'<span class="lb">'+tr('b_stop')+'</span>':IC.play+`<span>${done===n&&n&&done>0?tr('b_again'):tr('b_start')}</span>`;
   const hard=items.reduce((a,i)=>a+(PROBLEM.has(i.status)&&!isSoft(i)?1:0),0);
-  $('purge').innerHTML=IC.trash+'<span class="lb">حذف مشکل‌دارها</span>'+(hard?`<span>${fa(hard)}</span>`:'');$('purge').disabled=!hard;
-  $('copy').innerHTML=IC.copy+'<span class="lb">کپی لیست</span>';$('copy').dataset.menu=1;
-  $('add').innerHTML=IC.plus+'<span class="lb">افزودن</span>';
-  $('rem').innerHTML=IC.undo+'<span class="lb">حذف‌شده‌ها</span>'+(removed.size?`<span>${fa(removed.size)}</span>`:'');
-  const chips=[['all','همه',n],['alive','سالم',c('alive')],['problem','مشکل‌دار',prob],['weak','ضعیف',c('weak')],['opaque','غیرقابل خواندن',c('opaque')]];
-  $('chips').innerHTML=chips.map(([k,l,x])=>`<button class="chip ${filter===k?'on':''}" data-f="${k}">${l}<em>${fa(x)}</em></button>`).join('');
+  $('purge').innerHTML=IC.trash+'<span class="lb">'+tr('b_purge')+'</span>'+(hard?`<span>${nf(hard)}</span>`:'');$('purge').disabled=!hard;
+  $('copy').innerHTML=IC.copy+'<span class="lb">'+tr('b_copy')+'</span>';$('copy').dataset.menu=1;
+  $('add').innerHTML=IC.plus+'<span class="lb">'+tr('b_add')+'</span>';
+  $('rem').innerHTML=IC.archive+'<span class="lb">'+tr('b_removed')+'</span>'+(removed.size?`<span>${nf(removed.size)}</span>`:'');
+  const chips=[['all',tr('f_all'),n],['alive',tr('f_alive'),c('alive')],['problem',tr('f_problem'),prob],['weak',tr('f_weak'),c('weak')],['opaque',tr('f_opaque'),c('opaque')]];
+  $('chips').innerHTML=chips.map(([k,l,x])=>`<button class="chip ${filter===k?'on':''}" data-f="${k}">${l}<em>${nf(x)}</em></button>`).join('');
   computeVis();
   $('vl').style.height=vis.length*RH+'px';
   $('msg').hidden=vis.length>0;
-  if(!vis.length)$('msg').textContent=n?'موردی پیدا نشد':'لینکی بارگذاری نشد';
+  if(!vis.length)$('msg').textContent=n?tr('none_found'):loadState==='loading'?tr('loading'):loadState==='fail'?tr('readme_fail'):tr('no_links');
   paint();
   if(D)detHeader();
 }
@@ -665,8 +732,8 @@ $('win').onclick=async e=>{
   const it=byUrl.get(b.closest('.row').dataset.u);if(!it)return;
   if(b.dataset.a==='check')checkItem(it);
   else if(b.dataset.a==='more')openMenu(b,[
-    {label:'کپی لینک',icon:IC.copy,fn:()=>copyText(it.url)},
-    {label:'حذف از لیست',icon:IC.trash,danger:1,fn:()=>{removeItems([it]);sched();toast('حذف شد')}}
+    {label:tr('copy_link'),icon:IC.copy,fn:()=>copyText(it.url)},
+    {label:tr('remove_item'),icon:IC.trash,danger:1,fn:()=>{removeItems([it]);sched();toast(tr('removed_t'))}}
   ]);
 };
 $('chips').onclick=e=>{const b=e.target.closest('[data-f]');if(b){filter=b.dataset.f;render()}};
@@ -676,16 +743,16 @@ $('dnsOn').onchange=e=>{dnsOn=e.target.checked;ls.set('sc_dns',dnsOn)};
 $('copy').onclick=e=>{
   const mk=(label,icon,f,file)=>({label,icon,count:items.filter(f).length,file,get:()=>items.filter(f).map(i=>i.url).join('\n')});
   openMenu(e.currentTarget,[
-    mk('سالم‌ها',IC.okc,i=>GOOD.has(i.status),'alive-subs.txt'),
-    mk('مشکل‌دارها',IC.xc,i=>PROBLEM.has(i.status),'bad-subs.txt'),
-    mk('همه',IC.list,()=>true,'all-subs.txt'),
-    {label:'نمایش فعلی',icon:IC.search,count:vis.length,file:'view-subs.txt',get:()=>vis.map(i=>i.url).join('\n')}
+    mk(tr('m_alive'),IC.okc,i=>GOOD.has(i.status),'alive-subs.txt'),
+    mk(tr('m_bad'),IC.xc,i=>PROBLEM.has(i.status),'bad-subs.txt'),
+    mk(tr('m_all'),IC.list,()=>true,'all-subs.txt'),
+    {label:tr('m_view'),icon:IC.search,count:vis.length,file:'view-subs.txt',get:()=>vis.map(i=>i.url).join('\n')}
   ]);
 };
 $('purge').onclick=()=>{
   const p=items.filter(i=>PROBLEM.has(i.status)&&!isSoft(i));if(!p.length)return;
   const soft=items.filter(i=>PROBLEM.has(i.status)&&isSoft(i)).length;
-  if(!confirm(`${fa(p.length)} لینک خراب از لیست حذف شود؟`+(soft?`\n${fa(soft)} لینک به‌خاطر خطای شبکه یا timeout نگه داشته می‌شود (ممکن است روی اینترنت شما فیلتر باشد).`:'')))return;
+  if(!confirm(tr('purge_confirm',{n:nf(p.length)})+(soft?'\n'+tr('purge_soft',{n:nf(soft)}):'')))return;
   removeItems(p);render();remRender();$('dRem').showModal();
 };
 $('add').onclick=()=>$('dAdd').showModal();
@@ -708,8 +775,8 @@ function cleanReadme(){
   return{text,dropped};
 }
 function remRender(){
-  $('remInfo').textContent=!removed.size?'':readmeText?`${fa(cleanReadme().dropped)} لینک از این لیست در README پیدا شد و در نسخه‌ی جدید حذف می‌شود`:'README هنوز خوانده نشده';
-  $('remList').innerHTML=[...removed].map(u=>`<div><span>${esc(u)}</span><button class="btn sm ic" data-r="${esc(u)}" title="بازگردانی">${IC.undo}</button></div>`).join('')||'<div class="msg">لیست خالی است</div>';
+  $('remInfo').textContent=!removed.size?'':readmeText?tr('rem_info',{n:nf(cleanReadme().dropped)}):tr('rem_noreadme');
+  $('remList').innerHTML=[...removed].map(u=>`<div><span>${esc(u)}</span><button class="btn sm ic" data-r="${esc(u)}" title="${tr('restore')}">${IC.undo}</button></div>`).join('')||`<div class="msg">${tr('list_empty')}</div>`;
 }
 $('rem').onclick=()=>{remRender();$('dRem').showModal()};
 $('remList').onclick=e=>{
@@ -718,26 +785,26 @@ $('remList').onclick=e=>{
 };
 $('remAll').onclick=()=>{const l=[...removed];removed.clear();ls.set('sc_removed',[]);addLinks(l);remRender();render()};
 $('remCopy').onclick=()=>copyText([...removed].join('\n'));
-$('rdCopy').onclick=()=>{if(!readmeText)return toast('README هنوز خوانده نشده');const r=cleanReadme();copyText(r.text,`README جدید کپی شد، ${fa(r.dropped)} لینک حذف شد`)};
-$('rdDl').onclick=()=>{if(!readmeText)return toast('README هنوز خوانده نشده');download(cleanReadme().text,'README.md')};
-$('remClear').onclick=()=>{if(!removed.size||!confirm('لیست حذف‌شده‌ها پاک شود؟ این کار را بعد از آپدیت README انجام دهید، وگرنه لینک‌های README دوباره در لیست ظاهر می‌شوند.'))return;removed.clear();ls.set('sc_removed',[]);remRender();render()};
+$('rdCopy').onclick=()=>{if(!readmeText)return toast(tr('rem_noreadme'));const r=cleanReadme();copyText(r.text,tr('readme_copied',{n:nf(r.dropped)}))};
+$('rdDl').onclick=()=>{if(!readmeText)return toast(tr('rem_noreadme'));download(cleanReadme().text,'README.md')};
+$('remClear').onclick=()=>{if(!removed.size||!confirm(tr('clear_confirm')))return;removed.clear();ls.set('sc_removed',[]);remRender();render()};
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
 document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
 
 /* ---------- detail view (separate page, data served by the worker) ---------- */
 function cRow(r){
-  const dt=r.d==='bad'?tag('bad',IC.x+'دامنه ناموجود')
+  const dt=r.d==='bad'?tag('bad',IC.x+tr('d_missing'))
     :r.d==='ok'||r.d==='ip'?tag('ok',IC.globe,'DNS')
-    :r.d==='err'?tag('wn',IC.alert+'DNS ناموفق')
+    :r.d==='err'?tag('wn',IC.alert+tr('d_failed'))
     :r.d==='pending'?tag('mu',IC.spin):'';
-  const iss=r.issues.length?tag('bad',IC.alert+esc(r.issues[0]),r.issues.join('، ')):'';
-  const ok=!r.bad?tag('ok',IC.tick,'معتبر'):'';
+  const iss=r.issues.length?tag('bad',IC.alert+esc(issueText(r.issues[0])),r.issues.map(issueText).join(lang==='fa'?'، ':', ')):'';
+  const ok=!r.bad?tag('ok',IC.tick,tr('valid')):'';
   return`<div class="c ${r.bad?'bad':''}"><span class="pr">${esc(r.proto)}</span>
     <div class="cn"><b title="${esc(r.name)}">${esc(r.name||r.host)}</b><small>${esc(r.host)}${r.port?':'+r.port:''}</small></div>
     ${r.net?`<span class="pr x">${esc(r.net)}</span>`:''}${r.sec?`<span class="pr x">${esc(r.sec)}</span>`:''}
     ${iss}${dt}${ok}
-    <button class="btn sm ic" data-a="ccheck" data-i="${r.i}" title="بررسی دامنه">${IC.globe}</button>
-    <button class="btn sm ic" data-a="ccopy" data-i="${r.i}" title="کپی کانفیگ">${IC.copy}</button></div>`;
+    <button class="btn sm ic" data-a="ccheck" data-i="${r.i}" title="${tr('check_domain')}">${IC.globe}</button>
+    <button class="btn sm ic" data-a="ccopy" data-i="${r.i}" title="${tr('copy_cfg')}">${IC.copy}</button></div>`;
 }
 let draf=0;const detSched=()=>{cancelAnimationFrame(draf);draf=requestAnimationFrame(detLoad)};
 async function detLoad(){
@@ -756,7 +823,7 @@ async function detLoad(){
   $('dmsg').hidden=!none;
   if(none){
     const it=D.it;
-    $('dmsg').textContent=it.status==='opaque'?'محتوای این لینک از مرورگر قابل خواندن نیست؛ با دکمه‌ی باز کردن بررسی کنید.':(it.status==='checking'||it.status==='pending')?'در حال بررسی':(!it.total?(it.note||LBL[it.status]):'موردی پیدا نشد');
+    $('dmsg').textContent=it.status==='opaque'?tr('d_opaque'):(it.status==='checking'||it.status==='pending')?tr('d_checking'):(!it.total?(noteText(it.note)||LBL(it.status)):tr('none_found'));
   }
 }
 function detHeader(){
@@ -765,13 +832,13 @@ function detHeader(){
   $('dhost').textContent=host;$('dpath').textContent=path;
   $('dst').outerHTML=stPill(it.status).replace('<span class="st','<span id="dst" class="st');
   $('dopen').href=it.url;
-  $('dstats').innerHTML=[['',fa(it.total),'کل کانفیگ‌ها'],['ok',fa(it.valid),'معتبر'],['bad',fa(it.total-it.valid),'نامعتبر'],['mute',it.ms!=null?fa(it.ms)+'ms':'','پاسخ']]
+  $('dstats').innerHTML=[['',nf(it.total),tr('d_total')],['ok',nf(it.valid),tr('d_valid')],['bad',nf(it.total-it.valid),tr('d_invalid')],['mute',it.ms!=null?nf(it.ms)+'ms':'',tr('d_resp')]]
     .map(([k,v,l])=>`<div class="stat ${k}"><b>${v||'&nbsp;'}</b><span>${l}</span></div>`).join('');
-  $('dchips').innerHTML=[['all','همه',it.total],['ok','معتبر',it.valid],['bad','نامعتبر',it.total-it.valid]]
-    .map(([k,l,x])=>`<button class="chip ${D.filter===k?'on':''}" data-df="${k}">${l}<em>${fa(x)}</em></button>`).join('');
+  $('dchips').innerHTML=[['all',tr('f_all'),it.total],['ok',tr('d_valid'),it.valid],['bad',tr('d_invalid'),it.total-it.valid]]
+    .map(([k,l,x])=>`<button class="chip ${D.filter===k?'on':''}" data-df="${k}">${l}<em>${nf(x)}</em></button>`).join('');
   const ps=Object.entries(it.protos||{});
   const cur=D.proto;
-  $('dp').innerHTML=`<option value="">همه پروتکل‌ها</option>`+ps.map(([k,x])=>`<option value="${esc(k)}" ${k===cur?'selected':''}>${esc(k)} (${fa(x)})</option>`).join('');
+  $('dp').innerHTML=`<option value="">${tr('all_protos')}</option>`+ps.map(([k,x])=>`<option value="${esc(k)}" ${k===cur?'selected':''}>${esc(k)} (${nf(x)})</option>`).join('');
   $('dp').hidden=ps.length<2;
 }
 async function showDetail(it){
@@ -816,10 +883,10 @@ $('dcopy').onclick=e=>{
   const it=D.it;
   const mk=(label,icon,count,p,file)=>({label,icon,count,file,get:()=>call({t:'raws',url:it.url,...p}).then(r=>r.text)});
   openMenu(e.currentTarget,[
-    mk('معتبرها',IC.okc,it.valid,{filter:'ok'},'valid-configs.txt'),
-    mk('نامعتبرها',IC.xc,it.total-it.valid,{filter:'bad'},'invalid-configs.txt'),
-    mk('همه',IC.list,it.total,{filter:'all'},'all-configs.txt'),
-    mk('نمایش فعلی',IC.search,null,{filter:D.filter,q:D.q,proto:D.proto},'view-configs.txt')
+    mk(tr('d_valid'),IC.okc,it.valid,{filter:'ok'},'valid-configs.txt'),
+    mk(tr('d_invalid'),IC.xc,it.total-it.valid,{filter:'bad'},'invalid-configs.txt'),
+    mk(tr('m_all'),IC.list,it.total,{filter:'all'},'all-configs.txt'),
+    mk(tr('m_view'),IC.search,null,{filter:D.filter,q:D.q,proto:D.proto},'view-configs.txt')
   ]);
 };
 $('dwin').onclick=async e=>{
@@ -830,9 +897,43 @@ $('dwin').onclick=async e=>{
 };
 
 /* init */
-addLinks(extras);render();route();
-fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{readmeText=md;addLinks(parseReadme(md));render();route()})
-  .catch(()=>{$('msg').hidden=false;$('msg').textContent='خواندن README ناموفق بود؛ لینک‌ها را دستی اضافه کنید'});
+/* language + contribute */
+function applyLang(){
+  const d=document.documentElement;d.lang=lang;d.dir=lang==='fa'?'rtl':'ltr';
+  document.title=tr('title');
+  document.querySelectorAll('[data-i18n]').forEach(e=>{e.textContent=tr(e.dataset.i18n)});
+  document.querySelectorAll('[data-i18n-ph]').forEach(e=>{e.placeholder=tr(e.dataset.i18nPh)});
+  document.querySelectorAll('[data-i18n-title]').forEach(e=>{e.title=tr(e.dataset.i18nTitle)});
+  document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',tr(e.dataset.i18nAria)));
+  setStars(starN);
+  $('nstar').innerHTML=IC.star+tr('star');
+  $('contrib').innerHTML=IC.pr+'<span class="lb">'+tr('contribute')+'</span>';
+  $('lang').innerHTML=IC.globe+'<span>'+(lang==='fa'?'FA':'EN')+'</span>';$('lang').title=tr('lang_to');
+  $('remCopy').innerHTML=IC.copy+tr('rem_copy');$('remAll').innerHTML=IC.undo+tr('rem_all');$('remClear').innerHTML=IC.trash+tr('rem_clear');
+  $('rdCopy').innerHTML=IC.copy+tr('rd_copy');$('rdDl').innerHTML=IC.dl+tr('rd_dl');$('rdEdit').innerHTML=IC.open+tr('rd_edit');
+  closeMenu();render();remRender();
+  if(D){detHeader();detSched()}
+}
+$('lang').onclick=()=>{
+  lang=lang==='fa'?'en':'fa';
+  try{localStorage.setItem('sc_lang',lang)}catch(e){}
+  if(lang==='fa'&&window.__font)window.__font();
+  applyLang();
+};
+$('contrib').onclick=e=>{
+  const issue=(title,body)=>`${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+  openMenu(e.currentTarget,[
+    {label:tr('c_add'),icon:IC.plus,href:issue('Add link: ','Subscription link(s):\n\n')},
+    {label:tr('c_report'),icon:IC.alert,href:issue('Dead link: ','Link:\n\nWhat happens (404, empty, no configs...):\n')},
+    {label:tr('c_pr'),icon:IC.pencil,href:REPO+'/edit/main/README.md'},
+    {label:tr('c_issues'),icon:IC.list,href:REPO+'/issues'},
+    {label:tr('c_repo'),icon:IC.gh,href:REPO}
+  ]);
+};
+
+addLinks(extras);applyLang();route();
+fetch(README,{cache:'no-store'}).then(r=>r.ok?r.text():Promise.reject()).then(md=>{readmeText=md;loadState='ready';addLinks(parseReadme(md));render();route()})
+  .catch(()=>{loadState='fail';render()});
 </script>
 </body>
 </html>
