@@ -171,6 +171,43 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
 .toast{position:fixed;inset-inline:0;bottom:1.2rem;margin:auto;width:max-content;max-width:90vw;background:var(--ink);color:var(--bg);padding:.45rem 1.1rem;border-radius:99px;font-size:.85rem;opacity:0;transform:translateY(1rem);pointer-events:none;transition:.25s;z-index:70}
 .toast.on{opacity:1;transform:none}
 @media(max-width:700px){.row .st .lb,.lb{display:none}.row .st{min-width:0;width:1.7rem;padding:0;justify-content:center}.prs{display:none}.m .ms,.m .nt{display:none}.m{width:auto}.c .pr.x{display:none}}
+
+dialog[open]{animation:pop .18s ease}
+@keyframes pop{from{opacity:0;transform:translateY(.6rem) scale(.97)}}
+@media(prefers-reduced-motion:reduce){dialog[open]{animation:none}}
+dialog.cf{width:min(26rem,92vw);text-align:center}
+.cf .ci{--c:var(--accent);width:3rem;height:3rem;margin:.1rem auto .7rem;border-radius:50%;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.cf.dg .ci{--c:var(--bad)}
+.cf .ci svg{width:1.4rem;height:1.4rem}
+.cf h2{margin:0 0 .4rem;font-size:1.1rem}
+.cf p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.75;white-space:pre-line}
+.cf .df{justify-content:center;margin-top:1.1rem}
+.cf .df .btn{flex:1 1 8rem;height:2.6rem}
+.btn.pri.dg{background:linear-gradient(135deg,#dc2626,#ef4444);box-shadow:0 8px 20px -8px #dc2626}
+dialog.cp textarea{height:6.5rem}
+.rl{overscroll-behavior:contain}
+@media(max-width:600px){
+  main{padding:.8rem .65rem 5.5rem}
+  header{gap:.5rem}h1{font-size:1.1rem}.logo{width:2.1rem;height:2.1rem}
+  .hd{gap:.3rem}.btn{min-height:2.4rem}.btn.ic{width:2.4rem;height:2.4rem}.btn.star{height:2.4rem}
+  .btn.sm{min-height:0;height:2.1rem}.btn.sm.ic{width:2.1rem}
+  input[type=search],select{font-size:16px;height:2.5rem}textarea{font-size:16px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tools .search{flex:1 1 100%}.tools #run{flex:1 1 100%}.tools select{flex:1 1 8rem}
+  .tools .btn:not(.ic):not(#run){flex:1 1 auto}
+  .row{gap:.45rem;padding:0 .5rem}.c{gap:.4rem;padding:0 .5rem}
+  dialog,dialog.cf{width:100%;max-width:100%;margin:auto 0 0;border-radius:1.2rem 1.2rem 0 0;border-bottom:0;max-height:90dvh;padding:1.1rem 1rem calc(1.1rem + env(safe-area-inset-bottom,0px))}
+  .df .btn{flex:1 1 auto;min-height:2.6rem}.df .btn.sm{min-height:0;height:2.2rem}
+  .rl{max-height:42vh}
+  .nudge{width:92vw;max-width:92vw;border-radius:1rem;flex-wrap:wrap;justify-content:center;bottom:calc(1rem + env(safe-area-inset-bottom,0px))}
+  .toast{bottom:calc(1.2rem + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:480px){
+  header{flex-wrap:wrap;row-gap:.55rem}.brand{flex:1 1 auto}h1{white-space:nowrap}
+  .hd{flex:1 1 auto;flex-wrap:nowrap;justify-content:space-between}
+  .act{gap:.15rem}
+}
+@media(max-width:380px){.btn.star em{display:none}.stat{padding:.5rem .65rem}}
 </style>
 </head>
 <body>
@@ -249,6 +286,17 @@ textarea{width:100%;height:9rem;padding:.5rem .7rem;direction:ltr;font-family:ui
   <div class="df" style="margin-top:.4rem">
     <button class="btn sm" id="remCopy"></button><button class="btn sm" id="remAll"></button><button class="btn sm danger" id="remClear"></button><button class="btn sm" data-close data-i18n="close">Close</button>
   </div>
+</dialog>
+<dialog id="dConfirm" class="cf" aria-labelledby="cfT" aria-describedby="cfM">
+  <div class="ci" id="cfI"></div>
+  <h2 id="cfT"></h2>
+  <p id="cfM"></p>
+  <div class="df"><button class="btn" id="cfNo"></button><button class="btn pri" id="cfYes"></button></div>
+</dialog>
+<dialog id="dCopy" class="cp" aria-labelledby="cpT">
+  <h2 id="cpT"></h2>
+  <textarea id="cpA" readonly dir="ltr"></textarea>
+  <div class="df"><button class="btn pri" id="cpSel"></button><button class="btn" data-close data-i18n="close">Close</button></div>
 </dialog>
 <div class="nudge" id="nudge" hidden>
   <span class="ns" id="nsico"></span>
@@ -484,7 +532,7 @@ en:{title:'Sub Checker',star:'Star',star_title:'Star on GitHub',home:'Home',them
  search:'Search',sort:'Sort',sort_default:'Default',sort_cfg:'Most configs',sort_ms:'Fastest',sort_st:'Problems first',
  dns_title:'Check config domains via DNS',loading:'Loading…',back:'Back',open_link:'Open link',recheck:'Check again',check_domains:'Check domains',
  copy:'Copy',protocol:'Protocol',add_title:'Add links',extra_ph:'One link per line',add_ok:'Add',close:'Close',rem_title:'Removed links',
- nudge:'If this helped you, give it a star',download:'Download',copied:'Copied',copy_prompt:'Copy:',worker_err:'Worker error',
+ nudge:'If this helped you, give it a star',download:'Download',copied:'Copied',copy_prompt:'Copy:',cancel:'Cancel',purge_title:'Remove broken links',purge_ok:'Remove',clear_title:'Clear the removed list',clear_ok:'Clear',copy_title:'Copy manually',select_all:'Select & copy',doc_title:'V2Ray Sub Checker – Test Subscription Links Online (VLESS, VMess, Trojan)',worker_err:'Worker error',
  st_alive:'Alive',st_weak:'Weak',st_empty:'Empty',st_invalid:'Invalid',st_opaque:'Unreadable',st_dead:'Dead',st_skip:'Skipped',st_pending:'Pending',st_checking:'Checking',
  s_total:'Total links',s_alive:'Alive',s_problem:'Problems',s_opaque:'Unreadable',s_valid:'Valid configs',
  b_stop:'Stop',b_start:'Start check',b_again:'Check again',b_purge:'Remove broken',b_copy:'Copy list',b_add:'Add',b_removed:'Removed',
@@ -510,7 +558,7 @@ fa:{title:'بررسی ساب‌ها',star:'ستاره',star_title:'ستاره د
  search:'جستجو',sort:'مرتب‌سازی',sort_default:'پیش‌فرض',sort_cfg:'بیشترین کانفیگ',sort_ms:'سریع‌ترین',sort_st:'مشکل‌دار اول',
  dns_title:'بررسی دامنه‌ی کانفیگ‌ها با DNS',loading:'در حال خواندن',back:'بازگشت',open_link:'باز کردن لینک',recheck:'بررسی دوباره',check_domains:'بررسی دامنه‌ها',
  copy:'کپی',protocol:'پروتکل',add_title:'افزودن لینک',extra_ph:'هر خط یک لینک',add_ok:'افزودن',close:'بستن',rem_title:'حذف‌شده‌ها',
- nudge:'اگه به دردت خورد، یه ستاره بزن',download:'دانلود',copied:'کپی شد',copy_prompt:'کپی کنید:',worker_err:'خطا در پردازشگر',
+ nudge:'اگه به دردت خورد، یه ستاره بزن',download:'دانلود',copied:'کپی شد',copy_prompt:'کپی کنید:',cancel:'انصراف',purge_title:'حذف لینک‌های خراب',purge_ok:'حذف کن',clear_title:'پاک کردن لیست حذف‌شده‌ها',clear_ok:'پاک کن',copy_title:'کپی دستی',select_all:'انتخاب و کپی',doc_title:'چکر لینک ساب V2Ray – بررسی سالم بودن لینک‌های سابسکریپشن',worker_err:'خطا در پردازشگر',
  st_alive:'سالم',st_weak:'ضعیف',st_empty:'خالی',st_invalid:'نامعتبر',st_opaque:'غیرقابل خواندن',st_dead:'خراب',st_skip:'ردشده',st_pending:'در انتظار',st_checking:'در حال بررسی',
  s_total:'کل لینک‌ها',s_alive:'سالم',s_problem:'مشکل‌دار',s_opaque:'غیرقابل خواندن',s_valid:'کانفیگ معتبر',
  b_stop:'توقف',b_start:'شروع بررسی',b_again:'بررسی دوباره',b_purge:'حذف مشکل‌دارها',b_copy:'کپی لیست',b_add:'افزودن',b_removed:'حذف‌شده‌ها',
@@ -613,7 +661,27 @@ $('dnsOn').checked=dnsOn;
 /* helpers */
 let tt=0;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2200)}
 async function copyText(t,msg=tr('copied')){
-  try{await navigator.clipboard.writeText(t);toast(msg)}catch(e){prompt(tr('copy_prompt'),t)}
+  try{await navigator.clipboard.writeText(t);toast(msg)}catch(e){askCopy(t)}
+}
+/* custom dialogs (replace native confirm/prompt) */
+function askConfirm({title,msg,ok,danger=true}){
+  return new Promise(res=>{
+    const d=$('dConfirm');let v=false;
+    d.classList.toggle('dg',danger);$('cfYes').classList.toggle('dg',danger);
+    $('cfI').innerHTML=danger?IC.alert:IC.okc;
+    $('cfT').textContent=title;$('cfM').textContent=msg;
+    $('cfYes').textContent=ok;$('cfNo').textContent=tr('cancel');
+    const done=()=>{d.removeEventListener('close',done);res(v)};
+    d.addEventListener('close',done);
+    $('cfYes').onclick=()=>{v=true;d.close()};
+    $('cfNo').onclick=()=>d.close();
+    d.showModal();$('cfNo').focus();
+  });
+}
+function askCopy(t){
+  $('cpT').textContent=tr('copy_title');$('cpSel').textContent=tr('select_all');$('cpA').value=t;
+  $('cpSel').onclick=()=>{$('cpA').focus();$('cpA').select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}if(ok)toast(tr('copied'))};
+  $('dCopy').showModal();$('cpA').select();
 }
 function download(text,name){
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));
@@ -776,10 +844,10 @@ $('copy').onclick=e=>{
     {label:tr('m_view'),icon:IC.search,count:vis.length,file:'view-subs.txt',get:()=>vis.map(i=>i.url).join('\n')}
   ]);
 };
-$('purge').onclick=()=>{
+$('purge').onclick=async()=>{
   const p=items.filter(i=>PROBLEM.has(i.status)&&!isSoft(i));if(!p.length)return;
   const soft=items.filter(i=>PROBLEM.has(i.status)&&isSoft(i)).length;
-  if(!confirm(tr('purge_confirm',{n:nf(p.length)})+(soft?'\n'+tr('purge_soft',{n:nf(soft)}):'')))return;
+  if(!await askConfirm({title:tr('purge_title'),msg:tr('purge_confirm',{n:nf(p.length)})+(soft?'\n\n'+tr('purge_soft',{n:nf(soft)}):''),ok:tr('purge_ok')}))return;
   removeItems(p);render();remRender();$('dRem').showModal();
 };
 $('add').onclick=()=>$('dAdd').showModal();
@@ -814,7 +882,7 @@ $('remAll').onclick=()=>{const l=[...removed];removed.clear();ls.set('sc_removed
 $('remCopy').onclick=()=>copyText([...removed].join('\n'));
 $('rdCopy').onclick=()=>{if(!readmeText)return toast(tr('rem_noreadme'));const r=cleanReadme();copyText(r.text,tr('readme_copied',{n:nf(r.dropped)}))};
 $('rdDl').onclick=()=>{if(!readmeText)return toast(tr('rem_noreadme'));download(cleanReadme().text,'README.md')};
-$('remClear').onclick=()=>{if(!removed.size||!confirm(tr('clear_confirm')))return;removed.clear();ls.set('sc_removed',[]);remRender();render()};
+$('remClear').onclick=async()=>{if(!removed.size||!await askConfirm({title:tr('clear_title'),msg:tr('clear_confirm'),ok:tr('clear_ok')}))return;removed.clear();ls.set('sc_removed',[]);remRender();render()};
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
 document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
 
@@ -927,7 +995,7 @@ $('dwin').onclick=async e=>{
 /* language + contribute */
 function applyLang(){
   const d=document.documentElement;d.lang=lang;d.dir=lang==='fa'?'rtl':'ltr';
-  document.title=tr('title');
+  document.title=tr('doc_title');
   document.querySelectorAll('[data-i18n]').forEach(e=>{e.textContent=tr(e.dataset.i18n)});
   document.querySelectorAll('[data-i18n-ph]').forEach(e=>{e.placeholder=tr(e.dataset.i18nPh)});
   document.querySelectorAll('[data-i18n-title]').forEach(e=>{e.title=tr(e.dataset.i18nTitle)});
