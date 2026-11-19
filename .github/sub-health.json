@@ -1,23 +1,37 @@
 {
  "https://raw.githubusercontent.com/Amirrezaheydari81/free-v2ray-for-iran/main/index.html": {
-  "count": 1,
+  "count": 2,
   "first": "2026-11-18",
   "kind": "hard",
-  "last": "2026-11-18",
+  "last": "2026-11-19",
   "reason": "noconfigs"
  },
  "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/new.txt": {
-  "count": 1,
+  "count": 2,
   "first": "2026-11-18",
   "kind": "hard",
-  "last": "2026-11-18",
+  "last": "2026-11-19",
+  "reason": "empty"
+ },
+ "https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/all_configs.txt": {
+  "count": 1,
+  "first": "2026-11-19",
+  "kind": "hard",
+  "last": "2026-11-19",
   "reason": "empty"
  },
  "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt": {
-  "count": 1,
+  "count": 2,
   "first": "2026-11-18",
   "kind": "hard",
-  "last": "2026-11-18",
+  "last": "2026-11-19",
   "reason": "noconfigs"
+ },
+ "https://raw.githubusercontent.com/kort0881/vpn-checker-backend/main/checked/RU_Best/ru_white_part3.txt": {
+  "count": 1,
+  "first": "2026-11-19",
+  "kind": "hard",
+  "last": "2026-11-19",
+  "reason": "empty"
  }
 }

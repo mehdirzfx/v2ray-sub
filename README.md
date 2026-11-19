@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **1133 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **1129 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/18**
+**Last update on: 2026/11/19**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -74,7 +74,7 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Mixed Subscription Links
 
-All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **750 links.**
+All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **748 links.**
 
 ```
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
@@ -778,7 +778,6 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/count
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gr.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/id.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ie.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/iq.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ir.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/it.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/kz.txt
@@ -790,7 +789,6 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/count
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ng.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/no.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pe.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pt.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ro.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ru.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se.txt
@@ -1047,7 +1045,7 @@ https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/gi
 
 ## Clash and Mihomo YAML Links
 
-YAML profiles for Clash, Clash Meta / Mihomo, Clash Verge and compatible clients. **145 links.**
+YAML profiles for Clash, Clash Meta / Mihomo, Clash Verge and compatible clients. **143 links.**
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml
@@ -1167,7 +1165,6 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/count
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/id_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ie_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/in_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/iq_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ir_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/it_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/jp_clash.yaml
@@ -1183,7 +1180,6 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/count
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/no_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pe_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pl_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pt_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ro_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ru_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml
@@ -1431,7 +1427,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/18**
+**آخرین به‌روزرسانی: 2026/11/19**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
