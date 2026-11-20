@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **1129 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **1125 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/19**
+**Last update on: 2026/11/20**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -74,7 +74,7 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Mixed Subscription Links
 
-All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **748 links.**
+All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **744 links.**
 
 ```
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
@@ -91,7 +91,6 @@ https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS+All_RUS.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt
-https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_002.txt
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_003.txt
@@ -269,7 +268,6 @@ https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/all_configs
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/29.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/heavy/configs.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/heavy/configs_base64.txt
-https://raw.githubusercontent.com/Amirrezaheydari81/free-v2ray-for-iran/main/index.html
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_base64_Sub.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_443.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/split/tls.txt
@@ -320,7 +318,6 @@ https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/configs/mix_sub
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/v2ray-base64-0003.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/stable/v2ray-base64-0002.txt
 https://raw.githubusercontent.com/whoahaow/rjsxrd/main/githubmirror/bypass/bypass-all.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/new.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/12.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt
@@ -702,7 +699,6 @@ https://raw.githubusercontent.com/FLAT447/v2ray-lists/main/BASE64/BLACK_LTE.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T024607Z-922af1190fe6/all.txt
 https://raw.githubusercontent.com/TelegaVPN/free-vpn-keys/main/sub/base64/all.txt
 https://raw.githubusercontent.com/TelegaVPN/free-vpn-keys/main/sub/v2raytun/all.txt
-https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8444.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-KR.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/other/countries/DE/alive_DE.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/other/countries/NL/alive_NL.txt
@@ -1427,7 +1423,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/19**
+**آخرین به‌روزرسانی: 2026/11/20**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
