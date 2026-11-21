@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **1125 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **1122 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/20**
+**Last update on: 2026/11/21**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -74,7 +74,7 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Mixed Subscription Links
 
-All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **744 links.**
+All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **742 links.**
 
 ```
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
@@ -378,7 +378,6 @@ https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/cn/al
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/cz/all.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/kr/all.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/v2ray-base64-0005.txt
-https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/all_configs.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_80.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8080.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt
@@ -768,7 +767,6 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/count
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ch.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cz.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ee.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/eg.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/es.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fi.txt
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gr.txt
@@ -1041,7 +1039,7 @@ https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/gi
 
 ## Clash and Mihomo YAML Links
 
-YAML profiles for Clash, Clash Meta / Mihomo, Clash Verge and compatible clients. **143 links.**
+YAML profiles for Clash, Clash Meta / Mihomo, Clash Verge and compatible clients. **142 links.**
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml
@@ -1151,7 +1149,6 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/count
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cz_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/de_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ee_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/eg_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/es_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fi_clash.yaml
 https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fr_clash.yaml
@@ -1423,7 +1420,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/20**
+**آخرین به‌روزرسانی: 2026/11/21**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
