@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **1122 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **1121 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/21**
+**Last update on: 2026/11/22**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -823,7 +823,7 @@ https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-p
 
 ## VLESS Subscription Links
 
-VLESS configs, including VLESS + Reality and VLESS + XHTTP/WS/gRPC where available. **70 links.**
+VLESS configs, including VLESS + Reality and VLESS + XHTTP/WS/gRPC where available. **69 links.**
 
 ```
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
@@ -837,7 +837,6 @@ https://raw.githubusercontent.com/Kolandone/v2raycollector/refs/heads/main/vless
 https://raw.githubusercontent.com/Leon406/SubCrawler/master/sub/share/vless
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt
 https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt
-https://raw.githubusercontent.com/F0rc3Run/F0rc3Run/main/splitted-by-protocol/vless.txt
 https://raw.githubusercontent.com/arshiacomplus/v2rayExtractor/refs/heads/main/vless.html
 https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Protocols/vless.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/vless.txt
@@ -1420,7 +1419,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/21**
+**آخرین به‌روزرسانی: 2026/11/22**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
