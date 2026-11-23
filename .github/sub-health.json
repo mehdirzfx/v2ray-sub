@@ -1,1 +1,9 @@
-{}
+{
+ "https://raw.githubusercontent.com/kort0881/vpn-checker-backend/main/checked/RU_Best/ru_white_part3.txt": {
+  "count": 1,
+  "first": "2026-11-23",
+  "kind": "hard",
+  "last": "2026-11-23",
+  "reason": "empty"
+ }
+}
