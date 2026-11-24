@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **1121 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **936 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/22**
+**Last update on: 2026/11/24**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -74,7 +74,7 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Mixed Subscription Links
 
-All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **742 links.**
+All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **641 links.**
 
 ```
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
@@ -91,14 +91,6 @@ https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS+All_RUS.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_002.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_003.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_004.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_005.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_006.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_007.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_008.txt
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-1.txt
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-2.txt
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/mini/m1n1-5ub-3.txt
@@ -237,27 +229,12 @@ https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/3.tx
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/all/configs.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/all/configs_base64.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/10.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_015.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0009.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_014.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0010.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0002.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0007.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_010.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_001.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_004.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_005.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_006.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_007.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_009.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_011.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_012.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_013.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0003.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0006.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_002.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_003.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_008.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0008.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0005.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs_dev/proxies_chunk_0004.txt
@@ -321,7 +298,6 @@ https://raw.githubusercontent.com/whoahaow/rjsxrd/main/githubmirror/bypass/bypas
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/12.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/nl.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/v2ray-base64-0004.txt
 https://raw.githubusercontent.com/rekt0ro/ProxyRift/main/subscriptions/all.txt
 https://raw.githubusercontent.com/rekt0ro/ProxyRift/main/subscriptions/all-base64.txt
@@ -354,7 +330,6 @@ https://raw.githubusercontent.com/Mehinator/Derafsh/main/derafsh_servers.txt
 https://raw.githubusercontent.com/MohammadBahemmat/V2ray-Collector/main/all_servers.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/all/configs.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/all/configs_base64.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/patt/all.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/30.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BG.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/ES.txt
@@ -387,14 +362,12 @@ https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_p
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8443.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IE.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/4.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/us.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/10ium-HiN-VPN-mix
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/normal/10ium-HiN-VPN-mix
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/7.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/tls.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/tls_base64.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-JP.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/hk.txt
 https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/verified_configs.txt
 https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/main/public/Top500.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Sub5.txt
@@ -475,7 +448,6 @@ https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/sg/al
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/si/all.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/tr/all.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/DE.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gb.txt
 https://raw.githubusercontent.com/ProblemTheCode/SylphNet-public/main/sub/sub.txt
 https://raw.githubusercontent.com/ProblemTheCode/SylphNet-public/main/sub/sub_plain.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/8.txt
@@ -498,7 +470,6 @@ https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BZ.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/split/grpc.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/25.txt
 https://raw.githubusercontent.com/Freedom-Guard-Builder/Freedom-Finder/main/out/configs/all.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/jp.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub32_base64.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/cy/all.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T101606Z-8b610267f225/all.txt
@@ -517,7 +488,6 @@ https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reach
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T205059Z-e095b7999517/all.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T214755Z-1d7dc6596f9f/all.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T221036Z-7a61e8c7e2de/all.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/sg.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/fi/all.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/22.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T092627Z-6cae1b655c08/all.txt
@@ -601,7 +571,6 @@ https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BE.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/Canada.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/non_tls.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/non_tls_base64.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/de.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/GR.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-SG.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/DK.txt
@@ -623,7 +592,6 @@ https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/mix
 https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub22_base64.txt
 https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/au.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/6.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MX.txt
 https://raw.githubusercontent.com/Freedom-Guard-Builder/Freedom-Finder/main/out/channels/i10VPN.txt
@@ -631,11 +599,9 @@ https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/Countrie
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AL.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T080152Z-884e232e02b9/all.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/FR.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ca.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8880.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T071701Z-74d08f01ee28/all.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/regions/Asia.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pl.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub21_base64.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T062212Z-ceb3da311652/all.txt
 https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/main/category/ws.txt
@@ -669,12 +635,10 @@ https://raw.githubusercontent.com/sakha1370/OpenRay/main/output_iran/others_top1
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/main_top100_checked.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output_iran/irancell_top100.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/subscriptions/all.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/kr.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2083.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T042544Z-4de350978a3f/all.txt
 https://raw.githubusercontent.com/mfuu/FreeProxies/master/sub
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/other/countries/US/alive_US.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/tw.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_18000.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CL.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/FI.txt
@@ -711,8 +675,6 @@ https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub29_base6
 https://raw.githubusercontent.com/NiREvil/vless/main/edge/waste/All%20%20Warp%20Windscribe%20Poroton%20Hysteria
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Countrys/Canada.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/JO.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fr.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/in.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/location/base64/US
 https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/location/normal/US
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/23.txt
@@ -728,7 +690,6 @@ https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Bas
 https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/main/category/United%20States.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/v2rayN_PC/WHITE-CIDR-RU-all-v2rayN.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub33_base64.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cn.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AZ.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T005946Z-e8d9c4913f48/all.txt
 https://raw.githubusercontent.com/R3ZARAHIMI/tg-v2ray-configs-every2h/main/regions/conf-UK.txt
@@ -757,73 +718,11 @@ https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Subscribes/sub20.txt
 https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MT.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/docs/subscriptions/alive-stable
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/subscriptions/reachable-fast.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/all_configs.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/sni_v2ray/batch_001.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ae.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/al.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/at.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/bg.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/br.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ch.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cz.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ee.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/es.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fi.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gr.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/id.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ie.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ir.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/it.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/kz.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lt.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lv.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/mn.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/mx.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/my.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ng.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/no.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pe.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ro.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ru.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/th.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/tr.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/vn.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/za.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/patt/batches/batch_001.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/sni/all_configs_sni.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_001.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_002.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_003.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_004.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_005.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_006.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_007.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_008.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_009.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_010.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_011.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_012.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_013.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_014.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_015.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_016.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_017.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_018.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_019.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass-sni/batch_020.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_016.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_017.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_018.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_019.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_020.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/batch_021.txt
 ```
 
 ## VLESS Subscription Links
 
-VLESS configs, including VLESS + Reality and VLESS + XHTTP/WS/gRPC where available. **69 links.**
+VLESS configs, including VLESS + Reality and VLESS + XHTTP/WS/gRPC where available. **64 links.**
 
 ```
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
@@ -831,7 +730,6 @@ https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/vl.txt
 https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless.txt
 https://raw.githubusercontent.com/10ium/ScrapeAndCategorize/refs/heads/main/output_configs/Vless.txt
 https://raw.githubusercontent.com/Kolandone/v2raycollector/refs/heads/main/vless.txt
 https://raw.githubusercontent.com/Leon406/SubCrawler/master/sub/share/vless
@@ -846,7 +744,6 @@ https://raw.githubusercontent.com/HosseinKoofi/GO_V2rayCollector/main/vless_iran
 https://raw.githubusercontent.com/10ium/V2Hub3/refs/heads/main/Split/Normal/reality
 https://raw.githubusercontent.com/Mosifree/-FREE2CONFIG/refs/heads/main/Reality
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ir/vless.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/tcp-pass/reality.txt
 https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/output/vless.txt
 https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/kind/vless.txt
@@ -867,7 +764,6 @@ https://raw.githubusercontent.com/kasesm/Free-Config/main/vless_sub.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/10ium-V2Hub3-reality
 https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/main/public/vless.txt
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Protocols/vless.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/reality/reality.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/10ium-HiN-VPN-vless
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/normal/10ium-HiN-VPN-vless
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/vless.txt
@@ -893,16 +789,13 @@ https://raw.githubusercontent.com/TelegaVPN/free-vpn-keys/main/sub/base64/vless.
 https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/ru-sni-local/vless.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/v2rayN_PC/Vless-Reality-White-Lists-Rus-Mobile-v2rayN.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Base64/PROXIES_ONLY/Vless-Reality-White-Lists-Rus-Mobile-base64.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/patt/protocols/vless.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/sni/protocols/vless_sni.txt
 ```
 
 ## VMess Subscription Links
 
-VMess configs (WebSocket, TCP, gRPC and other transports). **31 links.**
+VMess configs (WebSocket, TCP, gRPC and other transports). **29 links.**
 
 ```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess.txt
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/vm.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt
 https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt
@@ -932,15 +825,13 @@ https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/F0rc3Run_vmess
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/normal/F0rc3Run_vmess
 https://raw.githubusercontent.com/kasesm/Free-Config/main/vmess_sub.txt
 https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/main/public/vmess.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/sni/protocols/vmess_sni.txt
 ```
 
 ## Trojan Subscription Links
 
-Trojan configs over TLS. **32 links.**
+Trojan configs over TLS. **29 links.**
 
 ```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan.txt
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/tr.txt
 https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/splitted/trojan.txt
 https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/trojan
@@ -970,16 +861,13 @@ https://raw.githubusercontent.com/MohammadBahemmat/V2ray-Collector/main/servers/
 https://raw.githubusercontent.com/kasesm/Free-Config/main/trojan_sub.txt
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Protocols/trojan.txt
 https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/tr
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/patt/protocols/trojan.txt
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/sni/protocols/trojan_sni.txt
 ```
 
 ## Shadowsocks Subscription Links
 
-Shadowsocks and ShadowsocksR configs. **36 links.**
+Shadowsocks and ShadowsocksR configs. **35 links.**
 
 ```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss.txt
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/ss.txt
 https://raw.githubusercontent.com/Argh94/V2RayAutoConfig/refs/heads/main/configs/ShadowSocks.txt
 https://raw.githubusercontent.com/Kolandone/v2raycollector/refs/heads/main/ss.txt
@@ -1038,14 +926,9 @@ https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/gi
 
 ## Clash and Mihomo YAML Links
 
-YAML profiles for Clash, Clash Meta / Mihomo, Clash Verge and compatible clients. **142 links.**
+YAML profiles for Clash, Clash Meta / Mihomo, Clash Verge and compatible clients. **82 links.**
 
 ```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash.yaml
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash.yaml
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash.yaml
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash.yaml
 https://raw.githubusercontent.com/Mosifree/-FREE2CONFIG/refs/heads/main/Clash_Movaghat
 https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml
 https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta-2.yaml
@@ -1071,7 +954,6 @@ https://raw.githubusercontent.com/rekt0ro/ProxyRift/main/subscriptions/all-clash
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/clash.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/clash-0001.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/clash-0002.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/sni/clash_sni.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/clash-0006.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/secure/clash.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/clash-0003.yaml
@@ -1089,7 +971,6 @@ https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/stab
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/stable/clash-0003.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/clash-JP.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/reality/reality.yaml
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/clash-0005.yaml
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/clash/10ium-HiN-VPN-mix.yaml
 https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/nodes/blues.yaml
@@ -1130,64 +1011,11 @@ https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Cla
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Clash/RU_DIRECT/BLACK_SS%2BAll_RUS_clash_rudirect.yaml
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Clash/GLOBAL/Vless-Reality-White-Lists-Rus-Mobile-clash-global.yaml
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Clash/PROXIES_ONLY/BLACK_SS%2BAll_RUS_clash_proxies.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/clash/batch_001.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/clash/batch_002.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/clash/batch_003.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/clash/batch_004.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/clash/batch_005.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/batches/clash/batch_006.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ae_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/al_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/at_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/au_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/bg_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/br_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ca_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ch_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cn_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cz_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/de_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ee_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/es_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fi_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/fr_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gb_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gr_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/hk_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/id_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ie_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/in_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ir_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/it_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/jp_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/kr_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/kz_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lt_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lv_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/mn_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/mx_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/my_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ng_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/nl_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/no_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pe_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/pl_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ro_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ru_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/sg_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/th_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/tr_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/tw_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/us_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/vn_clash.yaml
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/za_clash.yaml
 ```
 
 ## Sing-box and JSON Links
 
-JSON profiles for sing-box, Xray and NekoBox style clients. **57 links.**
+JSON profiles for sing-box, Xray and NekoBox style clients. **44 links.**
 
 ```
 https://raw.githubusercontent.com/Shayanthn/V2ray-Tester-Pro/main/working_telegram_proxies.json
@@ -1234,19 +1062,6 @@ https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/vless.js
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output_iran/converted/mci_top100_singbox_config.json
 https://raw.githubusercontent.com/TelegaVPN/free-vpn-keys/main/sub/singbox/all.json
 https://raw.githubusercontent.com/NiREvil/vless/main/edge/waste/All%20Guest%20SINGBOX
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/all_configs.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_001.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_002.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_003.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_004.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_005.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_006.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_007.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/batches/batch_008.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/protocols/ss.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/protocols/trojan.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/protocols/vless.json
-https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/farg/protocols/vmess.json
 ```
 
 ## Sources and Credits
@@ -1419,7 +1234,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/22**
+**آخرین به‌روزرسانی: 2026/11/24**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
