@@ -1,1 +1,23 @@
-{}
+{
+ "https://raw.githubusercontent.com/Kolandone/v2raycollector/refs/heads/main/ss.txt": {
+  "count": 1,
+  "first": "2026-11-25",
+  "kind": "hard",
+  "last": "2026-11-25",
+  "reason": "empty"
+ },
+ "https://raw.githubusercontent.com/Kolandone/v2raycollector/refs/heads/main/vless.txt": {
+  "count": 1,
+  "first": "2026-11-25",
+  "kind": "hard",
+  "last": "2026-11-25",
+  "reason": "empty"
+ },
+ "https://raw.githubusercontent.com/kort0881/vpn-checker-backend/main/checked/RU_Best/ru_white_part3.txt": {
+  "count": 1,
+  "first": "2026-11-25",
+  "kind": "hard",
+  "last": "2026-11-25",
+  "reason": "empty"
+ }
+}
