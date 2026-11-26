@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **936 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **880 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/24**
+**Last update on: 2026/11/26**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -74,7 +74,7 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Mixed Subscription Links
 
-All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **641 links.**
+All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **585 links.**
 
 ```
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
@@ -221,8 +221,6 @@ https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/22.txt
 https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/23.txt
 https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/24.txt
 https://github.com/nikita29a/FreeProxyList/raw/refs/heads/main/mirror/25.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/curated.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/verified_tls.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/21.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/14.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/3.txt
@@ -256,7 +254,6 @@ https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs/all_so
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/light/configs.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/light/configs_base64.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/split/tcp.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/ipv6_only.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs/all_sources_sub.txt
 https://raw.githubusercontent.com/AmirrezaFarnamTaheri/HUNTX/main/outputs/all_sources_sub_base64.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/base64/all_sub.txt
@@ -285,7 +282,6 @@ https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/19.t
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/10ium-V2Hub3-merged
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/normal/10ium-V2Hub3-merged
 https://raw.githubusercontent.com/R3ZARAHIMI/tg-v2ray-configs-every2h/main/conf-week.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/verified.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/17.txt
 https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/configs/mix.txt
 https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/configs/mix_sub.txt
@@ -304,46 +300,20 @@ https://raw.githubusercontent.com/rekt0ro/ProxyRift/main/subscriptions/all-base6
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/stable/v2ray-base64-0005.txt
 https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/main/public/podpiska.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/5.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CY.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AU.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/top.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/DE.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/FR.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/LT.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MD.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/NL.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/FI.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/GB.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/JP.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AE.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CA.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CH.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/HK.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IR.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/KR.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/top_ipv6.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IT.txt
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/main/sub.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CN.txt
 https://raw.githubusercontent.com/Mehinator/Derafsh/main/derafsh_sub.txt
 https://raw.githubusercontent.com/Mehinator/Derafsh/main/derafsh_servers.txt
 https://raw.githubusercontent.com/MohammadBahemmat/V2ray-Collector/main/all_servers.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/all/configs.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/all/configs_base64.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/30.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BG.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/ES.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/KZ.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CZ.txt
 https://raw.githubusercontent.com/kasesm/Free-Config/main/all_sub.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/stable/v2ray-base64-0004.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/stable/v2ray-base64-0003.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/secure/configs.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/secure/configs_base64.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/LV.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/robin.nscl.ir.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/normal/robin.nscl.ir.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/EE.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/ae/all.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/lt/all.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/24.txt
@@ -356,11 +326,9 @@ https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_80.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8080.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IN.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_full.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_plain_full.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8443.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IE.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/4.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/base64/10ium-HiN-VPN-mix
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/normal/10ium-HiN-VPN-mix
@@ -391,14 +359,12 @@ https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub12_base6
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub13_base64.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub14_base64.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub25_base64.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AT.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_plain_bl.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub1_base64.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/regions/North_America.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/ws_tls.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/ws_tls_base64.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/LU.txt
 https://raw.githubusercontent.com/luxxuria/harvester/main/ping_tested.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Sub15.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub15_base64.txt
@@ -411,13 +377,11 @@ https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/15.t
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/split/xhttp.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-US.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/GB.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BR.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/Countries/Canada.txt
 https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/mix
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/18.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/regions/Europe.txt
 https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/v2
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MY.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/at/all.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/au/all.txt
 https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/bg/all.txt
@@ -451,7 +415,6 @@ https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/DE.txt
 https://raw.githubusercontent.com/ProblemTheCode/SylphNet-public/main/sub/sub.txt
 https://raw.githubusercontent.com/ProblemTheCode/SylphNet-public/main/sub/sub_plain.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/8.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AM.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/CA.txt
 https://raw.githubusercontent.com/R3ZARAHIMI/tg-v2ray-configs-every2h/main/Original-Configs.txt
 https://raw.githubusercontent.com/whoahaow/rjsxrd/main/githubmirror/bypass/bypass-1.txt
@@ -466,7 +429,6 @@ https://raw.githubusercontent.com/whoahaow/rjsxrd/main/githubmirror/bypass/bypas
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/9.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2053.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_19999.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BZ.txt
 https://raw.githubusercontent.com/10Dream/sub-mod/main/sub/split/grpc.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/25.txt
 https://raw.githubusercontent.com/Freedom-Guard-Builder/Freedom-Finder/main/out/configs/all.txt
@@ -492,8 +454,6 @@ https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/fi/al
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/22.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T092627Z-6cae1b655c08/all.txt
 https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/main/category/tcp.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CO.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/HU.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T085746Z-1da4722933d8/all.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub3.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub6.txt
@@ -567,20 +527,15 @@ https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.b64
 https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub28_base64.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/base64/subs/sub1.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BE.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/Canada.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/non_tls.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/transports/non_tls_base64.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/GR.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-SG.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/DK.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T084248Z-e97179324ef0/all.txt
 https://raw.githubusercontent.com/R3ZARAHIMI/tg-v2ray-configs-every2h/main/Config_jo.txt
 https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub39.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/lite/config.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IL.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/26.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IM.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/HK.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2087.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2095.txt
@@ -593,10 +548,8 @@ https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub22_base64.txt
 https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/6.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MX.txt
 https://raw.githubusercontent.com/Freedom-Guard-Builder/Freedom-Finder/main/out/channels/i10VPN.txt
 https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/Countries/The_Netherlands.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AL.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T080152Z-884e232e02b9/all.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/FR.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_8880.txt
@@ -606,13 +559,11 @@ https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub21_base6
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T062212Z-ceb3da311652/all.txt
 https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/main/category/ws.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/Germany.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/ID.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bs.txt
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_plain_bs.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/subscriptions/mix
 https://raw.githubusercontent.com/NiREvil/vless/main/sub/v2rayng-wg.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/docs/subscriptions/mix
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/BY.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T054133Z-019235eae81a/all.txt
 https://raw.githubusercontent.com/rekt0ro/ProxyRift/main/subscriptions/light.txt
 https://raw.githubusercontent.com/rekt0ro/ProxyRift/main/subscriptions/light-base64.txt
@@ -640,19 +591,16 @@ https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reach
 https://raw.githubusercontent.com/mfuu/FreeProxies/master/sub
 https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/other/countries/US/alive_US.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_18000.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/CL.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/FI.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Sub16.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub16_base64.txt
 https://raw.githubusercontent.com/free-nodes/v2rayfree/main/sub
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IQ.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T033512Z-3b0fdedb5fc6/all.txt
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2082.txt
 https://raw.githubusercontent.com/NiREvil/vless/main/sub/exclave-wg.txt
 https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/nodes/yudou66.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub26_base64.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-HK.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MH.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/main/output/country/AE.txt
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/28.txt
 https://raw.githubusercontent.com/FLAT447/v2ray-lists/main/BLACK_FULL.txt
@@ -674,7 +622,6 @@ https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-c
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub29_base64.txt
 https://raw.githubusercontent.com/NiREvil/vless/main/edge/waste/All%20%20Warp%20Windscribe%20Poroton%20Hysteria
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Countrys/Canada.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/JO.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/location/base64/US
 https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/location/normal/US
 https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/23.txt
@@ -685,12 +632,10 @@ https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector
 https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/port_2052.txt
 https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-DE.txt
 https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/ru_configs.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/IS.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Base64/PROXIES_ONLY/WHITE-CIDR-RU-all-base64.txt
 https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/main/category/United%20States.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/v2rayN_PC/WHITE-CIDR-RU-all-v2rayN.txt
 https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Base64/Sub33_base64.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/AZ.txt
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/snapshots/reachable/20260820T005946Z-e8d9c4913f48/all.txt
 https://raw.githubusercontent.com/R3ZARAHIMI/tg-v2ray-configs-every2h/main/regions/conf-UK.txt
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Export/Base64/PROXIES_ONLY/BLACK_SS%2BAll_RUS_base64.txt
@@ -715,7 +660,6 @@ https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Subscribes/sub17.txt
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Subscribes/sub18.txt
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Subscribes/sub19.txt
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Subscribes/sub20.txt
-https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/countries/MT.txt
 https://raw.githubusercontent.com/sinavm/SVM/main/docs/subscriptions/alive-stable
 https://raw.githubusercontent.com/MahanKenway/Pusheen-V2Ray/main/subscriptions/reachable-fast.txt
 ```
@@ -1234,7 +1178,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/24**
+**آخرین به‌روزرسانی: 2026/11/26**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
