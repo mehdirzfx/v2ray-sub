@@ -1,16 +1,1 @@
-{
- "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt": {
-  "count": 1,
-  "first": "2026-11-26",
-  "kind": "hard",
-  "last": "2026-11-26",
-  "reason": "noconfigs"
- },
- "https://raw.githubusercontent.com/kort0881/vpn-checker-backend/main/checked/RU_Best/ru_white_part3.txt": {
-  "count": 2,
-  "first": "2026-11-25",
-  "kind": "hard",
-  "last": "2026-11-26",
-  "reason": "empty"
- }
-}
+{}

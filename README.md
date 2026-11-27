@@ -5,11 +5,11 @@
 [![Last commit](https://img.shields.io/github/last-commit/mehdirzfx/v2ray-sub?style=flat-square)](https://github.com/mehdirzfx/v2ray-sub/commits/main)
 [![License](https://img.shields.io/github/license/mehdirzfx/v2ray-sub?style=flat-square)](LICENSE)
 
-A curated collection of **880 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
+A curated collection of **877 free public V2Ray / Xray / sing-box subscription links** aggregated from **112 open-source GitHub repositories**. Every link was checked for availability when this list was updated (the URL responds and returns configs), and each source is credited by its GitHub username directly in the link.
 
 Paste a subscription link into your client and import many **VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and TUIC** configs at once. Works with v2rayNG, Hiddify, Husi, NekoBox, Streisand, V2Box, v2rayN, NekoRay, Clash Verge and more.
 
-**Last update on: 2026/11/26**
+**Last update on: 2026/11/27**
 
 > Note: This list is a compilation of other repositories. All developers' rights are preserved, and the links are fully specified with the original username in the URL.
 
@@ -74,12 +74,11 @@ Paste a subscription link into your client and import many **VLESS, VMess, Troja
 
 ## Mixed Subscription Links
 
-All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **585 links.**
+All-in-one lists that combine several protocols (VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC). Best default choice for most clients. **584 links.**
 
 ```
 https://raw.githubusercontent.com/miladtahanian/V2RayCFGDumper/refs/heads/main/sub.txt
 https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt
-https://raw.githubusercontent.com/kort0881/vpn-checker-backend/main/checked/RU_Best/ru_white_part3.txt
 https://raw.githubusercontent.com/sakha1370/OpenRay/refs/heads/main/output/all_valid_proxies.txt
 https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt
 https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri
@@ -773,7 +772,7 @@ https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/main/public/vmess.t
 
 ## Trojan Subscription Links
 
-Trojan configs over TLS. **29 links.**
+Trojan configs over TLS. **27 links.**
 
 ```
 https://raw.githubusercontent.com/pie-with-jam/5ubscrpt10n-Reborn/main/protocols/tr.txt
@@ -799,8 +798,6 @@ https://raw.githubusercontent.com/svinakraft-maker/FlareFeed/main/public/trojan.
 https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/configs/trojan.txt
 https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/configs/trojan_sub.txt
 https://raw.githubusercontent.com/kasesm/Free-Config/main/trojan_raw.txt
-https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/protocols/trojan.txt
-https://raw.githubusercontent.com/noahclanman/free-xray-gcp/main/output/protocols/trojan_base64.txt
 https://raw.githubusercontent.com/MohammadBahemmat/V2ray-Collector/main/servers/trojan_servers.txt
 https://raw.githubusercontent.com/kasesm/Free-Config/main/trojan_sub.txt
 https://raw.githubusercontent.com/SoliSpirit/SolVPN/main/Protocols/trojan.txt
@@ -1178,7 +1175,7 @@ This repository only aggregates links that are publicly available on the interne
 
 این مخزن مجموعه‌ای از **لینک‌های سابسکریپشن رایگان V2Ray** شامل **VLESS، VMess، Trojan، Shadowsocks، Hysteria2 و TUIC** و پروفایل‌های Clash و sing-box است که از ریپوهای عمومی گیت‌هاب جمع‌آوری شده. هر لینک هنگام به‌روزرسانی از نظر در دسترس بودن بررسی شده و نام سازنده در خود لینک مشخصه.
 
-**آخرین به‌روزرسانی: 2026/11/26**
+**آخرین به‌روزرسانی: 2026/11/27**
 
 ### طرز استفاده از لینک ساب (کانفیگ رایگان V2Ray)
 
