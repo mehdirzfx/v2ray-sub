@@ -1,1 +1,9 @@
-{}
+{
+ "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt": {
+  "count": 1,
+  "first": "2026-11-28",
+  "kind": "hard",
+  "last": "2026-11-28",
+  "reason": "noconfigs"
+ }
+}
